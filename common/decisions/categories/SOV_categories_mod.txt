@@ -1,0 +1,20 @@
+SOV_sudba_gulag = {
+	icon = generic_propaganda
+
+    picture = GFX_decision_cat_picture_naval_treaties
+
+	visible = {
+
+	}
+    priority = 10
+}
+SOV_economic_zakryt_posledstvye_ot_golodomora_1947_categories = {
+	icon = generic_propaganda
+
+    picture = GFX_decision_cat_picture_naval_treaties
+
+	visible = {
+
+	}
+    priority = 11
+}

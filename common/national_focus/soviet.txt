@@ -1,0 +1,1603 @@
+﻿search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+### search_filters = {FOCUS_FILTER_SOV_POLITICAL_PARANOIA}
+### search_filters = {FOCUS_FILTER_PROPAGANDA}
+### search_filters = {FOCUS_FILTER_ARMY_XP}
+### search_filters = {FOCUS_FILTER_NAVY_XP}
+### search_filters = {FOCUS_FILTER_AIR_XP}
+# Reminder that focus filters prio has to be handled in the generic focus file :)
+
+focus_tree = {
+	id = soviet_focus
+
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = SOV
+		}
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = 55 y = 1500 }
+	
+	
+	focus = {
+	   id = SOV_umer_beria   
+	   cost = 0.5
+	   prerequisite = { }
+	   x = 45
+       y = 0
+	   available = {
+	    custom_trigger_tooltip = {
+            tooltip = SOV_umer_beria_tt
+            has_variable = umer_beria
+        }
+	   }
+	   bypass = {
+	         
+	   }
+	   completion_reward = {
+	      add_political_power = -320
+		  add_stability = -0.1
+		}
+		
+	   
+
+    }
+	focus = {
+	   id = SOV_XX_soezd_cpss
+	   cost = 10
+	   prerequisite = { focus =  SOV_umer_beria  }
+	   x = 0
+       y = 5
+	   
+	   relative_position_id = SOV_umer_beria
+	   
+	   available = {
+	    
+	   }
+	   bypass = {
+	         
+	   }
+	   completion_reward = {
+	      country_event = smert.2
+		}
+		
+	   
+
+    }
+	focus = {
+	   id = SOV_nikita_hyrchov 
+	   cost = 10
+	   prerequisite = { focus =  SOV_XX_soezd_cpss }
+	   mutually_exclusive = { focus = SOV_malenkov }
+	   mutually_exclusive = { focus = SOV_vlast_NKVD }
+	   x = -8
+       y = 1
+	   
+	   relative_position_id = SOV_XX_soezd_cpss
+	   
+	   available = {
+	       custom_trigger_tooltip = {
+		       tooltip = SOV_nikita__hyrchov_tt
+               has_country_flag = nikita_hyruchov
+            }
+	    }
+	   bypass = {     
+	   }
+	   completion_reward = { 
+		}
+		
+	   
+
+    }
+	focus = {
+	   id = SOV_nikita_hyrchov_sosdat_oppasitiu 
+	   cost = 10
+	   prerequisite = { focus =  SOV_nikita_hyrchov  }
+	   
+	   x = 0
+       y = 1
+	   
+	   relative_position_id = SOV_nikita_hyrchov
+	   
+	   available = {
+	       
+	    }
+	   bypass = {     
+	   }
+	   completion_reward = { 
+	      add_ideas = idea_SOV_nikita_hyrushov_sozdaet_opasitsi
+		  add_political_power = -50
+		}
+		
+	   
+
+    }
+	focus = {
+	   id = SOV_nikita_hyrchov_corupsia_v_NKVD 
+	   cost = 10
+	   prerequisite = { focus =  SOV_nikita_hyrchov_sosdat_oppasitiu  }
+	   mutually_exclusive = { focus  = SOV_nikita_hyrchov_zarushirtsa_poderzhkoi_naroda }
+	   
+	   x = -5
+       y = 1
+	   
+	   relative_position_id = SOV_nikita_hyrchov_sosdat_oppasitiu
+	   
+	   available = {
+	       
+	    }
+	   bypass = {     
+	   }
+	   completion_reward = { 
+	      custom_effect_tooltip = SOV_nikita_hyrchov_corupsia_v_NKVD_tt 
+		  set_country_flag = SOV_nikita_hyrchov_corupsia_v_NKVD
+		}
+		
+	   
+
+    }
+	focus = {
+	   id = SOV_nikita_hyrchov_zarushirtsa_poderzhkoi_naroda 
+	   cost = 10
+	   prerequisite = { focus =  SOV_nikita_hyrchov_sosdat_oppasitiu  }
+	   mutually_exclusive = { focus = SOV_nikita_hyrchov_corupsia_v_NKVD }
+	   
+	   x = -1
+       y = 1
+	   
+	   relative_position_id = SOV_nikita_hyrchov_sosdat_oppasitiu
+	   
+	   available = {
+	       
+	    }
+	   bypass = {     
+	   }
+	   completion_reward = { 
+	      custom_effect_tooltip = SOV_nikita_hyrchov_zarushirtsa_poderzhkoi_naroda_tt
+          set_country_flag = SOV_nikita_hyrchov_zarushaetsa_podershoi_naroda		  
+		}
+		
+	   
+
+    }
+	focus = {
+	   id = SOV_nikita_hyrchov_sudba_avtonomiu
+	   cost = 10
+	   prerequisite = { focus =  SOV_nikita_hyrchov_zarushirtsa_poderzhkoi_naroda  focus =  SOV_nikita_hyrchov_corupsia_v_NKVD  }
+	   
+	   x = -2
+       y = 1
+	   
+	   relative_position_id = SOV_nikita_hyrchov_zarushirtsa_poderzhkoi_naroda
+	   
+	   available = {
+	       
+	    }
+	   bypass = {     
+	   }
+	   completion_reward = { 
+	      country_event = avtonomy.1
+		}
+		
+	   
+
+    }
+	focus = {
+	   id = SOV_nikita_hyrchov_ubrat_pomex  
+	   cost = 10
+	   prerequisite = { focus =  SOV_nikita_hyrchov_sudba_avtonomiu  }
+	   
+	   x = -2
+       y = 2
+	   
+	   relative_position_id = SOV_nikita_hyrchov_sudba_avtonomiu
+	   
+	   available = {
+	      NOT = {
+		    has_completed_focus = SOV_nikita_hyrchov_voina
+		  }
+	    }
+	   bypass = {     
+	   }
+	   completion_reward = { 
+	      custom_effect_tooltip = SOV_nikita_hyrchov_ubrat_pomex_tt
+		  set_country_flag = SOV_germany_civil_war_generaly_ubit
+		}
+		
+	   
+
+    }
+	focus = {
+	   id = SOV_nikita_hyrchov_voina
+	   cost = 10
+	   prerequisite = { focus =  SOV_nikita_hyrchov_sudba_avtonomiu  }
+	   
+	   x = 0
+       y = 5
+	   
+	   relative_position_id = SOV_nikita_hyrchov_sudba_avtonomiu
+	   
+	   available = {
+	       
+	    }
+	   bypass = {     
+	   }
+	   completion_reward = { 
+	      country_event = { id = civil_war_SOV.1 }
+		}
+    }
+	focus = {
+	   id = SOV_dogvor_s_german_reix
+	   cost = 10
+	   prerequisite = { focus =  SOV_buharin  focus =  SOV_nikita_hyrchov_sudba_avtonomiu
+        	 focus = SOV_malenkov_marsh_na_moskvu 
+		}
+	   mutually_exclusive = { focus = SOV_malenkov_dogovor_japan }
+	   
+	   x = 5
+       y = 3
+	   
+	   relative_position_id = SOV_nikita_hyrchov_sudba_avtonomiu
+	   
+	   available = {
+	       GER = {
+		      has_civil_war = no
+		   }
+		   NOT = {
+		    has_completed_focus = SOV_nikita_hyrchov_voina
+		  }
+	    }
+	   bypass = {     
+	   }
+	   completion_reward = { 
+	      GER = {
+		    country_event = germany_civil_war_SOV.1
+		  }
+		  add_stability = -0.05
+		}
+		
+	   
+
+    }
+	focus = {
+	    id = SOV_malenkov
+	    cost = 10
+	    prerequisite = { focus =  SOV_XX_soezd_cpss  }
+	    mutually_exclusive = { focus = SOV_vlast_NKVD }
+	    mutually_exclusive = { focus = SOV_nikita_hyrchov }
+	    x = 0
+        y = 1
+	    
+	    relative_position_id = SOV_XX_soezd_cpss
+	   
+	    available = {
+	         custom_trigger_tooltip = {
+		       tooltip = SOV_Buharin_tt
+               has_country_flag = Buharin
+            }
+	    }
+	   bypass = {
+	    
+	    }
+		completion_reward = {}
+	}
+	focus = {
+	    id = SOV_malenkov_zahvatit_sovet_ministrov
+	    cost = 10
+	    prerequisite = { focus =  SOV_malenkov  }
+	    x = 0
+        y = 1
+	    
+	    relative_position_id = SOV_malenkov
+	   
+	    available = {
+	    }
+	    bypass = {
+	    
+	    }
+		completion_reward = {
+			create_country_leader = {
+				name = SOV_malenkovX
+				desc = "SOV_malenkov_DESC"
+				picture = GFX_portrait_SOV_malenckov
+				expire = "2000.1.1"
+				ideology = marxism
+				traits = {
+					nepolnotasenaevlast 
+				}
+			}
+		} 
+	}
+	
+	focus = {
+	    id = SOV_malenkov_obeshat_colectivnoe_rekovodstvo
+	    cost = 10
+	    prerequisite = { focus =  SOV_malenkov_zahvatit_sovet_ministrov  }
+	    x = 0
+        y = 1
+	    
+	    relative_position_id = SOV_malenkov_zahvatit_sovet_ministrov
+	   
+	    available = {
+	    }
+	    bypass = {
+	    
+	    }
+		completion_reward = {
+			custom_effect_tooltip = SOV_malenkov_obeshat_colectibnoe_upravlenie_tt
+			custom_effect_tooltip = SOV_malenkov_obeshat_colectibnoe_upravlenie_effects_tt
+          	set_country_flag = SOV_malenkov_obeshat_colectibnoe_upravlenie
+		}
+	}
+	focus = {
+	    id = SOV_malenkov_ubrat_NKVD
+	    cost = 10
+	    prerequisite = { focus =  SOV_malenkov_obeshat_colectivnoe_rekovodstvo  }
+	    x = 0
+        y = 1
+	    
+	    relative_position_id = SOV_malenkov_obeshat_colectivnoe_rekovodstvo
+	    available = {
+	    }
+	    bypass = {
+	    
+	    }
+		completion_reward = {
+			add_stability = -0.05
+			add_political_power = 150
+		}
+	}
+	focus = {
+	    id = SOV_malenkov_prekratit_delo_vrashei
+	    cost = 5
+	    prerequisite = { focus =  SOV_malenkov_ubrat_NKVD  }
+	    x = 0
+        y = 2
+	    
+	    relative_position_id = SOV_malenkov_ubrat_NKVD
+	    available = {
+	    }
+	    bypass = {
+	    
+	    }
+		completion_reward = {
+			add_stability = -0.05
+			add_political_power = 150
+		}
+	}
+	focus = {
+	    id = SOV_malenkov_ubrat_ludei_is_avtonomui
+	    cost = 10
+	    prerequisite = { focus =  SOV_malenkov_ubrat_NKVD  }
+	    x = -1
+        y = 1
+	    
+	    relative_position_id = SOV_malenkov_ubrat_NKVD
+	   
+	    available = {
+	    }
+	    bypass = {
+	    
+	    }
+		completion_reward = {
+			set_country_flag = SOV_malenkov_flag_ubrat_chinovnikov
+			custom_effect_tooltip = SOV_malenkov_ubrat_ludei_is_avtonomui_tt
+		}
+	}
+	focus = {
+	    id = SOV_malenkov_dogovor_USA
+	    cost = 10
+	    prerequisite = { focus =  SOV_malenkov_ubrat_ludei_is_avtonomui }
+		mutually_exclusive = { focus = SOV_dogvor_s_german_reix }
+	    x = -2
+        y = 2
+	    
+	    relative_position_id = SOV_malenkov_ubrat_ludei_is_avtonomui
+	   
+	    available = {
+	    }
+	    bypass = {
+	    
+	    }
+		completion_reward = {
+			add_stability = -0.05
+			
+		}
+	}
+	focus = {
+	    id = SOV_malenkov_relegioznii_ustupki
+	    cost = 10
+	    prerequisite = { focus =  SOV_malenkov_ubrat_ludei_is_avtonomui }
+	    x = 0
+        y = 2
+	    
+	    relative_position_id = SOV_malenkov_ubrat_ludei_is_avtonomui
+	   
+	    available = {
+	    }
+	    bypass = {
+	    
+	    }
+		completion_reward = {
+			custom_effect_tooltip = SOV_malenkov_relegioznii_ustupki_tt
+			set_country_flag = SOV_malenkov_relegioznii_ustupki_flag
+		}
+	}
+	focus = {
+	    id = SOV_malenkov_voina
+	    cost = 10
+	    prerequisite = { focus =  SOV_malenkov_relegioznii_ustupki }
+	    x = 0
+        y = 2
+	    
+	    relative_position_id = SOV_malenkov_relegioznii_ustupki
+	   
+	    available = {
+	    }
+	    bypass = {
+	    
+	    }
+		completion_reward = {}
+	}
+	
+	
+	focus = {
+	    id = SOV_vlast_NKVD
+	    cost = 10
+	    prerequisite = { focus =  SOV_XX_soezd_cpss  }
+	    mutually_exclusive = { focus = SOV_malenkov }
+	    mutually_exclusive = { focus = SOV_nikita_hyrchov }
+	    x = 8
+        y = 1
+	   
+	    relative_position_id = SOV_XX_soezd_cpss
+	   
+	    available = {
+	        custom_trigger_tooltip = {
+		       tooltip = SOV_NKVD_tt  
+               has_country_flag = NKVD
+            }
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+		}
+    }
+	focus = {
+	    id = SOV_vlast_NKVD_represion_v_sovet_ministrov
+	    cost = 5
+	    prerequisite = { focus =  SOV_vlast_NKVD  }
+	    x = 0
+        y = 1
+	   
+	    relative_position_id = SOV_vlast_NKVD
+	   
+	    available = {
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+		}
+    }
+	focus = {
+	    id = SOV_vlast_NKVD_rastrel_lishnix
+	    cost = 5
+	    prerequisite = { focus =  SOV_vlast_NKVD_represion_v_sovet_ministrov  }
+		mutually_exclusive = {
+			focus = SOV_vlast_NKVD_sobrat_starui_gvadiu
+		}
+	    x = 0
+        y = 1
+	   
+	    relative_position_id = SOV_vlast_NKVD_represion_v_sovet_ministrov
+	   
+	    available = {
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+		}
+    }
+	focus = {
+	    id = SOV_vlast_NKVD_sobrat_starui_gvadiu
+	    cost = 5
+	    prerequisite = { focus =  SOV_vlast_NKVD_represion_v_sovet_ministrov  }
+		mutually_exclusive = {
+			focus = SOV_vlast_NKVD_rastrel_lishnix
+		}
+	    x = 2
+        y = 1
+	   
+	    relative_position_id = SOV_vlast_NKVD_represion_v_sovet_ministrov
+	   
+	    available = {
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+		}
+    }
+	focus = {
+	    id = SOV_vlast_NKVD_voenii_is_avtonomii
+	    cost = 5
+	    prerequisite = { focus =  SOV_vlast_NKVD_sobrat_starui_gvadiu  }
+		mutually_exclusive = {
+		}
+	    x = 2
+        y = 1
+	   
+	    relative_position_id = SOV_vlast_NKVD_sobrat_starui_gvadiu
+	   
+	    available = {
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+		}
+    }
+	focus = {
+	    id = SOV_vlast_NKVD_loalnost_KGB
+	    cost = 5
+	    prerequisite = { 
+			focus =  SOV_vlast_NKVD_rastrel_lishnix 
+			focus = SOV_vlast_NKVD_sobrat_starui_gvadiu
+		}
+	    x = 1
+        y = 2
+	   
+	    relative_position_id = SOV_vlast_NKVD_rastrel_lishnix
+	   
+	    available = {
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+		}
+    }
+	focus = {
+	    id = SOV_vlast_NKVD_poderska_generalov
+	    cost = 5
+	    prerequisite = { focus =  SOV_vlast_NKVD_represion_v_sovet_ministrov  }
+	    x = -3
+        y = 1
+	   
+	    relative_position_id = SOV_vlast_NKVD_represion_v_sovet_ministrov
+	   
+	    available = {
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+		}
+    }
+	focus = {
+	    id = SOV_vlast_NKVD_poderska_generalov_Zkov
+	    cost = 5
+	    prerequisite = { focus =  SOV_vlast_NKVD_poderska_generalov }
+	    x = -2
+        y = 1
+	   
+	    relative_position_id = SOV_vlast_NKVD_poderska_generalov
+	   
+	    available = {
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+		}
+    }
+	focus = {
+	    id = SOV_vlast_NKVD_poderska_generalov_Rokkosovsky
+	    cost = 5
+	    prerequisite = { focus =  SOV_vlast_NKVD_poderska_generalov }
+	    x = 0
+        y = 1
+	   
+	    relative_position_id = SOV_vlast_NKVD_poderska_generalov
+	   
+	    available = {
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+		}
+    }
+	focus = {
+	    id = SOV_vlast_NKVD_vypostit_oficerov_is_Gulaga
+	    cost = 5
+	    prerequisite = { 
+			focus =  SOV_vlast_NKVD_poderska_generalov_Rokkosovsky 
+			focus = SOV_vlast_NKVD_poderska_generalov_Zkov
+		}
+	    x = -1
+        y = 1
+	   
+	    relative_position_id = SOV_vlast_NKVD_poderska_generalov_Rokkosovsky
+	   
+	    available = {
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+		}
+    }
+	focus = {
+	    id = SOV_vlast_NKVD_loalnos_army
+	    cost = 5
+	    prerequisite = { 
+			focus =  SOV_vlast_NKVD_vypostit_oficerov_is_Gulaga 
+		}
+	    x = 0
+        y = 1
+	   
+	    relative_position_id = SOV_vlast_NKVD_vypostit_oficerov_is_Gulaga
+	   
+	    available = {
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+		}
+    }
+	focus = {
+	    id = SOV_vlast_NKVD_pereobrozanie_v_MVD
+	    cost = 5
+	    prerequisite = { 
+			focus =  SOV_vlast_NKVD_loalnos_army
+			focus = SOV_vlast_NKVD_loalnost_KGB
+		}
+	    x = 4
+        y = 2
+	   
+	    relative_position_id = SOV_vlast_NKVD_loalnos_army
+	   
+	    available = {
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+		}
+    }
+	focus = {
+	    id = SOV_vlast_NKVD_popytka_zahvata_MOSCOW
+	    cost = 5
+	    prerequisite = { 
+			focus =  SOV_vlast_NKVD_pereobrozanie_v_MVD
+		}
+	    x = 0
+        y = 2
+	   
+	    relative_position_id = SOV_vlast_NKVD_pereobrozanie_v_MVD
+	   
+	    available = {
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+		}
+    }
+	focus = {
+	    id = SOV_vlast_NKVD_uspex
+	    cost = 5
+	    prerequisite = { 
+			focus =  SOV_vlast_NKVD_popytka_zahvata_MOSCOW
+		}
+	    x = 0
+        y = 1
+	   
+	    relative_position_id = SOV_vlast_NKVD_popytka_zahvata_MOSCOW
+	   
+	    available = {
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+			set_cosmetic_tag = SOV_NKVD 
+		}
+    }
+
+
+	########--economic-########
+
+	focus = {
+	    id = SOV_economic_uscorit_petiletky
+	    cost = 5
+	    x = 10
+        y = 0
+	   
+	   
+	    available = {
+	    
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+			add_political_power = 100
+
+            custom_effect_tooltip = SOV_uscorit_5_plan_tt
+			
+			
+			add_to_variable = {
+				SOV_mod_5_plan_industrial_complex_modifiear = 0.05 
+				tooltip = SOV_mod_5_plan_industrial_complex_modifiear_tt
+			}
+			add_to_variable = {
+				SOV_mod_5_plan_infrastructure_modifiear = 0.05
+				tooltip = SOV_mod_5_plan_infrastructure_modifiear_tt
+			}
+			add_to_variable = { 
+				SOV_mod_5_plan_production_oil_facto_modifiear = 0.05 
+				tooltip = production_oil_facto_modifiear_tt
+			}
+			add_to_variable = { 
+				SOV_mod_5_plan_production_factory_efficiency_gain_factor_modifiear = 0.1
+				tooltip = SOV_mod_5_plan_production_factory_efficiency_gain_factor_modifiear_tt
+			}
+			add_to_variable = { 
+				SOV_mod_5_plan_production_lack_of_resource_penalty_factor_modifiear = -0.1 
+				tooltip = SOV_mod_5_plan_production_lack_of_resource_penalty_factor_modifiear_tt
+			}
+		}
+    }
+	focus = {
+	    id = SOV_economic_zakryt_posledstvye_ot_golodomora_1947
+	    cost = 5
+	    x = -3
+        y = 1
+
+		prerequisite = { focus = SOV_economic_uscorit_petiletky }
+		relative_position_id = SOV_economic_uscorit_petiletky
+	   
+	   
+	    available = {
+	    
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+			add_political_power = 100
+
+			add_timed_idea = {
+				days = 365
+				idea = idea_SOV_zakryt_posledstvie_golodonora_1947
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = SOV_economic_zakryt_posledstvye_ot_golodomora_1947_tt
+		}
+    }
+	focus = {
+	    id = SOV_economic_decentralization
+	    cost = 10
+	    prerequisite = { focus =  SOV_economic_uscorit_petiletky }
+	    x = -1
+        y = 5
+	   
+	    relative_position_id = SOV_economic_uscorit_petiletky
+
+		allow_branch = { 
+            NOT = {
+				has_completed_focus = SOV_economic_akcent_na_tysholai_economic
+			}
+		}
+
+		mutually_exclusive = { focus = SOV_economic_akcent_na_tysholai_economic }
+	   
+	    available = {
+			custom_trigger_tooltip = {
+				tooltip = SOV_umer_beria_tt
+				has_variable = umer_beria
+            }
+            NOT = {
+				has_country_leader = {
+					name = "SOV_partiass"
+					ideology = communism
+				}
+			}
+			NOT = {
+				has_civil_war = yes
+			}
+			NOT = {
+				has_idea = idea_SOV_zakryt_posledstvie_golodonora_1947
+			}
+	    } 
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+			mark_focus_tree_layout_dirty = yes
+
+            custom_effect_tooltip = SOV_economic_decentralization_tt
+
+			add_to_variable = { SOV_mod_5_plan_industrial_complex_modifiear = 0.05 }
+			add_to_variable = { SOV_mod_5_plan_infrastructure_modifiear = 0.05 }
+			add_to_variable = { SOV_mod_5_plan_production_speed_arms_factory_factor_modifiear = -0.20 }
+			add_to_variable = { SOV_mod_5_plan_monthly_population_modifiear = 0.1 }
+		}
+
+    }
+	focus = {
+	    id = SOV_economic_urbanization
+	    cost = 10
+	    prerequisite = { focus =  SOV_economic_decentralization }
+	    x = 0
+        y = 1
+	   
+	    relative_position_id = SOV_economic_decentralization
+
+	   
+	    available = {
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+            hidden_effect = {
+				ROOT  = {
+					SOV_mod_urbanization_scripted_effects = yes
+				}
+			}
+			custom_effect_tooltip = SOV_economic_urbanization_tt
+		}
+
+    }
+
+	focus = {
+	    id = SOV_economic_roboshie_is_avtonomii
+	    cost = 10
+	    prerequisite = { 
+			focus =  SOV_economic_urbanization 
+			focus = SOV_economic_profesti_commisiu_v_VPK
+		}
+	    x = 1
+        y = 3
+	   
+	    relative_position_id = SOV_economic_urbanization
+
+	   
+	    available = {
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+		}
+
+    }
+
+    focus = {
+	    id = SOV_economic_nausnye_centry
+	    cost = 10
+	    prerequisite = { focus =  SOV_economic_urbanization }
+	    x = 0
+        y = 1
+	   
+	    relative_position_id = SOV_economic_urbanization
+
+	   
+	    available = {
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+			add_research_slot = 1
+			add_tech_bonus = {
+				bonus = 1
+				uses = 4
+				category = industry
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = electronics
+			}
+			add_stability = 0.05
+		}
+
+    }
+	
+	focus = {
+	    id = SOV_economic_reforma_sovzavhosov
+	    cost = 10
+	    prerequisite = { focus =  SOV_economic_decentralization }
+	    x = -2
+        y = 2
+	   
+	    relative_position_id = SOV_economic_decentralization
+
+	   
+	    available = {
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+			add_ideas = idea_SOV_reforma_savhosov
+		}
+
+    }
+
+	focus = {
+	    id = SOV_economic_zakryt_defisit_bytovyx_tovarov
+	    cost = 10
+	    prerequisite = { focus =  SOV_economic_reforma_sovzavhosov }
+	    x = -2
+        y = 1
+	   
+	    relative_position_id = SOV_economic_reforma_sovzavhosov
+
+	   
+	    available = {
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+			add_timed_idea = {
+				days = 600
+				idea = idea_SOV_zakryt_defisit_tovorov
+			}
+		}
+
+    }
+
+	focus = {
+	    id = SOV_economic_uvelichit_colichestvo_sveinyx_fabric
+	    cost = 10
+	    prerequisite = { focus =  SOV_economic_zakryt_defisit_bytovyx_tovarov }
+	    x = -2
+        y = 1
+	   
+	    relative_position_id = SOV_economic_zakryt_defisit_bytovyx_tovarov
+
+	   
+	    available = {
+			has_idea = idea_SOV_zakryt_defisit_tovorov
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+			custom_effect_tooltip =  SOV_mod_5_plan_sveinyx_fabric_modifiear_tt
+			add_to_variable = { SOV_mod_5_plan_industrial_complex_modifiear = 0.5 } 
+			add_to_variable = { SOV_mod_5_supply_node_range_modifiear = 0.10 }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_political_power = 100
+			add_stability = 0.10
+			random_owned_state = {
+				limit = { is_core_of = ROOT } 
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+
+    }
+
+	focus = {
+	    id = SOV_economic_ivanovski_camvolnyi_combinant
+	    cost = 10
+	    prerequisite = { focus =  SOV_economic_zakryt_defisit_bytovyx_tovarov }
+	    x = 0
+        y = 1
+	   
+	    relative_position_id = SOV_economic_zakryt_defisit_bytovyx_tovarov
+
+	   
+	    available = {
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+			253 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+				add_stability = 0.02
+			}
+		}
+
+    }
+
+	focus = {
+	    id = SOV_economic_avtomization_proisvodsvto_bytovix_tovarov
+	    cost = 10
+	    prerequisite = { focus =  SOV_economic_ivanovski_camvolnyi_combinant}
+		prerequisite = { focus =SOV_economic_uvelichit_colichestvo_sveinyx_fabric  }
+	    x = -1
+        y = 1
+	   
+	    relative_position_id = SOV_economic_ivanovski_camvolnyi_combinant
+
+	   
+	    available = {
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+			custom_effect_tooltip = SOV_economic_avtomization_proisvodsvto_bytovix_tovarov_tt
+			add_to_variable = { SOV_mod_5_research_speed_factor_modifiear = 0.10 }
+			add_to_variable = { SOV_mod_5_production_speed_buildings_factor_modifiear = 0.08 }
+			add_to_variable = { SOV_mod_5_plan_production_factory_max_efficiency_factor_modifiear = 0.15 }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			remove_ideas = idea_SOV_zakryt_defisit_tovorov
+		}
+
+    }
+
+	focus = {
+	    id = SOV_economic_osvoenie_seleni
+	    cost = 10
+	    prerequisite = { 
+			focus =  SOV_economic_reforma_sovzavhosov
+			focus =  SOV_economic_urbanization 
+			
+		}
+	    x = 1
+        y = 2
+	   
+	    relative_position_id = SOV_economic_reforma_sovzavhosov
+
+	   
+	    available = {
+			AND = {
+				controls_state = 653
+				controls_state = 651
+				controls_state = 249
+				controls_state = 399
+				controls_state = 400
+			}
+			NOT = {
+				has_idea = idea_SOV_zakryt_defisit_tovorov
+			}
+
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+		}
+
+    }
+	focus = {
+	    id = SOV_economic_postroit_doma_dla_roboshih
+	    cost = 10
+	    prerequisite = { 
+			focus =  SOV_economic_osvoenie_seleni
+		}
+	    x = 0
+        y = 1
+	   
+	    relative_position_id = SOV_economic_osvoenie_seleni
+
+	   
+	    available = {
+			
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+			add_timed_idea = {
+				idea = idea_SOV_postroit_doma_dla_roboshih
+				days = 120
+			}
+		}
+
+    }
+
+    #### Хрущев ####
+
+	focus = {
+	    id = SOV_economic_dognat_i_pergnat
+	    cost = 10
+	    prerequisite = { focus =  SOV_economic_decentralization }
+	    x = -4
+        y = 1
+	   
+	    relative_position_id = SOV_economic_decentralization
+
+		allow_branch = {
+            has_country_leader = { 
+                name = SOV_nikita_chyrsov
+				ideology = communism
+            }
+		}
+
+	   
+	    available = {
+			has_country_leader = {
+				name = "SOV_nikita_chyrsov"
+				ideology = communism
+			}
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+		}
+
+    }
+
+	##### economic_akcent_na_tysholai
+
+	focus = {
+	    id = SOV_economic_akcent_na_tysholai_economic
+	    cost = 10
+	    prerequisite = { focus =  SOV_economic_uscorit_petiletky }
+	    x = 1
+        y = 5
+	   
+	    relative_position_id = SOV_economic_uscorit_petiletky
+
+		allow_branch = { 
+            NOT = {
+				has_completed_focus = SOV_economic_decentralization
+			}
+		}
+
+		mutually_exclusive = { focus = SOV_economic_decentralization }
+	   
+	    available = {
+	        custom_trigger_tooltip = {
+				tooltip = SOV_umer_beria_tt
+				has_variable = umer_beria
+            }
+			NOT = {
+				has_country_leader = {
+					name = "SOV_partiass"
+					ideology = communism
+				}
+				has_civil_war = yes
+				has_idea = idea_SOV_zakryt_posledstvie_golodonora_1947
+			}
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+			mark_focus_tree_layout_dirty = yes
+			custom_effect_tooltip = SOV_economic_akcent_na_tesholai_prom_effects_tt
+			add_to_variable = { SOV_mod_5_plan_arms_factory_modifiear = 0.10 }
+			add_to_variable = { SOV_mod_5_plan_industrial_complex_modifiear = -0.10 }
+			add_to_variable = { SOV_mod_5_plan_production_lack_of_resource_penalty_factor_modifiear = -0.5 }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+			random_core_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_stability = -0.1
+			add_war_support = 0.1
+		}
+		
+	   
+
+    }
+	focus = {
+	    id = SOV_economic_postroit_GES
+	    cost = 10
+	    prerequisite = { focus =  SOV_economic_akcent_na_tysholai_economic }
+	    x = 2
+        y = 1
+	   
+	    relative_position_id = SOV_economic_akcent_na_tysholai_economic
+
+	   
+	    available = {
+
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+			random_owned_state = {
+				limit = { is_core_of = ROOT } 
+				add_building_construction = {
+					type = dam
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			random_owned_state = {
+				limit = { is_core_of = ROOT } 
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			random_owned_state = {
+				limit = { is_core_of = ROOT } 
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			random_owned_state = {
+				limit = { is_core_of = ROOT } 
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			random_owned_state = {
+				limit = { is_core_of = ROOT } 
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+		
+	   
+
+    }
+
+	focus = {
+	    id = SOV_economic_ispozovat_gulag
+	    cost = 10
+	    prerequisite = { focus =  SOV_economic_postroit_GES }
+	    x = 2
+        y = 1
+	   
+	    relative_position_id = SOV_economic_postroit_GES
+
+	   
+	    available = {
+			has_idea = idea_SOV_gulag
+			has_completed_focus = SOV_economic_sudba_gulag
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+		}
+		
+	   
+
+    }
+
+	focus = {
+	    id = SOV_economic_trudavae_reforma
+	    cost = 10
+	    prerequisite = { focus =  SOV_economic_ispozovat_gulag }
+	    x = 2
+        y = 1
+	   
+	    relative_position_id = SOV_economic_ispozovat_gulag
+
+	   
+	    available = {
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+			add_stability = 0.1
+		}
+		
+	   
+
+    }
+
+	focus = {
+	    id = SOV_economic_profesti_commisiu_v_VPK
+	    cost = 10
+	    prerequisite = { focus =  SOV_economic_akcent_na_tysholai_economic }
+	    x = 0
+        y = 1
+	   
+	    relative_position_id = SOV_economic_akcent_na_tysholai_economic
+
+	   
+	    available = {
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+			add_ideas = idea_SOV_profesti_proferku_VPK
+		}
+		
+	   
+
+    }
+
+	focus = {
+	    id = SOV_economic_profesti_vydelit_sredstivo_dla_VPK
+	    cost = 10
+	    prerequisite = { focus =  SOV_economic_profesti_commisiu_v_VPK }
+	    x = 0
+        y = 1
+	   
+	    relative_position_id = SOV_economic_profesti_commisiu_v_VPK
+
+	   
+	    available = {
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+
+			remove_ideas = idea_SOV_profesti_proferku_VPK
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+            custom_effect_tooltip = SOV_economic_profesti_vydelit_sredstivo_dla_VPK_tt
+
+			add_to_variable = { SOV_mod_5_research_speed_factor_modifiear = 0.05 }
+			add_to_variable = { SOV_mod_5_production_speed_buildings_factor_modifiear = 0.05 }
+			add_to_variable = { SOV_mod_5_plan_production_factory_max_efficiency_factor_modifiear = 0.10 }
+		}
+    }
+	focus = {
+	    id = SOV_economic_ispolnit_idea_resikl
+	    cost = 10
+	    prerequisite = { 
+			focus =  SOV_economic_profesti_vydelit_sredstivo_dla_VPK
+			focus = SOV_economic_postroit_GES 
+		}
+	    x = 1
+        y = 1
+	   
+	    relative_position_id = SOV_economic_profesti_vydelit_sredstivo_dla_VPK
+
+	   
+	    available = {
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+			add_to_variable = {  }
+			add_ideas = SOV_economic_ispolnit_idea_resikl_consert
+		}
+    }
+
+	focus = {
+	    id = SOV_economic_zony_dla_ecsperementov
+	    cost = 10
+	    prerequisite = { 
+			focus =  SOV_economic_profesti_vydelit_sredstivo_dla_VPK
+		}
+	    x = 4
+        y = 1
+	   
+	    relative_position_id = SOV_economic_profesti_vydelit_sredstivo_dla_VPK
+
+	   
+	    available = {
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+			add_research_slot = 1
+			add_political_power = 100
+			add_war_support = 0.05
+		}
+    }
+
+	focus = {
+	    id = SOV_economic_isledovotelsky_compleks_europe
+	    cost = 10
+	    prerequisite = { 
+			focus =  SOV_economic_zony_dla_ecsperementov
+		}
+		mutually_exclusive = { focus = SOV_economic_posteoika_voenyxz_zavodov }
+	    x = 0
+        y = 1
+	   
+	    relative_position_id = SOV_economic_zony_dla_ecsperementov
+
+	   
+	    available = {
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+		}
+    }
+
+	focus = {
+	    id = SOV_economic_eksperty_is_drygyx_stran
+	    cost = 10
+	    prerequisite = { 
+			focus =  SOV_economic_isledovotelsky_compleks_europe
+		}
+	    x = 0
+        y = 1
+	   
+	    relative_position_id = SOV_economic_isledovotelsky_compleks_europe
+
+	   
+	    available = {
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+			add_research_slot = 1
+		}
+    }
+
+	focus = {
+	    id = SOV_economic_posteoika_voenyxz_zavodov
+	    cost = 10
+	    prerequisite = { 
+			focus =  SOV_economic_zony_dla_ecsperementov
+			focus = SOV_economic_ispozovat_gulag
+		}
+
+		mutually_exclusive = { focus = SOV_economic_isledovotelsky_compleks_europe }
+	    x = 3
+        y = 1
+	   
+	    relative_position_id = SOV_economic_zony_dla_ecsperementov
+
+	   
+	    available = {
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+			random_owned_state = {
+				limit = { is_core_of = ROOT } 
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			random_owned_state = {
+				limit = { is_core_of = ROOT } 
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			random_owned_state = {
+				limit = { is_core_of = ROOT } 
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+    }
+
+	focus = {
+	    id = SOV_economic_avtomization
+	    cost = 10
+	    prerequisite = { 
+			focus =  SOV_economic_ispolnit_idea_resikl
+		}
+	    x = 0
+        y = 1
+	   
+	    relative_position_id = SOV_economic_ispolnit_idea_resikl
+
+	   
+	    available = {
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+			custom_effect_tooltip = SOV_economic_avtomizationn_tt
+
+			add_to_variable = { SOV_mod_5_research_speed_factor_modifiear = 0.10 }
+			add_to_variable = { SOV_mod_5_plan_production_factory_start_efficiency_factor_modifiear = 0.1 }
+			add_to_variable = { SOV_mod_5_plan_production_factory_max_efficiency_factor_modifiear = 0.15 }
+		}
+    }
+
+	focus = {
+	    id = SOV_economic_6_5_plan
+	    cost = 10
+	    prerequisite = { 
+			focus =  SOV_economic_avtomization
+			focus = SOV_economic_postroit_doma_dla_roboshih
+		}
+	    x = 0
+        y = 3
+	   
+	    relative_position_id = SOV_economic_avtomization
+
+	   
+	    available = {
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+		}
+    }
+
+    #####
+
+	focus = {
+	    id = SOV_economic_sudba_gulag
+	    cost = 5
+	    prerequisite = { focus =  SOV_economic_uscorit_petiletky }
+	    x = 0
+        y = 2
+	   
+	    relative_position_id = SOV_economic_uscorit_petiletky
+
+	   
+	    available = {
+	        custom_trigger_tooltip = {
+				tooltip = SOV_umer_beria_tt
+				has_variable = umer_beria
+            }
+			NOT = {
+				has_civil_war = yes
+			}
+	    }
+	    bypass = {
+	         
+	    }
+	    completion_reward = {
+			add_political_power = 100 
+		}
+		
+	   
+
+    }
+}

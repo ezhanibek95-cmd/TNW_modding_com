@@ -1,0 +1,280 @@
+ideas = {
+
+	country = {
+		idea_SOV_nikita_hyrushov_sozdaet_opasitsi = {
+			
+			picture = GER_destroed_nation
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_weekly = -0.005
+				political_power_cost = 0.3
+				stability_factor = -0.1
+				political_advisor_cost_factor = 0.5
+				mobilization_laws_cost_factor = 10
+				economy_cost_factor = 10
+				
+			}
+		}
+		idea_SOV_nikita_hyrushov_pomosh_ussr = {
+			
+			picture = GER_destroed_nation
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_expected_value = 5
+                production_speed_buildings_factor = -0.5
+                production_speed_industrial_complex_factor = -0.5 
+				production_speed_arms_factory_factor = 0.2
+			}
+		}
+		idea_SOV_nikita_hyrushov_pomosh_ot_marionetok = {
+			
+			picture = GER_destroed_nation
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_expected_value = -0.1
+                production_speed_buildings_factor = 0.1
+                production_speed_industrial_complex_factor = 0.2
+				production_speed_arms_factory_factor = 0.4
+				army_defence_factor = 0.05
+				army_morale = 0.1
+				army_org = 0.5
+			}
+		}
+		idea_SOV_nikita_hyrushov_corrupsia_v_NKVD = {
+			
+			picture = GFX_idea_SOV_corupsia_v_NKVD
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_defence_factor = -0.1
+				army_morale = -1
+				army_org = -1
+				max_planning = -5
+				breakthrough_factor = -0.3
+				stability_factor = -0.3
+				war_support_factor = 0.1
+				line_change_production_efficiency_factor = -0.2
+			}
+		}
+		idea_SOV_nikita_hyrushov_zarushaetsa_podershoi_naroda = {
+			
+			picture = SOV_corupsia_v_NKVD
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_defence_factor = -0.05
+				training_time_factor = -0.2
+				army_morale = -1
+				army_org = -1
+				max_planning = -0.1
+				stability_factor = 0.1
+				war_support_factor = 0.3
+				defence = 0.1
+				offence = -0.02
+				core_attack_bonus = 0.10
+			}
+		}
+
+		idea_SOV_gulag = {
+			
+			picture = 
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.2
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_arms_factory_factor = 0.15
+				civilian_factory_use = 4
+				research_speed_factor = -0.1
+				stability_factor = -0.2
+				communism_drift = 0.03
+				drift_defence_factor = -0.3
+				recruitable_population_factor = -0.2
+			}
+		}
+		idea_SOV_reforma_savhosov = {
+			
+			picture = 
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = 0.3
+				stability_factor = 0.05
+				consumer_goods_factor = -0.05
+			}
+		}
+		idea_SOV_postroit_doma_dla_roboshih = {
+			
+			picture = 
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_infrastructure_factor = 0.10
+				monthly_population = 0.50
+				stability_weekly = 0.01
+			}
+		}
+		idea_SOV_zakryt_defisit_tovorov = {
+			
+			picture = 
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.10
+				production_factory_efficiency_gain_factor = 0.10
+				production_lack_of_resource_penalty_factor = -0.10
+				recruitable_population_factor = -0.10
+				stability_weekly = 0.02
+				production_factory_max_efficiency_factor = 0.2
+			}
+		}
+		idea_SOV_profesti_proferku_VPK = {
+			
+			picture = 
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.70
+				production_speed_arms_factory_factor = -0.40
+				production_factory_max_efficiency_factor -0.20
+				production_factory_start_efficiency_factor = -0.2
+				industrial_capacity_dockyard = -0.3
+			}
+		}
+		idea_SOV_zakryt_posledstvie_golodonora_1947 = {
+			
+			picture = 
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.50
+				stability_weekly = 0.05
+			}
+		}
+		idea_SOV_zakryt_posledstvie_golodonora_1947_1 = {
+			
+			picture = 
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.20
+				stability_weekly = -0.005
+				army_org_factor = -0.1
+				experience_gain_army_unit_factor = -0.1
+				war_support_factor = -0.3
+				political_power_gain = -0.1
+			}
+		}
+	}
+}

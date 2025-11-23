@@ -1,0 +1,195 @@
+characters = {
+	GER_Adolf_Hitler_old = {
+		name = GER_Adolf_hitler_old
+		
+		portraits = {
+			civilian = {
+				large = "gfx\leaders\GER\Adolf_Hitler_old.dds"
+			}
+		}
+		
+		country_leader = {
+			desc = ""
+			traits = { dictator shadow_of_Gimmler deadly_disease }
+			ideology = nazism
+			expire = "1953.3.1"
+			id = -1
+		}
+	}
+	
+	GER_Heinrich_Himmler = {
+		name = GER_Heinrich_Himmler
+		
+		portraits = {
+			civilian = {
+				large = "gfx\leaders\GER\Heinrich_Himmler.dds"
+				small = "gfx\interface\ideas\Heinrich_Himmler_small.dds"
+			}
+		}
+		
+		country_leader = {
+			desc = ""
+			traits = { dictator prince_of_terror terror_ss }
+			ideology = nazism
+			expire = "1965.1.1"
+			id = -1
+		}
+		
+		advisor = {
+			slot = political_advisor
+			idea_token = heinrich_himmler
+			allowed = {
+				original_tag = GER
+			}
+			available = {
+				OR = {
+					has_government = fascism
+				}
+			}
+			visible = {
+				has_government = fascism
+			}
+			traits = {
+				prince_of_terror
+			}
+		}
+	}
+	GER_Martin_Borman = {
+		name = GER_Martin_Borman
+		
+		portraits = {
+			civilian = {
+				large = "gfx\leaders\GER\Martin_Borman.dds"
+				small = "gfx\interface\ideas\Martin_Borman_small.dds"
+			}
+		}
+		
+		country_leader = {
+			desc = ""
+			traits = { dictator }
+			ideology = fascism_ideology
+			expire = "1971.1.1"
+			id = -1
+			traits = {
+				nazist_burokrat
+			}
+		}
+		
+		advisor = {
+			slot = political_advisor
+			idea_token = martin_borman
+			allowed = {
+				original_tag = GER
+			}
+			available = {
+				OR = {
+					has_government = fascism
+				}
+			}
+			visible = {
+				has_government = fascism
+			}
+			traits = {
+				nazist_burokrat
+			}
+		}
+	}
+	GER_Albert_Speer = {
+		name = GER_Albert_Speer
+		
+		portraits = {
+			civilian = {
+				small = "gfx\interface\ideas\Albert_Speer_small.dds"
+			}
+		}
+		
+		advisor = {
+			slot = political_advisor
+			idea_token = albert_speer
+			allowed = {
+				original_tag = GER
+			}
+			available = {
+				OR = {
+					has_government = fascism
+				}
+			}
+			visible = {
+				has_government = fascism
+			}
+			traits = {
+				technocratic_reformer
+			}
+		}
+	}
+	GER_Joseph_Goebbels = {
+		name = GER_Joseph_Goebbels
+		
+		portraits = {
+			civilian = {
+				large = "gfx\leaders\GER\Joseph_Goebbels.dds"
+				small = "gfx\interface\ideas\Joseph_Goebbels_small.dds"
+			}
+		}
+		
+		country_leader = {
+			desc = ""
+			traits = { dictator }
+			ideology = gen_nazism
+			expire = "1963.2.1"
+			id = -1
+			traits = {
+				propaganda_minister
+				prince_of_terror
+				dictator
+			}
+		}
+		
+		advisor = {
+			slot = political_advisor
+			idea_token = joseph_goebbels
+			allowed = {
+				original_tag = GER
+			}
+			available = {
+				OR = {
+					has_government = fascism
+				}
+			}
+			visible = {
+				has_government = fascism
+			}
+			traits = {
+				propaganda_minister
+			}
+		}
+	}
+	GER_Paul_Hausser = {
+		name = GER_Paul_Hausser
+		
+		portraits = {
+			army = {
+				large = "gfx\leaders\GER\Paul_Hausser.dds"
+			}
+		}
+		
+		advisor = {
+			slot = political_advisor
+			idea_token = GER_Paul_Hausser
+			allowed = {
+				original_tag = GER
+			}
+			available = {
+				OR = {
+					has_government = fascism
+				}
+			}
+			visible = {
+				has_government = fascism
+			}
+			traits = {
+				propaganda_minister
+			}
+		}
+	}
+}

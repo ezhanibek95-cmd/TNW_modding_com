@@ -1,0 +1,12 @@
+ROM_OIL_iskat = {
+	icon = generic_propaganda
+
+    picture = decision_hol_draw_up_staff_plans
+
+    mutually_exclusive = yes
+
+	visible = {
+        has_completed_focus = ROM_iskat_OIL
+	}
+    priority = 10
+}

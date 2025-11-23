@@ -1,0 +1,853 @@
+﻿search_filter_prios = {
+	FOCUS_FILTER_POLITICAL = 1010
+	
+	FOCUS_FILTER_RESEARCH = 522
+	
+	FOCUS_FILTER_INDUSTRY = 509
+
+	FOCUS_FILTER_BALANCE_OF_POWER = 200
+	FOCUS_FILTER_SOV_POLITICAL_PARANOIA = 111
+	FOCUS_FILTER_PROPAGANDA = 110
+	FOCUS_FILTER_MISSIOLINI = 110
+	FOCUS_FILTER_ARMY_XP = 103
+	FOCUS_FILTER_NAVY_XP = 102
+	FOCUS_FILTER_AIR_XP = 101
+
+}
+
+focus_tree = {
+	id = generic_focus
+	
+	country = {
+		factor = 1
+	}
+	
+	default = yes
+	reset_on_civilwar = no
+
+
+
+	#shared_focus = HABSBURG_part_of_something_bigger
+
+	focus = { 
+	    id = mod_mir_posle_voinu
+		cost = 5
+
+		icon = GFX_focus_RAJ_to_shake_the_world
+		x = 25
+		y = 0
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_izmenenie_v_politke
+		cost = 5
+
+		icon = GFX_goal_generic_political_pressure
+		mutually_exclusive = {
+			focus = generic_focus_prodolshot_curs_neitraliteta
+		}
+		relative_position_id = mod_mir_posle_voinu
+		prerequisite = {
+			focus = mod_mir_posle_voinu
+		}
+		x = 5
+		y = 1
+
+		completion_reward = {
+
+		}
+	}
+	####### NEITRALITET #######
+	focus = { 
+	    id = generic_focus_prodolshot_curs_neitraliteta
+		cost = 5
+
+		icon = GFX_goal_generic_neutrality_focus
+		mutually_exclusive = {
+			focus = generic_focus_izmenenie_v_politke
+		}
+		relative_position_id = mod_mir_posle_voinu
+		prerequisite = {
+			focus = mod_mir_posle_voinu
+		}
+		x = -5
+		y = 1
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_political_stability
+		cost = 5
+
+		icon = GFX_goal_generic_demand_territory
+		mutually_exclusive = {
+		}
+		relative_position_id = generic_focus_prodolshot_curs_neitraliteta
+		prerequisite = {
+			focus = generic_focus_prodolshot_curs_neitraliteta
+		}
+		x = 0
+		y = 1
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_izalation_politcy
+		cost = 5
+
+		icon = GFX_goal_generic_defence
+		mutually_exclusive = {
+		}
+		relative_position_id = generic_focus_political_stability
+		prerequisite = {
+			focus = generic_focus_political_stability
+		}
+		x = 0
+		y = 1
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_zahem_voeavat?
+		cost = 5
+
+		icon = GFX_goal_generic_military_deal
+		mutually_exclusive = {
+			focus = generic_focus_podershka_democratyc_country
+		}
+		relative_position_id = generic_focus_izalation_politcy
+		prerequisite = {
+			focus = generic_focus_izalation_politcy
+			focus = generic_focus_democratyc_respublick
+		}
+		x = 2
+		y = 2
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_oboronytelny_neitralitet
+		cost = 5
+
+		icon = GFX_goal_generic_military_sphere
+		mutually_exclusive = {
+		}
+		relative_position_id = generic_focus_izalation_politcy
+		prerequisite = {
+			focus = generic_focus_izalation_politcy
+		}
+		x = 0
+		y = 2
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_economyc_neitralitet
+		cost = 5
+
+		icon = GFX_goal_generic_construction
+		available = {
+			NOT = {
+				has_completed_focus = generic_focus_democratyc_respublick
+			}
+		}
+		mutually_exclusive = {
+		}
+		relative_position_id = generic_focus_oboronytelny_neitralitet
+		prerequisite = {
+			focus = generic_focus_oboronytelny_neitralitet
+			focus = generic_focus_zahem_voeavat?
+		}
+		x = -1
+		y = 1
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_zahita_neitralitet
+		cost = 5
+
+		icon = GFX_goal_generic_construct_military
+		mutually_exclusive = {
+		}
+		relative_position_id = generic_focus_economyc_neitralitet
+		prerequisite = {
+			focus = generic_focus_oboronytelny_neitralitet
+		}
+		prerequisite = { focus = generic_focus_economyc_neitralitet }
+		x = 1
+		y = 1
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_vesnyi_neitralitet
+		cost = 5
+
+		icon = GFX_goal_generic_neutrality_focus
+		mutually_exclusive = {
+		}
+		relative_position_id = generic_focus_zahita_neitralitet
+		prerequisite = {
+			focus = generic_focus_zahita_neitralitet
+		}
+		x = 0
+		y = 2
+
+		completion_reward = {
+
+		}
+	}
+	###################
+	####### DEMOCRATYC #########
+	focus = { 
+	    id = generic_focus_podgotovka_c_vyboram
+		cost = 10
+
+		icon = GFX_goal_continuous_boost_freedom
+		mutually_exclusive = {
+		}
+		relative_position_id = generic_focus_izmenenie_v_politke
+		prerequisite = {
+			focus = generic_focus_izmenenie_v_politke
+		}
+		x = -5
+		y = 1
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_vybory
+		cost = 10
+
+		icon = GFX_goal_generic_national_unity
+		mutually_exclusive = {
+		}
+		relative_position_id = generic_focus_podgotovka_c_vyboram
+		prerequisite = {
+			focus = generic_focus_podgotovka_c_vyboram
+		}
+		x = 0
+		y = 1
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_democratyc_respublick
+		cost = 10
+
+		icon = GFX_goal_support_democracy
+		mutually_exclusive = {
+		}
+		relative_position_id = generic_focus_vybory
+		prerequisite = {
+			focus = generic_focus_vybory
+		}
+		x = 0
+		y = 1
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_podershka_democratyc_country
+		cost = 10
+
+		icon = GFX_goal_support_democracy
+		mutually_exclusive = {
+			focus = generic_focus_zahem_voeavat?
+		}
+		relative_position_id = generic_focus_democratyc_respublick
+		prerequisite = {
+			focus = generic_focus_democratyc_respublick
+		}
+		x = 0
+		y = 1
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_peresmotret_vneshniu_political
+		cost = 10
+
+		icon = GFX_goal_generic_demand_territory
+		mutually_exclusive = {
+			focus = generic_focus_democratyc_stability
+		}
+		relative_position_id = generic_focus_podershka_democratyc_country
+		prerequisite = {
+			focus = generic_focus_podershka_democratyc_country
+			focus = generic_focus_zahem_voeavat?
+		}
+		x = 0
+		y = 1
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_democratyc_stability
+		cost = 10
+
+		icon = GFX_goal_generic_forceful_treaty
+		mutually_exclusive = {
+			focus = generic_focus_peresmotret_vneshniu_political
+		}
+		relative_position_id = generic_focus_podershka_democratyc_country
+		available = {
+			NOT = {
+				has_completed_focus = generic_focus_izalation_politcy
+			}
+		}
+		prerequisite = {
+			focus = generic_focus_podershka_democratyc_country
+			focus = generic_focus_zahem_voeavat?
+		}
+		x = -2
+		y = 1
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_zahita_border
+		cost = 10
+
+		icon = GFX_goal_generic_fortify_city
+		mutually_exclusive = {
+		}
+		relative_position_id = generic_focus_democratyc_stability
+		prerequisite = {
+			focus = generic_focus_democratyc_stability
+		}
+		x = -1
+		y = 1
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_iskat_soisnikov
+		cost = 10
+
+		icon = GFX_goal_generic_improve_relations
+		mutually_exclusive = {
+		}
+		relative_position_id = generic_focus_democratyc_stability
+		prerequisite = {
+			focus = generic_focus_democratyc_stability
+			focus = generic_focus_peresmotret_vneshniu_political
+		}
+		x = 1
+		y = 1
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_rasvedovatleniy_set
+		cost = 10
+
+		icon = GFX_goal_generic_more_territorial_claims
+		mutually_exclusive = {
+		}
+		relative_position_id = generic_focus_democratyc_stability
+		prerequisite = {
+			focus = generic_focus_peresmotret_vneshniu_political
+			focus = generic_focus_sovetniki_is_ger
+		}
+		x = 3
+		y = 1
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_dobrovolcheski_corpus
+		cost = 10
+
+		icon = GFX_goal_generic_small_arms
+		mutually_exclusive = {
+		}
+		relative_position_id = generic_focus_democratyc_stability
+		prerequisite = {
+			focus = generic_focus_democratyc_stability
+			focus = generic_focus_peresmotret_vneshniu_political
+		}
+		x = 0
+		y = 2
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_izalation_ot_ugroz
+		cost = 10
+
+		icon = GFX_goal_generic_defence
+		mutually_exclusive = {
+		}
+		available = {
+			NOT = {
+				has_completed_focus = generic_focus_vstupit_v_OSC
+			}
+		}
+		relative_position_id = generic_focus_democratyc_stability
+		prerequisite = {
+			focus = generic_focus_democratyc_stability
+			focus = generic_focus_peresmotret_vneshniu_political
+		}
+		x = 2
+		y = 2
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_ugroza_vedyshih_stran
+		cost = 10
+
+		icon = GFX_goal_generic_attack_allies
+		mutually_exclusive = {
+		}
+		relative_position_id = generic_focus_dobrovolcheski_corpus
+		prerequisite = {
+			focus = generic_focus_izalation_ot_ugroz
+		}
+		prerequisite = { focus = generic_focus_dobrovolcheski_corpus }
+		x = 1
+		y = 1
+
+		completion_reward = {
+
+		}
+	}
+
+	########### FASHISN #############
+    focus = { 
+	    id = generic_focus_sozdat_fashistkyu_partiu
+		cost = 10
+
+		icon = GFX_goal_support_fascism
+		mutually_exclusive = {
+		}
+		relative_position_id = generic_focus_izmenenie_v_politke
+		prerequisite = {
+			focus = generic_focus_izmenenie_v_politke
+		}
+		x = -1
+		y = 1
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_podgotovka_c_voine
+		cost = 5
+
+		icon = GFX_goal_rhineland
+		mutually_exclusive = {
+			focus = generic_focus_rashiremie_partii
+		}
+		relative_position_id = generic_focus_sozdat_fashistkyu_partiu
+		prerequisite = {
+			focus = generic_focus_sozdat_fashistkyu_partiu
+		}
+		x = -1
+		y = 1
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_nazhat_grashdanskui_voinu
+		cost = 5
+
+		icon = GFX_goal_generic_major_war
+		mutually_exclusive = {
+		}
+		relative_position_id = generic_focus_podgotovka_c_voine
+		prerequisite = {
+			focus = generic_focus_podgotovka_c_voine
+		}
+		x = 0
+		y = 1
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_rashiremie_partii
+		cost = 5
+
+		icon = GFX_goal_generic_national_unity
+		mutually_exclusive = {
+			focus = generic_focus_podgotovka_c_voine
+		}
+		relative_position_id = generic_focus_sozdat_fashistkyu_partiu
+		prerequisite = {
+			focus = generic_focus_sozdat_fashistkyu_partiu
+		}
+		x = 1
+		y = 1
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_referendum
+		cost = 5
+
+		icon = GFX_goal_generic_political_pressure
+		mutually_exclusive = {
+		}
+		relative_position_id = generic_focus_rashiremie_partii
+		prerequisite = {
+			focus = generic_focus_rashiremie_partii
+		}
+		x = 0
+		y = 1
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_vstupit_v_OSC
+		cost = 5
+
+		icon = GFX_goal_support_fascism
+		mutually_exclusive = {
+			focus = generic_focus_sobstvenii_put_fascisma
+		}
+		available = {
+			GER = {
+				is_faction_leader = yes
+			}
+		}
+		relative_position_id = generic_focus_nazhat_grashdanskui_voinu
+		prerequisite = {
+			focus = generic_focus_rashiremie_partii
+			focus = generic_focus_referendum
+		}
+		x = 0
+		y = 1
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_sobstvenii_put_fascisma
+		cost = 5
+
+		icon = GFX_goal_continuous_suppression
+		mutually_exclusive = {
+			focus = generic_focus_vstupit_v_OSC
+		}
+		available = {
+		}
+		relative_position_id = generic_focus_nazhat_grashdanskui_voinu
+		prerequisite = {
+			focus = generic_focus_rashiremie_partii
+			focus = generic_focus_referendum
+		}
+		x = 2
+		y = 1
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_fashisky_legion
+		cost = 10
+
+		icon = GFX_goal_generic_axis_build_infantry
+		mutually_exclusive = {
+		}
+		available = {
+		}
+		relative_position_id = generic_focus_sobstvenii_put_fascisma
+		prerequisite = {
+			focus = generic_focus_sobstvenii_put_fascisma
+		}
+		x = 1
+		y = 1
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_zakupka_vorushenii
+		cost = 10
+
+		icon = GFX_goal_generic_build_tank
+		mutually_exclusive = {
+			focus = generic_focus_sobstvenni_company
+		}
+		available = {
+		}
+		relative_position_id = generic_focus_fashisky_legion
+		prerequisite = {
+			focus = generic_focus_fashisky_legion
+		}
+		x = 1
+		y = 1
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_zacon_rabskogo_truda
+		cost = 10
+
+		icon = GFX_goal_generic_forceful_treaty
+		mutually_exclusive = {
+			focus = generic_focus_reforma_raboshih
+		}
+		available = {
+		}
+		relative_position_id = generic_focus_zakupka_vorushenii
+		prerequisite = {
+			focus = generic_focus_zakupka_vorushenii
+			focus = generic_focus_sobstvenni_company
+		}
+		x = 0
+		y = 1
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_reforma_raboshih
+		cost = 10
+
+		icon = GFX_goal_generic_consumer_goods
+		mutually_exclusive = {
+			focus = generic_focus_zacon_rabskogo_truda
+		}
+		available = {
+		}
+		relative_position_id = generic_focus_zakupka_vorushenii
+		prerequisite = {
+			focus = generic_focus_zakupka_vorushenii
+			focus = generic_focus_sobstvenni_company
+		}
+		x = 2
+		y = 1
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_sobstvenni_company
+		cost = 10
+
+		icon = GFX_goal_generic_construct_mil_factory
+		mutually_exclusive = {
+			focus = generic_focus_zakupka_vorushenii
+		}
+		available = {
+		}
+		relative_position_id = generic_focus_fashisky_legion
+		prerequisite = {
+			focus = generic_focus_fashisky_legion
+		}
+		x = 3
+		y = 1
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_tainae_policy
+		cost = 10
+
+		icon = GFX_goal_generic_special_forces
+		mutually_exclusive = {
+		}
+		available = {
+		}
+		relative_position_id = generic_focus_sobstvenii_put_fascisma
+		prerequisite = {
+			focus = generic_focus_sobstvenii_put_fascisma
+		}
+		x = 0
+		y = 2
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_uslit_fashistky_reshim
+		cost = 5
+
+		icon = GFX_goal_generic_military_sphere
+		mutually_exclusive = {
+		}
+		available = {
+		}
+		relative_position_id = generic_focus_vstupit_v_OSC
+		prerequisite = {
+			focus = generic_focus_sobstvenii_put_fascisma
+			focus = generic_focus_vstupit_v_OSC
+		}
+		x = 1
+		y = 1
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_podgotovka_k_voine
+		cost = 11
+
+		icon = GFX_goal_generic_position_armies
+		mutually_exclusive = {
+		}
+		available = {
+		}
+		relative_position_id = generic_focus_uslit_fashistky_reshim
+		prerequisite = {
+			focus = generic_focus_sobstvenii_put_fascisma
+		}
+		x = 0
+		y = 2
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_integracia_sosedei
+		cost = 11
+
+		icon = GFX_goal_generic_major_war
+		mutually_exclusive = {
+		}
+		available = {
+		}
+		relative_position_id = generic_focus_podgotovka_k_voine
+		prerequisite = {
+			focus = generic_focus_podgotovka_k_voine
+		}
+		prerequisite = {
+			focus = generic_focus_isledovatelskie_centry_osi
+			focus = generic_focus_zacon_rabskogo_truda
+			focus generic_focus_reforma_raboshih
+		}
+		x = 0
+		y = 1
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_sovetniki_is_ger
+		cost = 10
+
+		icon = GFX_goal_generic_axis_build_infantry
+		mutually_exclusive = {
+		}
+		available = {
+		}
+		relative_position_id = generic_focus_vstupit_v_OSC
+		prerequisite = {
+			focus = generic_focus_vstupit_v_OSC
+		}
+		x = -1
+		y = 1
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_economyc_sotrudnishenstvo
+		cost = 10
+
+		icon = GFX_goal_generic_construct_mil_factory
+		mutually_exclusive = {
+		}
+		available = {
+		}
+		relative_position_id = generic_focus_vstupit_v_OSC
+		prerequisite = {
+			focus = generic_focus_vstupit_v_OSC
+		}
+		x = 0
+		y = 2
+
+		completion_reward = {
+
+		}
+	}
+	focus = { 
+	    id = generic_focus_isledovatelskie_centry_osi
+		cost = 10
+
+		icon = GFX_goal_generic_scientific_exchange
+		mutually_exclusive = {
+		}
+		available = {
+			NOT = {
+				has_completed_focus = generic_focus_peresmotret_vneshniu_political
+			}
+		}
+		relative_position_id = generic_focus_sovetniki_is_ger
+		prerequisite = {
+			focus = generic_focus_vstupit_v_OSC
+			focus = generic_focus_rasvedovatleniy_set
+		}
+		x = 0
+		y = 2
+
+		completion_reward = {
+
+		}
+	}
+}

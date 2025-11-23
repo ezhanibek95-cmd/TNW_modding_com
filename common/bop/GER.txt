@@ -1,0 +1,248 @@
+
+GER_fascism_party_balance = {
+	initial_value = 0.6
+	
+	left_side = GER_NSDAP
+	
+	right_side = GER_SS
+	
+	decision_category = GER_balance_decision_category
+	
+	range = {
+		id = GER_neutral_control
+		min = -0.1
+		max = 0.1
+		modifier = {
+			stability_factor = -0.10
+            war_support_factor = -0.05
+		}
+	}
+	side = {
+		id = GER_SS
+		icon = GFX_idea_generic_agrarian_society
+		range = {
+			id = GER_SS_weak_range
+			min = 0.1
+			max = 0.3
+			modifier = {
+				operative_slot = 1
+                army_org_factor = -0.10
+			}
+		}
+		range = {
+			id = GER_SS_medium_range
+			min = 0.3
+			max = 0.7
+			modifier = {
+				operative_slot = 2
+				war_support_factor = 0.05
+                resistance_target = -0.25
+                
+			}
+			on_activate = {
+                hidden_effect = {
+                    if = {
+                        country_event = GER_ss_purge_event.1  # Чистка Геринга
+                    }
+				}
+			}
+		}
+		range = {
+			id = GER_SS_total_control_range
+			min = 0.7
+			max = 1
+			modifier = {
+				operative_slot = 3
+				war_support_factor = 0.1
+                resistance_target = -0.40
+				recruitable_population_factor = -0.15
+			}
+		}
+	}
+	side = {
+		id = GER_NSDAP
+		icon = GFX_idea_generic_degauss_ship_hulls
+		range = {
+			id = GER_NSDAP_weak_range
+            min = -0.4
+            max = -0.15
+            modifier = {
+                political_power_factor = 0.10
+                stability_factor = 0.05
+                war_support_factor = 0.03
+            }
+		}
+		range = {
+			id = GER_NSDAP_medium_range
+            min = -0.7
+            max = -0.4
+            modifier = {
+                political_power_factor = 0.15
+                factory_output = 0.10
+                construction_speed = 0.15
+                army_org_factor = 0.05
+            }
+            on_activate = {
+                hidden_effect = {
+                    if = {
+                        limit = { has_idea = GER_ss_dominance }
+                        remove_ideas = GER_ss_dominance
+                    }
+                }
+            }
+		}
+		range = {
+			id = GER_NSDAP_total_range
+            min = -1.0
+            max = -0.7
+            modifier = {
+                political_power_factor = 0.25
+                stability_factor = 0.10
+            }
+            on_activate = {
+                hidden_effect = {
+                    if = {
+                        country_event = GER_ss_purge_event.2  # Арест Гиммлера
+                    }
+                    add_ideas = GER_nsdap_dominance
+                }
+            }
+            on_deactivate = {
+                hidden_effect = {
+                    remove_ideas = GER_nsdap_dominance
+                }
+            }
+        }
+	}
+# Вложенный баланс: Геббельс vs Гиммлер
+GER_gh_balance = {
+	initial_value = 0.6          # >0 = перевес в сторону Гиммлера
+
+	left_side = GER_GOEBBELS
+	right_side = GER_HIMMLER
+
+	decision_category = GER_gh_balance_decision_category
+
+	# Нейтральный промежуток — конфликт ослабляет страну
+	range = {
+		id = GER_gh_neutral
+		min = -0.1
+		max = 0.1
+		modifier = {
+			stability_factor = -0.05
+			war_support_factor = -0.05
+		}
+	}
+
+	# СТОРОНА: Гиммлер (право, положительные значения)
+	side = {
+		id = GER_HIMMLER
+		icon = GFX_idea_generic_security   # иконка для СС / силовой фракции
+
+		range = {
+			id = GER_himmler_weak_range
+			min = 0.1
+			max = 0.3
+			modifier = {
+				operative_slot = 1
+				army_org_factor = -0.05
+			}
+		}
+
+		range = {
+			id = GER_himmler_medium_range
+			min = 0.3
+			max = 0.7
+			modifier = {
+				operative_slot = 2
+				war_support_factor = 0.05
+				resistance_target = -0.25
+			}
+			on_activate = {
+				hidden_effect = {
+					if = {
+						country_event = GER_gh_himmler_purge.1   # пример: чистки/кампания Гиммлера
+					}
+				}
+			}
+		}
+
+		range = {
+			id = GER_himmler_total_range
+			min = 0.7
+			max = 1.0
+			modifier = {
+				operative_slot = 3
+				war_support_factor = 0.12
+				resistance_target = -0.40
+				recruitable_population_factor = -0.10
+			}
+			on_activate = {
+				hidden_effect = {
+					add_ideas = GER_himmler_dominance
+				}
+			}
+			on_deactivate = {
+				hidden_effect = {
+					remove_ideas = GER_himmler_dominance
+				}
+			}
+		}
+	}
+
+	# СТОРОНА: Геббельс (лево, отрицательные значения)
+	side = {
+		id = GER_GOEBBELS
+		icon = GFX_idea_generic_degauss_ship_hulls   # можно заменить на подходящую иконку (пропаганда)
+
+		range = {
+			id = GER_goebbels_weak_range
+			min = -0.3
+			max = -0.1
+			modifier = {
+				political_power_factor = 0.08
+				stability_factor = 0.03
+			}
+		}
+
+		range = {
+			id = GER_goebbels_medium_range
+			min = -0.6
+			max = -0.3
+			modifier = {
+				political_power_factor = 0.15
+				stability_factor = 0.07
+				factory_output = 0.05    # пропаганда/мобилизация граждан уменьшает саботаж — лёгкий бонус к производству
+			}
+			on_activate = {
+				hidden_effect = {
+					if = {
+						limit = { has_idea = GER_himmler_dominance }
+						remove_ideas = GER_himmler_dominance
+					}
+				}
+			}
+		}
+
+		range = {
+			id = GER_goebbels_total_range
+			min = -1.0
+			max = -0.6
+			modifier = {
+				political_power_factor = 0.25
+				stability_factor = 0.10
+				factory_output = 0.10
+			}
+			on_activate = {
+				hidden_effect = {
+					add_ideas = GER_goebbels_dominance
+				}
+			}
+			on_deactivate = {
+				hidden_effect = {
+					remove_ideas = GER_goebbels_dominance
+				}
+			}
+		}
+	}
+}

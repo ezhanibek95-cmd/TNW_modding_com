@@ -1,0 +1,14 @@
+spriteTypes = {    
+    spriteType = { 
+        name = "GFX_portrait_beria"
+        texturefile = "gfx/leaders/SOV/portrait_SOV_lavrenty_beriya_mod.dds"
+    }
+	spriteType = { 
+        name = "GFX_portrait_SOV_partiaa"  
+        texturefile = "gfx/leaders/SOV/potrait_communism_party.dds"
+    }
+	spriteType = { 
+        name = "GFX_portrait_SOV_nikita_crysov"  
+        texturefile = "gfx/leaders/SOV/portrait_SOV_nikita_cyrysov.dds"
+    }
+}

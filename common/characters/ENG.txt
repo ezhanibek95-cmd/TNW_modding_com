@@ -1,0 +1,16 @@
+characters = {
+    ENG_Winston_chechil = {
+        name = "ENG_Winston_chechil"
+        portraits = {
+            civilian = {
+                large = GFX_ENG_Winston_chechil
+            }
+        }
+        country_leader = { 
+            ideology = populism
+            expire = "1960.12.07" 
+            id = -1
+            traits = { }
+        }
+    }
+}

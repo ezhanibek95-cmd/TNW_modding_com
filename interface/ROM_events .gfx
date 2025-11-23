@@ -1,0 +1,7 @@
+spriteTypes = {	
+
+	spriteType = {
+		name = "GFX_ROM_events_carol_mixai" 
+		texturefile = "gfx/event_pictures/ROM_events_carol_mixai.dds"
+	}
+}

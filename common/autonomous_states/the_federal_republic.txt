@@ -1,0 +1,49 @@
+autonomy_state = {
+    use_overlord_color = yes
+	
+    id = autonomy_the_federal_republic
+
+    # Меньше автономии: ближе к интеграции, чем к независимости
+    min_freedom_level = 0.12      # уменьшено (раньше 0.25/0.15), теперь слабее автономия
+	
+    manpower_influence = 0.05     # моб. влияние меньше - демографические изменения слабо повышают автономию
+
+    rule = {
+        can_not_declare_war = yes       # не может объявлять войны
+        units_deployed_to_overlord = yes    # войска субъектов под контролем сюзерена
+        can_decline_call_to_war = no   # небольшой самоконтроль — может отклонять призыв (опционально)
+    }
+
+    modifier = {
+        autonomy_manpower_share = 0.75              # сюзерен получает 75% manpower (уменьшено)
+        extra_trade_to_overlord_factor = 0.35       # лишь небольшая доля торговли уходит сюзерену
+        overlord_trade_cost_factor = -0.40         # малое преимущество сюзерена в ценах
+        can_master_build_for_us = 1                 # сюзерен может строить (технически сохраняется)
+        research_sharing_per_country_bonus = 0.80  # минимальный уровень совместных исследований
+    }
+
+    # ИИ-параметры — числовые коэффициенты (без фигурных скобок)
+    ai_subject_wants_higher = {factor = 0.35}      # субъект умеренно желает больше автономии (но не сильно)
+    ai_overlord_wants_lower = {factor = 1.2}     # сюзерен предпочитает удерживать контроль
+    ai_overlord_wants_garrison = 0.6   # у сюзерена умеренная склонность ставить гарнизоны
+
+    # Условия, при которых субъект может получить этот уровень
+    can_take_level = {
+        OR = {
+            has_country_flag = fed_republic_agreement   # флаг, выставляемый фокусом/ивентом
+            
+        }
+    }
+
+    can_lose_level = {
+        has_war = yes
+        OR = {
+            OVERLORD = { controls_state = 120 }  # пример: если сюзерен теряет/захватывает ключевой штат
+        }
+    }
+
+    # Ограничение — только для демократии (оставь или убери по желанию)
+    allowed = {
+		always = yes
+	}
+}

@@ -1,0 +1,16 @@
+characters = {
+    TRK_Zhumabai_shaihmetov= {
+        name = "TRK_Zhumabai_shaihmetov"
+        portraits = {
+            civilian = {
+                large = GFX_portrait_TRK_Zhumabai_shaihmetov
+            }
+        }
+        country_leader = { 
+            ideology = marxism
+            expire = "1960.12.07" 
+            id = -1
+            traits = { }
+        }
+    }
+}

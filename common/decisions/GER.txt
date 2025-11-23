@@ -1,0 +1,30 @@
+ decision_category = {
+        id = GER_balance_category
+        name = GER_BALANCE_CATEGORY
+        
+        decision = {
+            name = GER_SS_PURGE_DECISION
+            icon = GFX_decision_purge_ss
+            cost = 150
+            available = {
+                power_balance_value = { id = GER_power_balance value > 0.4 }
+            }
+            effect = {
+                add_power_balance = { id = GER_power_balance value = -0.30 }
+                add_stability = -0.15
+            }
+        }
+        
+        decision = {
+            name = GER_EMPOWER_PARTY_DECISION
+            icon = GFX_decision_empower_party
+            cost = 100
+            available = {
+                power_balance_value = { id = GER_power_balance value < -0.3 }
+            }
+            effect = {
+                add_power_balance = { id = GER_power_balance value = 0.25 }
+            }
+        }
+    }
+

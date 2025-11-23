@@ -1,0 +1,98 @@
+add_namespace = germany
+
+# President dies
+country_event = {
+	id = GER_hitler_death.1
+    title = GER_HITLER_DEATH_TITLE
+    desc = GER_HITLER_DEATH_DESC
+    picture = GFX_report_event_hitler_bunker
+    fire_only_once = yes
+	
+	trigger = {
+		original_tag = GER
+		date > 1953.2.1
+		has_start_date < 1953.01.02
+	}	
+
+	mean_time_to_happen = {
+		days = 30
+		modifier = {
+			factor = 0.5
+			date > 1953.2.1
+		}
+	}
+
+	immediate = {
+		set_power_balance = {
+			id = TAG_example_balance
+			set_default = yes
+		}
+		custom_effect_tooltip = {
+            text = GER_hitler_death_tooltip
+        }
+	}
+
+	option = {
+		name = GER_HITLER_DEATH_OPTION
+		add_stability = -0.25
+		every_country = {
+	 		limit = {
+				GER_Adolf_Hitler_old = { is_unit_leader = yes }
+			}
+	 		GER_Adolf_Hitler_old = { remove_unit_leader_role = yes }
+	 	}	
+	}			
+}
+country_event = {
+    id = GER_power_struggle.1
+    title = GER_POWER_STRUGGLE_TITLE
+    desc = GER_POWER_STRUGGLE_DESC
+    
+    trigger = {
+        power_balance_value = { id = GER_power_balance value > 0.7 }
+        NOT = { has_country_leader = "Heinrich Himmler" }
+    }
+    
+    immediate = {
+		add_country_leader_role = {
+			character = Heinrich Himmler
+			promote_character = yes
+			country_leader = {
+				expire = "1965.1.1"
+				ideology = nazism
+			}
+		}
+    }
+    
+    option = {
+        name = GER_POWER_STRUGGLE_OPTION_SS
+        add_war_support = 0.05
+    }
+}
+
+country_event = {
+    id = GER_power_struggle.2
+    title = GER_POWER_STRUGGLE_TITLE
+    desc = GER_POWER_STRUGGLE_DESC
+    
+    trigger = {
+        power_balance_value = { id = GER_power_balance value < -0.7 }
+        NOT = { has_country_leader = "Martin Bormann" }
+    }
+    
+    immediate = {
+        add_country_leader_role = {
+			character = Martin Bormann
+			promote_character = yes
+			country_leader = {
+				expire = "1965.1.1"
+				ideology = nazism
+			}
+		}	
+	}
+    
+    option = {
+        name = GER_POWER_STRUGGLE_OPTION_NSDAP
+        add_stability = 0.10
+    }
+}

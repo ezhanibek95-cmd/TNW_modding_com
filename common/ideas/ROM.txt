@@ -1,0 +1,420 @@
+ideas = {
+
+	country = {
+		idea_ROM_conductorky_reshim = {
+			
+			picture = german_advisors
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_cost = 0.1
+				stability_factor = -0.1
+                drift_defence_factor = 0.3
+                fascism_drift = 0.03
+			}
+		}
+		idea_ROM_uselenii_conductorky_reshim = {
+			
+			picture = german_advisors
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_cost = 0.05
+				stability_factor = -0.1
+                drift_defence_factor = 0.5
+                fascism_drift = 0.1
+                war_support_factor = 0.1
+                defence = 0.1
+			}
+		}
+        idea_ROM_krug_Simy = {
+			
+			picture = german_advisors
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+            
+			
+			modifier = {
+				political_power_cost = -0.1
+				stability_factor = 0.05
+                drift_defence_factor = -0.1
+                war_support_factor = 0.02
+                defence = 0.05
+			}
+		}
+        idea_ROM_fascist_Sovet = {
+			
+			picture = german_advisors
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_cost = -0.2
+				stability_factor = -0.1
+                drift_defence_factor = 0.1
+                war_support_factor = 0.1
+                defence = 0.05
+			}
+		}
+		idea_ROM_propoganda = {
+			
+			picture = ast_abandon_the_westminster_system
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_cost = 0.2
+				stability_factor = 0.05
+                drift_defence_factor = 0.07
+                war_support_factor = 0.1
+			}
+		}
+		idea_ROM_novae_constitution = {
+			
+			picture = gre_schachtplan 
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_cost = -0.4
+				stability_factor = 0.02
+			}
+		}
+		idea_ROM_economic_vozroshdenie = {
+			
+			picture = ARG_public_works_investment
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_cost = 0.2
+				stability_factor = 0.05
+				production_speed_buildings_factor = 0.05
+			}
+		}
+		idea_ROM_economic_neft_zavisimost = {
+			
+			picture = generic_fuel_reserves
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			
+			modifier = {
+				stability_factor = -0.05
+				min_export = 0.2
+				fuel_gain = -50
+				production_factory_max_efficiency_factor = -0.05
+				production_lack_of_resource_penalty_factor = 0.05
+				supply_consumption_factor = 0.05
+				production_factory_start_efficiency_factor = -0.07
+			}
+		}
+		idea_ROM_GER_vliaenie = {
+			
+			picture = hol_caved_to_the_germans
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			targeted_modifier = {
+                tag = ger
+                attack_bonus_against = -0.10
+                defense_bonus_against = -0.20 
+			}
+			
+			modifier = {
+				stability_factor = -0.02
+				fascism_acceptance = 100
+			}
+		}
+		idea_ROM_SOV_vliaenie = {
+			
+			picture = hol_caved_to_the_germans
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			targeted_modifier = {
+                tag = SOV
+                attack_bonus_against = -0.10
+                defense_bonus_against = -0.20 
+			}
+			
+			modifier = {
+				stability_factor = -0.02
+				communism_acceptance = 100
+			}
+		}
+		idea_ROM_ENG_vliaenie = {
+			
+			picture = hol_caved_to_the_germans
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			targeted_modifier = {
+                tag = ENG
+                attack_bonus_against = -0.10
+                defense_bonus_against = -0.20 
+			}
+			
+			modifier = {
+				stability_factor = -0.02
+				democratic_acceptance = 100
+			}
+		}
+		idea_ROM_resource_prodat = {
+			
+			picture = hol_caved_to_the_germans
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.1
+				production_lack_of_resource_penalty_factor = -0.2
+			}
+		}
+		idea_ROM_selcsko_hozaitvenoe_reforma = {
+			
+			picture = ARG_argentine_beef_trade
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				global_building_slots = 2
+				political_power_cost = 0.2
+				stability_factor = 0.03
+				consumer_goods_factor = -0.05
+			}
+		}
+		idea_ROM_nezavisimost = {
+			
+			picture = generic_volunteer_expedition_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_cost = 0.1
+				stability_factor = 0.1
+				stability_weekly = 0.02
+			}
+		}
+		idea_ROM_balkan_ambise = {
+			
+			picture = chi_war_of_resistance3
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				war_support_factor = 0.05
+				justify_war_goal_time = -0.3
+                offence = 0.05
+				army_speed_factor = 0.1
+			}
+		}
+		idea_ROM_Radikal_vlast = {
+			
+			picture = SWE_wargames
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				war_support_factor = -0.1
+				stability_factor = -0.1
+				required_garrison_factor = -0.2
+				resistance_activity = -0.5
+				conscription = 0.03
+				consumer_goods_factor = -0.05
+				mobilization_speed = -0.05
+				conscription_factor = 0.1
+			}
+		}
+		idea_ROM_Monarxizm = {
+			
+			picture = SWE_wargames
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_weekly = 0.02
+                monorxism_drift = 0.1
+			}
+		}
+		idea_ROM_Monarxizm_dolg = { 
+			
+			picture = RAJ_military_into_the_workforce
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				war_support_factor = 0.05
+				mobilization_speed = 0.05
+				conscription_factor = 0.1
+				conscription = 0.05
+			}
+		}
+		idea_ROM_Revanshizm = { 
+			
+			picture = chi_army_corruption3
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				offence = 0.1
+				war_support_factor = 0.04
+			}
+		}
+    }
+}

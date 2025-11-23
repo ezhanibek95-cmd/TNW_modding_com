@@ -1,0 +1,3483 @@
+focus_tree = {
+    id = ROM_free_focus
+
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = ROM
+		}
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = 55 y = 2500 } 
+
+    ##############
+
+    focus = {
+        id = ROM_econmociheskaya_vosroshednie
+        cost = 5
+        icon = GFX_focus_AFG_a_modern_economy
+        mutually_exclusive = { }
+
+        x = 25
+        y = 0
+
+        prerequisite = {}
+
+
+
+        available = {}
+
+        completion_reward = {
+           mark_focus_tree_layout_dirty = yes
+           add_ideas = idea_ROM_economic_vozroshdenie
+           custom_effect_tooltip = generic_skip_one_line_tt
+           custom_effect_tooltip = ROM_econmociheskaya_vosroshednie_1_tt 
+           custom_effect_tooltip = ROM_econmociheskaya_vosroshednie_TNP_tt
+           set_variable = { ROM_economic_TNP = 0.05 }
+        }
+    }
+
+    focus = {
+        id = ROM_economic_investeccee_OIL
+        cost = 5
+        icon = GFX_focus_PER_increase_oil_sales
+
+        x = 2
+        y = 1
+
+        prerequisite = {
+            focus = ROM_econmociheskaya_vosroshednie
+        }
+        relative_position_id = ROM_econmociheskaya_vosroshednie
+
+
+        available = {
+            NOT = {
+                has_country_flag = ROM_ecnomic_start
+                has_country_flag = ROM_ecnomic_start_2
+            }
+        }
+
+        completion_reward = {
+            set_country_flag = ROM_ecnomic_start_3
+            add_to_variable = { ROM_ecnomic_FUEL_GAIN = 45 }
+            add_to_variable = { ROM_ecnomic_FUEL_stoimost = -75 }
+            add_to_variable = { ROM_economic_TNP = 0.05 }
+            custom_effect_tooltip = ROM_econmociheskaya_vosroshednie_1_tt
+            custom_effect_tooltip = ROM_econmociheskaya_vosroshednie_FUEL_COST_tt
+            custom_effect_tooltip = ROM_econmociheskaya_vosroshednie_FUEL_BASE_PRIROST_tt
+            custom_effect_tooltip = ROM_econmociheskaya_vosroshednie_TNP2_tt
+
+        }
+    }
+    focus = {
+        id = ROM_rasvitie_regiona_PLOESHTI
+        cost = 10
+        icon = GFX_goal_generic_construct_infrastructure
+        mutually_exclusive = {
+            focus = ROM_iskat_OIL
+        }
+
+        x = 0
+        y = 1
+
+        prerequisite = {
+            focus = ROM_economic_investeccee_OIL
+        }
+        relative_position_id = ROM_economic_investeccee_OIL
+
+
+        available = {}
+
+        completion_reward = {
+            46 = {
+                add_building_construction = {
+                    type = infrastructure
+                    level = 5
+                    instant_build = yes
+                }
+                custom_effect_tooltip = generic_skip_one_line_tt
+                add_resource = {
+                    type = oil
+                    amount = 16
+                }
+            }
+        }
+    }
+    focus = {
+        id = ROM_iskat_OIL
+        cost = 10
+        icon = GFX_focus_SOV_the_road_of_life
+        mutually_exclusive = {
+            focus = ROM_rasvitie_regiona_PLOESHTI
+        }
+
+        x = 2
+        y = 1
+
+        prerequisite = {
+            focus = ROM_economic_investeccee_OIL
+        }
+        relative_position_id = ROM_economic_investeccee_OIL
+
+
+        available = {}
+
+        completion_reward = {
+            unlock_decision_category_tooltip = ROM_OIL_iskat
+        }
+    }
+    focus = {
+        id = ROM_nasionality_OIL
+        cost = 5
+        icon = GFX_focus_GER_subjugate_romanian_economy
+        mutually_exclusive = {
+            focus = ROM_economic_poszvat_inostranyx_investorov
+        }
+
+        x = 0
+        y = 3
+
+        prerequisite = {
+            focus = ROM_rasvitie_regiona_PLOESHTI
+            focus = ROM_iskat_OIL
+        }
+        relative_position_id = ROM_rasvitie_regiona_PLOESHTI
+
+
+        available = {}
+
+        completion_reward = {
+            clr_country_flag = ROM_ecnomic_start_3
+            GER = {
+                remove_resource_rights = 46
+            }
+            add_stability = 0.1
+        }
+    }
+    focus = {
+        id = ROM_economic_poszvat_inostranyx_investorov
+        cost = 5
+        icon = GFX_focus_PER_invite_oil_nations
+        mutually_exclusive = {
+            focus = ROM_nasionality_OIL
+        }
+
+        x = 2
+        y = 3
+
+        prerequisite = {
+            focus = ROM_rasvitie_regiona_PLOESHTI
+            focus = ROM_iskat_OIL
+        }
+        relative_position_id = ROM_rasvitie_regiona_PLOESHTI
+
+
+        available = {}
+
+        completion_reward = {
+            clr_country_flag = ROM_ecnomic_start_3
+            custom_effect_tooltip = ROM_econmociheskaya_vosroshednie_1_tt
+            custom_effect_tooltip = ROM_econmociheskaya_vosroshednie_RESORCE_MIN_EXPORT_tt
+            add_to_variable = { ROM_ecnomic_min_export_oil = 0.3 }
+            custom_effect_tooltip = generic_skip_one_line_tt
+            add_ideas = idea_ROM_resource_prodat
+        }
+    }
+    focus = {
+        id = ROM_tysholaya_promyshlenost
+        cost = 10
+        icon = GFX_goal_generic_construct_civ_factory
+
+        x = -2
+        y = 1
+
+        prerequisite = {
+            focus = ROM_econmociheskaya_vosroshednie
+        }
+        relative_position_id = ROM_econmociheskaya_vosroshednie
+
+
+        available = {
+            NOT = {
+                has_country_flag = ROM_ecnomic_start_2
+                has_country_flag = ROM_ecnomic_start_3 
+            }
+        }
+
+        completion_reward = {
+            random_owned_state = {
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes
+                }
+            }
+            random_owned_state = {
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes
+                }
+            }
+            set_country_flag = ROM_ecnomic_start
+        }
+    }
+    focus = {
+        id = ROM_nasyonal_predpriatii
+        cost = 10
+        icon = GFX_focus_GER_prioritize_the_four_year_plan
+
+        x = 0
+        y = 2
+
+        available = {
+            controls_state = 46
+        }
+
+        prerequisite = {
+            focus = ROM_tysholaya_promyshlenost
+        }
+        relative_position_id = ROM_tysholaya_promyshlenost
+
+
+        available = {}
+
+        completion_reward = {
+            46 = {
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 5
+                    instant_build = yes
+                }
+            }
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = ROM_econmociheskaya_vosroshednie_1_tt
+            custom_effect_tooltip = ROM_econmociheskaya_vosroshednie_TNP1_tt
+            add_to_variable = { ROM_economic_TNP = 0.1 }
+        }
+    }
+    focus = {
+        id = ROM_postroyka_scladov
+        cost = 5
+        icon = GFX_focus_generic_military_industry
+
+        x = -2
+        y = 1
+
+        prerequisite = {
+            focus = ROM_nasyonal_predpriatii
+        }
+        relative_position_id = ROM_nasyonal_predpriatii
+
+
+        available = {}
+
+        completion_reward = {
+            custom_effect_tooltip = ROM_econmociheskaya_vosroshednie_1_tt
+            custom_effect_tooltip = ROM_econmociheskaya_vosroshednie_MAX_ZAVOD_tt 
+
+            custom_effect_tooltip = ROM_econmociheskaya_vosroshednie_NEXVATKA_RESOUSE_tt 
+            add_to_variable = { ROM_economic_MAX_ZAVOD_FACTOR = 0.1 }
+            add_to_variable = { ROM_ecnomic_resourse_penalty = -0.05 }
+        }
+    }
+    focus = {
+        id = ROM_fabriky_dla_forusheni
+        cost = 5
+        icon = GFX_goal_generic_construct_mil_factory
+
+        x = 0
+        y = 2
+
+        prerequisite = {
+            focus = ROM_nasyonal_predpriatii
+        }
+        relative_position_id = ROM_nasyonal_predpriatii
+
+
+        available = {
+            has_country_flag = ROM_ecnomic_start
+        }
+
+        completion_reward = {
+            add_war_support = 0.05
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = ROM_econmociheskaya_vosroshednie_1_tt
+            custom_effect_tooltip = ROM_econmociheskaya_vosroshednie_SPEED_ZAVOD_tt
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            add_to_variable = { ROM_ecnomic_SPEED_ARMS_ZAVOD = 0.1 }
+
+            random_owned_state = {
+                add_building_construction = {
+                    type = arms_factory
+                    level = 1
+                    instant_build = yes
+                }
+            }
+            random_owned_state = {
+                add_building_construction = {
+                    type = arms_factory
+                    level = 1
+                    instant_build = yes
+                }
+            }
+            clr_country_flag = ROM_ecnomic_start
+
+        }
+    }
+    focus = {
+        id = ROM_tysholaya_razvitie_regionov
+        cost = 10
+        icon = GFX_goal_generic_construct_infrastructure
+
+        x = -1
+        y = 1
+
+        prerequisite = {
+            focus = ROM_tysholaya_promyshlenost
+        }
+        relative_position_id = ROM_tysholaya_promyshlenost
+
+
+        available = {}
+
+        completion_reward = {
+            add_stability = 0.05
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = ROM_econmociheskaya_vosroshednie_1_tt
+            custom_effect_tooltip = ROM_econmociheskaya_vosroshednie_SPEED_INFRASTRUCTURE_tt
+            add_to_variable = { ROM_economic_speed_ifrastructure = 0.05 }
+        }
+    }
+    focus = {
+        id = ROM_tysholaya_metal_proizvodvta
+        cost = 10
+        icon = GFX_focus_generic_steel
+
+        x = -1
+        y = 1
+
+        prerequisite = {
+            focus = ROM_tysholaya_razvitie_regionov
+        }
+        relative_position_id = ROM_tysholaya_razvitie_regionov
+
+
+        available = {}
+
+        completion_reward = {
+            add_resource = {
+                type = steel
+                amount = 16
+                state = 81
+            }
+
+        }
+    }
+    focus = {
+        id = ROM_economic_agrary
+        cost = 10
+        icon = GFX_focus_generic_farmland
+
+        x = 0
+        y = 1
+
+        prerequisite = {
+            focus = ROM_econmociheskaya_vosroshednie
+        }
+        relative_position_id = ROM_econmociheskaya_vosroshednie
+
+
+        available = {
+            NOT = {
+                has_country_flag = ROM_ecnomic_start
+                has_country_flag = ROM_ecnomic_start_3
+            }
+        }
+
+        completion_reward = {
+            set_country_flag = ROM_ecnomic_start_2
+            add_to_variable = { ROM_economic_TNP = 0.015 }
+            custom_effect_tooltip = ROM_econmociheskaya_vosroshednie_1_tt
+            custom_effect_tooltip = ROM_econmociheskaya_vosroshednie_TNP3_tt
+            custom_effect_tooltip = generic_skip_one_line_tt
+            random_owned_state = {
+                add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes
+                }
+            }
+
+        }
+    }
+    focus = {
+        id = ROM_economic_agrary_territory_dla_poseva
+        cost = 5
+        icon = GFX_focus_hol_abandon_the_gold_standard
+
+        x = 0
+        y = 1
+
+        prerequisite = {
+            focus = ROM_economic_agrary
+        }
+        relative_position_id = ROM_economic_agrary
+
+
+        available = {}
+
+        completion_reward = {
+            add_to_variable = { ROM_economic_SPEDD_STROITELSTVO = 0.1 }
+            custom_effect_tooltip = ROM_econmociheskaya_vosroshednie_1_tt
+            custom_effect_tooltip = ROM_economic_SPEDD_STROITELSTVO_tt
+        }
+    }
+    focus = {
+        id = ROM_economic_razdat_zemly_dla_christian
+        cost = 5
+        icon = GFX_focus_PER_feat_of_engineering
+
+        x = 0
+        y = 1
+
+        prerequisite = {
+            focus = ROM_economic_agrary_territory_dla_poseva
+        }
+        relative_position_id = ROM_economic_agrary_territory_dla_poseva
+
+
+        available = {}
+
+        completion_reward = {
+            add_stability = 0.10
+            random_owned_controlled_state = {
+                add_extra_state_shared_building_slots = 2
+            }
+            random_owned_controlled_state = {
+                add_extra_state_shared_building_slots = 1
+            }
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = ROM_econmociheskaya_vosroshednie_1_tt
+            custom_effect_tooltip = ROM_economyc_niskae_roshdaemocst_tt
+            add_to_variable = { ROM_economyc_niskae_roshdaemocst = 0.20 }
+        }
+    }
+    focus = {
+        id = ROM_economic_dat_prava_na_sobstevy_scot
+        cost = 5
+        icon = GFX_focus_ARG_capitalize_the_beef_industry
+
+        x = -1
+        y = 1
+
+        prerequisite = {
+            focus = ROM_economic_razdat_zemly_dla_christian
+        }
+        relative_position_id = ROM_economic_razdat_zemly_dla_christian
+
+
+        available = {}
+
+        completion_reward = {
+            add_stability = 0.05
+            custom_effect_tooltip = CHL_skip_one_line_tt
+            custom_effect_tooltip = ROM_econmociheskaya_vosroshednie_1_tt
+            custom_effect_tooltip = ROM_economicRASHOD_PRIPASOV_tt
+            add_to_variable = { ROM_economicRASHOD_PRIPASOV = -0.1 }
+        }
+    }
+    focus = {
+        id = ROM_economic_avtomatization_sobyranie_urashai
+        cost = 10
+        icon = GFX_focus_AFG_telegraph
+
+        x = 1
+        y = 1
+
+        prerequisite = {
+            focus = ROM_economic_dat_prava_na_sobstevy_scot
+            focus = ROM_economic_selsco_hozastvenoe_reforma
+        }
+        relative_position_id = ROM_economic_dat_prava_na_sobstevy_scot
+
+
+        available = {}
+
+        completion_reward = {
+            clr_country_flag = ROM_ecnomic_start_2
+            add_research_slot = 1
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = ROM_econmociheskaya_vosroshednie_1_tt
+            custom_effect_tooltip = ROM_econmociheskaya_vosroshednie_TNP4_tt
+            custom_effect_tooltip = ROM_economic_SCOROST_ISLEDOVANIE_tt
+            add_to_variable = { ROM_ecnomic_RESEARCH_SPEED = 0.05 }
+            add_to_variable = { ROM_economic_TNP = -0.1 }
+        }
+    }
+    focus = {
+        id = ROM_economic_avatkaria_ROM
+        cost = 5
+        icon = GFX_focus_GER_autarky_achieved
+
+        x = 0
+        y = 2
+
+        prerequisite = {
+            focus = ROM_economic_avtomatization_sobyranie_urashai
+        }
+        prerequisite = { 
+            focus = ROM_economic_poszvat_inostranyx_investorov
+            focus = ROM_nasionality_OIL 
+        }
+        prerequisite = { focus = ROM_fabriky_dla_forusheni }
+        relative_position_id = ROM_economic_avtomatization_sobyranie_urashai
+
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_economic_selsco_hozastvenoe_reforma
+        cost = 5
+        icon = GFX_focus_AUS_lawmaking_leniency
+
+        x = 1
+        y = 1
+
+        prerequisite = {
+            focus = ROM_economic_razdat_zemly_dla_christian
+        }
+        relative_position_id = ROM_economic_razdat_zemly_dla_christian
+
+
+        available = {}
+
+        completion_reward = {
+            add_ideas = idea_ROM_selcsko_hozaitvenoe_reforma
+        }
+    }
+
+    ############
+    ###ECONOMIC
+    ############
+
+    focus = {
+        id = ROM_sudba_corol_mixail
+        cost = 5
+        icon = GFX_focus_rom_coup
+        mutually_exclusive = { focus = ROM_conductor_reshim }
+
+        x = 15
+        y = 0
+
+        prerequisite = {}
+        allow_branch = {
+            NOT = {
+                has_completed_focus = ROM_conductor_reshim 
+            }
+        }
+
+
+        available = {}
+
+        completion_reward = {
+            mark_focus_tree_layout_dirty = yes
+            add_stability = -0.05
+            add_political_power = 150
+            create_country_leader = {
+                name = ROM_MIXAI_I
+                picture = GFX_portrait_ROM_MIXAI_I
+                expire = "1965.1.1"
+                ideology = relegioz
+                traits = {
+                }
+            }
+            add_popularity = {
+                ideology = monorxism
+                popularity = 0.2
+            }
+        }
+    }
+    focus = {
+        id = ROM_perefarot_corol
+        cost = 10
+        icon = GFX_focus_rom_royal_dictatorship
+
+        x = 0
+        y = 1
+
+        prerequisite = {
+            focus = ROM_sudba_corol_mixail
+        }
+        relative_position_id = ROM_sudba_corol_mixail
+
+
+        available = {}
+
+        completion_reward = {
+            set_politics = {
+                ruling_party = monorxism
+            }
+            
+        }
+    }
+    focus = {
+        id = ROM_srochno_reshit_problemy_s_reixom
+        cost = 5
+        icon = GFX_focus_chi_mission_to_germany
+
+        x = 0
+        y = 1
+
+        prerequisite = {
+            focus = ROM_perefarot_corol
+        }
+        relative_position_id = ROM_perefarot_corol
+
+
+        available = {}
+
+        completion_reward = {
+            add_opinion_modifier = {
+                target = GER
+                modifier = GER_ROM
+            }
+            diplomatic_relation = {
+                    country = GER
+                    relation = non_aggression_pact
+            }
+            GER = {
+                add_opinion_modifier = {
+                    target = ROM
+                    modifier = GER_ROM
+                }
+            }
+        }
+    }
+    focus = {
+        id = ROM_ustroit_chistky_fascistov
+        cost = 5
+        icon = GFX_focus_GER_subdue_the_wehrmacht_historical
+
+        x = 0
+        y = 1
+
+        prerequisite = {
+            focus = ROM_srochno_reshit_problemy_s_reixom
+        }
+        relative_position_id = ROM_srochno_reshit_problemy_s_reixom
+
+
+        available = {}
+
+        completion_reward = {
+            add_stability = 0.1
+            remove_ideas = idea_ROM_Radikal_vlast
+        }
+    }
+    focus = {
+        id = ROM_zarushitsa_poderskoi_USSSR
+        cost = 5
+        icon = GFX_focus_chi_mission_to_the_soviet_union
+        mutually_exclusive = {
+            focus = ROM_zarushitsa_poderskoi_ENG
+            focus = ROM_zarushitsa_poderskoi_GER
+        }
+
+        x = -2
+        y = 1
+
+        prerequisite = {
+            focus = ROM_ustroit_chistky_fascistov
+        }
+        relative_position_id = ROM_ustroit_chistky_fascistov
+
+
+        available = {}
+
+        completion_reward = {
+            remove_ideas = idea_ROM_GER_vliaenie
+            custom_effect_tooltip = CHL_skip_one_line_tt
+            add_ideas = idea_ROM_SOV_vliaenie
+            SOV = {
+                give_guarantee = ROM
+            }
+        }
+    }
+    focus = {
+        id = ROM_zarushitsa_poderskoi_ENG
+        cost = 5
+        icon = GFX_focus_eng_the_sun_never_sets
+        mutually_exclusive = {
+            focus = ROM_zarushitsa_poderskoi_USSSR
+            focus = ROM_zarushitsa_poderskoi_GER
+        }
+
+        x = 2
+        y = 1
+
+        prerequisite = {
+            focus = ROM_ustroit_chistky_fascistov
+        }
+        relative_position_id = ROM_ustroit_chistky_fascistov
+
+
+        available = {}
+
+        completion_reward = {
+            remove_ideas = idea_ROM_GER_vliaenie
+            custom_effect_tooltip = CHL_skip_one_line_tt
+            add_ideas = idea_ROM_ENG_vliaenie
+            ENG = {
+                give_guarantee = ROM
+            }
+        }
+    }
+    focus = {
+        id = ROM_nacionalization_ukrain
+        cost = 10
+        icon = GFX_focus_HUN_the_kingdom_of_ukraine
+
+        x = 2
+        y = 2
+
+        prerequisite = {
+            focus = ROM_zarushitsa_poderskoi_ENG
+            focus = ROM_zarushitsa_poderskoi_USSSR
+        }
+        relative_position_id = ROM_zarushitsa_poderskoi_USSSR
+
+
+        available = {}
+
+        completion_reward = {
+            add_state_core = 192
+            add_state_core = 834
+        }
+    }
+    focus = {
+        id = ROM_dolsnost_corol
+        cost = 5
+        icon = GFX_focus_rom_abdicate
+
+        x = 1
+        y = 1
+
+        allow_branch = {
+            NOT = {
+                has_completed_focus = ROM_uslekenie_profsoisov
+            }
+        }
+
+        prerequisite = {
+            focus = ROM_nacionalization_ukrain
+        }
+        relative_position_id = ROM_nacionalization_ukrain
+
+
+        available = {
+            NOT = {
+                has_completed_focus = ROM_uslekenie_profsoisov
+            }
+        }
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_vozrozhdenie_nazii
+        cost = 5
+        icon = GFX_focus_GER_the_peoples_victory
+
+        x = -1
+        y = 1
+
+        prerequisite = {
+            focus = ROM_nacionalization_ukrain
+        }
+        relative_position_id = ROM_nacionalization_ukrain
+
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    ##### COMMINUSM ######
+    focus = {
+        id = ROM_uslekenie_profsoisov
+        cost = 5
+        icon = GFX_focus_ARG_legitimize_the_PCA
+        mutually_exclusive = {
+            focus = ROM_profesti_vybory
+            focus = ROM_monarchyskie_ambisee
+        }
+
+        x = -2
+        y = 1
+
+        allow_branch = {
+            NOT = {
+                has_completed_focus = ROM_podgotovka_k_vyboramy
+                has_completed_focus = ROM_monarchyskie_ambisee
+                has_completed_focus = ROM_dolsnost_corol
+            }
+        }
+
+        prerequisite = {
+            focus = ROM_zarushitsa_poderskoi_USSSR
+        }
+        relative_position_id = ROM_zarushitsa_poderskoi_USSSR
+
+
+        available = {}
+
+        completion_reward = {
+            mark_focus_tree_layout_dirty = yes
+        }
+    }
+    focus = {
+        id = ROM_rasreshenie_na_mitingi
+        cost = 5
+        icon = GFX_focus_GER_strike_at_the_rising_sun
+        mutually_exclusive = {
+        }
+
+        x = -1
+        y = 1
+
+        allow_branch = {
+        }
+
+        prerequisite = {
+            focus = ROM_uslekenie_profsoisov
+        }
+        relative_position_id = ROM_uslekenie_profsoisov
+
+
+        available = {}
+
+        completion_reward = {
+            mark_focus_tree_layout_dirty = yes
+        }
+    }
+    focus = {
+        id = ROM_milicia_profsoiov
+        cost = 5
+        icon = GFX_focus_generic_military_mission
+        mutually_exclusive = {
+        }
+
+        x = 1
+        y = 1
+
+        allow_branch = {
+        }
+
+        prerequisite = {
+            focus = ROM_uslekenie_profsoisov
+        }
+        relative_position_id = ROM_uslekenie_profsoisov
+
+
+        available = {}
+
+        completion_reward = {
+            mark_focus_tree_layout_dirty = yes
+        }
+    }
+    focus = {
+        id = ROM_uselenie_com_partii
+        cost = 5
+        icon = GFX_focus_generic_communist
+        mutually_exclusive = {
+        }
+
+        x = 1
+        y = 1
+
+        allow_branch = {
+        }
+
+        prerequisite = {
+            focus = ROM_rasreshenie_na_mitingi
+        }
+        prerequisite = {
+            focus = ROM_milicia_profsoiov
+        }
+        relative_position_id = ROM_rasreshenie_na_mitingi
+
+
+        available = {}
+
+        completion_reward = {
+            mark_focus_tree_layout_dirty = yes
+        }
+    }
+    focus = {
+        id = ROM_zabostovky
+        cost = 5
+        icon = GFX_focus_AUS_austromarxism
+        mutually_exclusive = {
+        }
+
+        x = -1
+        y = 1
+
+        allow_branch = {
+        }
+
+        prerequisite = {
+            focus = ROM_uselenie_com_partii
+        }
+        relative_position_id = ROM_uselenie_com_partii
+
+
+        available = {}
+
+        completion_reward = {
+            mark_focus_tree_layout_dirty = yes
+        }
+    }
+    focus = {
+        id = ROM_socialisticheskaya_strana
+        cost = 5
+        icon = GFX_focus_AUS_danubian_socialist_communes
+        mutually_exclusive = {
+        }
+
+        x = -3
+        y = 1
+
+        allow_branch = {
+        }
+
+        prerequisite = {
+            focus = ROM_zabostovky
+        }
+        relative_position_id = ROM_zabostovky
+
+
+        available = {}
+
+        completion_reward = {
+            mark_focus_tree_layout_dirty = yes
+        }
+    }
+    focus = {
+        id = ROM_sozdanie_crasnoi_army
+        cost = 10
+        icon = GFX_focus_NOR_a_new_norway_Trotsky_communism
+        mutually_exclusive = {
+        }
+
+        x = 2
+        y = 1
+
+        allow_branch = {
+        }
+
+        prerequisite = {
+            focus = ROM_socialisticheskaya_strana
+        }
+        relative_position_id = ROM_socialisticheskaya_strana
+
+
+        available = {}
+
+        completion_reward = {
+            mark_focus_tree_layout_dirty = yes
+        }
+    }
+    focus = {
+        id = ROM_zheleznae_army
+        cost = 10
+        icon = GFX_focus_SOV_the_glory_of_the_red_army_communism
+        mutually_exclusive = {
+            focus = ROM_sozializm_v_nebe
+        }
+
+        x = 1
+        y = 1
+
+        allow_branch = {
+        }
+
+        prerequisite = {
+            focus = ROM_sozdanie_crasnoi_army
+        }
+        relative_position_id = ROM_sozdanie_crasnoi_army
+
+
+        available = {}
+
+        completion_reward = {
+            mark_focus_tree_layout_dirty = yes
+        }
+    }
+    focus = {
+        id = ROM_nepodimae_army
+        cost = 10
+        icon = GFX_focus_SOV_builder_of_the_red_army
+        mutually_exclusive = {
+        }
+
+        x = 0
+        y = 1
+
+        allow_branch = {
+        }
+
+        prerequisite = {
+            focus = ROM_zheleznae_army
+            focus = ROM_sozializm_v_nebe
+        }
+        relative_position_id = ROM_zheleznae_army
+
+
+        available = {}
+
+        completion_reward = {
+            mark_focus_tree_layout_dirty = yes
+        }
+    }
+    focus = {
+        id = ROM_sozializm_v_nebe
+        cost = 10
+        icon = GFX_focus_PER_the_peoples_airforce
+        mutually_exclusive = {
+            focus = ROM_zheleznae_army
+        }
+
+        x = 3
+        y = 1
+
+        allow_branch = {
+        }
+
+        prerequisite = {
+            focus = ROM_sozdanie_crasnoi_army
+        }
+        relative_position_id = ROM_sozdanie_crasnoi_army
+
+
+        available = {}
+
+        completion_reward = {
+            mark_focus_tree_layout_dirty = yes
+        }
+    }
+    focus = {
+        id = ROM_reforma_planovai_economyce
+        cost = 5
+        icon = GFX_focus_generic_socialist_science
+        mutually_exclusive = {
+        }
+
+        x = -3
+        y = 1
+
+        allow_branch = {
+        }
+
+        prerequisite = {
+            focus = ROM_colectiviszatcii
+        }
+        relative_position_id = ROM_colectiviszatcii
+
+        available = {}
+
+        completion_reward = {
+            mark_focus_tree_layout_dirty = yes
+        }
+    }
+    focus = {
+        id = ROM_nasionalnyi_socializm
+        cost = 5
+        icon = GFX_focus_generic_spur_communist_revolutions
+        mutually_exclusive = {
+        }
+
+        x = 1
+        y = 1
+
+        allow_branch = {
+        }
+
+        prerequisite = {
+            focus = ROM_colectiviszatcii
+        }
+        relative_position_id = ROM_colectiviszatcii
+
+        available = {}
+
+        completion_reward = {
+            mark_focus_tree_layout_dirty = yes
+        }
+    }
+    focus = {
+        id = ROM_zblizhenie_s_moscow
+        cost = 5
+        icon = GFX_focus_SOV_the_supreme_soviet
+        mutually_exclusive = {
+        }
+
+        x = 0
+        y = 1
+
+        allow_branch = {
+        }
+
+        prerequisite = {
+            focus = ROM_nasionalnyi_socializm
+        }
+        relative_position_id = ROM_nasionalnyi_socializm
+
+        available = {}
+
+        completion_reward = {
+            mark_focus_tree_layout_dirty = yes
+        }
+    }
+    focus = {
+        id = ROM_propoganda_COM
+        cost = 5
+        icon = GFX_focus_BRA_cohen_plan
+        mutually_exclusive = {
+        }
+
+        x = -3
+        y = 1
+
+        allow_branch = {
+        }
+
+        prerequisite = {
+            focus = ROM_nasionalnyi_socializm
+        }
+        relative_position_id = ROM_nasionalnyi_socializm
+
+        available = {}
+
+        completion_reward = {
+            mark_focus_tree_layout_dirty = yes
+        }
+    }
+    focus = {
+        id = ROM_REvanshizm_com
+        cost = 5
+        icon = GFX_focus_SWE_refuge_for_revolutionaries
+        mutually_exclusive = {
+        }
+
+        x = 1
+        y = 1
+
+        allow_branch = {
+        }
+
+        prerequisite = {
+            focus = ROM_socialisticheski_put
+        }
+        relative_position_id = ROM_socialisticheski_put
+
+        available = {}
+
+        completion_reward = {
+            mark_focus_tree_layout_dirty = yes
+        }
+    }
+    focus = {
+        id = ROM_unitoshit_capitalistov
+        cost = 5
+        icon = GFX_focus_RAJ_crush_the_anathema
+        mutually_exclusive = {
+        }
+
+        x = 1
+        y = 1
+
+        allow_branch = {
+        }
+
+        prerequisite = {
+            focus = ROM_REvanshizm_com
+        }
+        relative_position_id = ROM_REvanshizm_com
+
+        available = {}
+
+        completion_reward = {
+            mark_focus_tree_layout_dirty = yes
+        }
+    }
+    focus = {
+        id = ROM_socialisticheski_put
+        cost = 5
+        icon = GFX_focus_SOV_the_last_purge
+        mutually_exclusive = {
+            focus = ROM_idti_po_ideam_maexizma
+        }
+        x = 0
+        y = 1
+
+        allow_branch = {
+        }
+
+        prerequisite = {
+            focus = ROM_zblizhenie_s_moscow
+        }
+        relative_position_id = ROM_zblizhenie_s_moscow
+
+        available = {}
+
+        completion_reward = {
+            mark_focus_tree_layout_dirty = yes
+        }
+    }
+    focus = {
+        id = ROM_idti_po_ideam_maexizma
+        cost = 5
+        icon = GFX_focus_eng_liberate_the_home_of_marx
+        mutually_exclusive = {
+            focus = ROM_socialisticheski_put
+        }
+        x = -2
+        y = 1
+
+        allow_branch = {
+        }
+
+        prerequisite = {
+            focus = ROM_zblizhenie_s_moscow
+        }
+        relative_position_id = ROM_zblizhenie_s_moscow
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_mirnyi_put_marxizma
+        cost = 5
+        icon = GFX_focus_generic_communist
+        mutually_exclusive = {
+        }
+        x = -2
+        y = 1
+
+        allow_branch = {
+        }
+
+        prerequisite = {
+            focus = ROM_idti_po_ideam_maexizma
+        }
+        relative_position_id = ROM_idti_po_ideam_maexizma
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_ideal_planovoi_econmicy
+        cost = 5
+        icon = GFX_focus_generic_economic_recovery
+        mutually_exclusive = {
+        }
+        x = -2
+        y = 1
+
+        allow_branch = {
+        }
+
+        prerequisite = {
+            focus = ROM_mirnyi_put_marxizma
+        }
+        relative_position_id = ROM_mirnyi_put_marxizma  
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_uslit_gos_plan
+        cost = 5
+        icon = GFX_focus_SOV_merge_plants
+        mutually_exclusive = {
+        }
+        x = 0
+        y = 2
+
+        allow_branch = {
+        }
+
+        prerequisite = {
+            focus = ROM_mirnyi_put_marxizma
+        }
+        prerequisite = {
+            focus = ROM_nezavisemy_put_economichescogog_rosta
+        }
+        relative_position_id = ROM_mirnyi_put_marxizma  
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_mitnaya_popytkasozdanie_proletarii
+        cost = 5
+        icon = GFX_focus_GER_proletarian_dictatorship
+        mutually_exclusive = {
+        }
+        x = 0
+        y = 1
+
+        allow_branch = {
+        }
+
+        prerequisite = {
+            focus = ROM_uslit_gos_plan
+        }
+        relative_position_id = ROM_uslit_gos_plan
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_zahishta_ot_capitalistov
+        cost = 10
+        icon = GFX_focus_RAJ_crush_the_anathema
+        mutually_exclusive = {
+        }
+        x = -2
+        y = 1
+
+        allow_branch = {
+        }
+
+        prerequisite = {
+            focus = ROM_uslit_gos_plan
+        }
+        relative_position_id = ROM_uslit_gos_plan
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_usliti_prava_raboshih
+        cost = 5
+        icon = GFX_focus_generic_workers_and_farmers_rise
+        mutually_exclusive = {
+        }
+
+        x = -1
+        y = 1
+
+        allow_branch = {
+        }
+
+        prerequisite = {
+            focus = ROM_socialisticheski_put
+            focus = ROM_idti_po_ideam_maexizma
+        }
+        relative_position_id = ROM_socialisticheski_put
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_prisidenenie_proletarii
+        cost = 5
+        icon = GFX_goal_support_communism
+        mutually_exclusive = {
+        }
+
+        x = 0
+        y = 1
+
+        allow_branch = {
+        }
+
+        prerequisite = {
+            focus = ROM_mitnaya_popytkasozdanie_proletarii
+
+        }
+        relative_position_id = ROM_mitnaya_popytkasozdanie_proletarii
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_nezavisemy_put_economichescogog_rosta
+        cost = 5
+        icon = GFX_focus_ICE_embrace_the_workers_revolution
+        mutually_exclusive = {
+        }
+
+        x = -1
+        y = 1
+
+        allow_branch = {
+        }
+
+        prerequisite = {
+            focus = ROM_usliti_prava_raboshih
+        }
+        relative_position_id = ROM_usliti_prava_raboshih
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_free_medicine
+        cost = 5
+        icon = GFX_focus_generic_bad_medical
+        mutually_exclusive = {
+        }
+
+        x = 0
+        y = 1
+
+        allow_branch = {
+        }
+
+        prerequisite = {
+            focus = ROM_nezavisemy_put_economichescogog_rosta
+        }
+        relative_position_id = ROM_nezavisemy_put_economichescogog_rosta
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_idea_o_federation
+        cost = 5
+        icon = GFX_focus_BUL_balkan_federation_of_socialist_republics
+        mutually_exclusive = {
+        }
+
+        x = 0
+        y = 2
+
+        allow_branch = {
+        }
+
+        prerequisite = {
+            focus = ROM_socialisticheski_put
+        }
+        relative_position_id = ROM_socialisticheski_put
+
+        available = {}
+
+        completion_reward = {
+            mark_focus_tree_layout_dirty = yes
+        }
+    }
+    focus = {
+        id = ROM_balkan_federation
+        cost = 10
+        icon = GFX_focus_generic_soviet_politics
+        mutually_exclusive = {
+        }
+
+        x = 0
+        y = 1
+
+        allow_branch = {
+        }
+
+        prerequisite = {
+            focus = ROM_idea_o_federation
+        }
+        relative_position_id = ROM_idea_o_federation
+
+        available = {}
+
+        completion_reward = {
+            mark_focus_tree_layout_dirty = yes
+        }
+    }
+    focus = {
+        id = ROM_rashirenie_nashei_federation
+        cost = 10
+        icon = GFX_focus_SOV_proclaim_soviet_hegemony
+        mutually_exclusive = {
+        }
+
+        x = 0
+        y = 1
+
+        allow_branch = {
+        }
+
+        prerequisite = {
+            focus = ROM_balkan_federation
+        }
+        relative_position_id = ROM_balkan_federation
+
+        available = {}
+
+        completion_reward = {
+            mark_focus_tree_layout_dirty = yes
+        }
+    }
+    focus = {
+        id = ROM_colectiviszatcii
+        cost = 5
+        icon = GFX_focus_generic_communist_industry
+        mutually_exclusive = {
+        }
+
+        x = 0
+        y = 1
+
+        allow_branch = {
+        }
+
+        prerequisite = {
+            focus = ROM_socialisticheskaya_strana
+        }
+        relative_position_id = ROM_socialisticheskaya_strana
+
+
+        available = {}
+
+        completion_reward = {
+            mark_focus_tree_layout_dirty = yes
+        }
+    }
+    focus = {
+        id = ROM_sudba_corol_mixai
+        cost = 5
+        icon = GFX_focus_PER_communist_afghanistan_intervention
+        mutually_exclusive = {
+        }
+
+        x = -2
+        y = 1
+
+        allow_branch = {
+        }
+
+        prerequisite = {
+            focus = ROM_socialisticheskaya_strana
+        }
+        relative_position_id = ROM_socialisticheskaya_strana
+
+
+        available = {}
+
+        completion_reward = {
+            mark_focus_tree_layout_dirty = yes
+        }
+    }
+    
+
+    ##### DEMOCRATYC ######
+    focus = {
+        id = ROM_podgotovka_k_vyboramy
+        cost = 5
+        icon = GFX_focus_ARG_defense_and_democracy
+        mutually_exclusive = {
+            focus = ROM_profsoize
+            focus = ROM_monarchyskie_ambisee
+        }
+
+        x = 2
+        y = 1
+
+        allow_branch = {
+            NOT = {
+                has_completed_focus = ROM_monarchyskie_ambisee
+                has_completed_focus = ROM_uslekenie_profsoisov
+            }
+        }
+
+        prerequisite = {
+            focus = ROM_zarushitsa_poderskoi_ENG
+        }
+        relative_position_id = ROM_zarushitsa_poderskoi_ENG
+
+
+        available = {}
+
+        completion_reward = {
+            mark_focus_tree_layout_dirty = yes 
+        }
+    }
+    focus = {
+        id = ROM_izberatelnoe_pravo
+        cost = 5
+        icon = GFX_focus_AUS_womens_education_initiative
+        mutually_exclusive = {
+        }
+
+        x = -1
+        y = 1
+
+        prerequisite = {
+            focus = ROM_podgotovka_k_vyboramy
+        }
+        relative_position_id = ROM_podgotovka_k_vyboramy
+
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_svobodnae_precca
+        cost = 5
+        icon = GFX_focus_generic_printing_press
+        mutually_exclusive = {
+        }
+
+        x = 1
+        y = 1
+
+        prerequisite = {
+            focus = ROM_podgotovka_k_vyboramy
+        }
+        relative_position_id = ROM_podgotovka_k_vyboramy
+
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_vybory
+        cost = 5
+        icon = GFX_focus_generic_democratic_europe
+        mutually_exclusive = {
+        }
+
+        x = 1
+        y = 1
+
+        prerequisite = {
+            focus = ROM_izberatelnoe_pravo
+        }
+        prerequisite = {
+            focus = ROM_svobodnae_precca
+        }
+        relative_position_id = ROM_izberatelnoe_pravo
+
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_ukrepit_stability
+        cost = 5
+        icon = GFX_focus_spr_masters_of_our_own_fate
+        mutually_exclusive = {
+        }
+
+        x = 1
+        y = 1
+
+        prerequisite = {
+            focus = ROM_vybory
+        }
+        relative_position_id = ROM_vybory
+
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_anti_corupsion
+        cost = 5
+        icon = GFX_focus_GER_customs_union
+        mutually_exclusive = {
+        }
+
+        x = 1
+        y = 1
+
+        prerequisite = {
+            focus = ROM_svobodnae_precca
+        }
+        relative_position_id = ROM_svobodnae_precca
+
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_respublika
+        cost = 5
+        icon = GFX_focus_invite_romania
+        mutually_exclusive = {
+        }
+
+        x = 0
+        y = 2
+
+        prerequisite = {
+            focus = ROM_vybory
+        }
+        prerequisite = {
+            focus = ROM_constitutsia_Mixai
+        }
+        relative_position_id = ROM_vybory
+
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_novea_constitutsia_dem
+        cost = 5
+        icon = GFX_focus_AUS_lawmaking_leniency
+        mutually_exclusive = {
+        }
+
+        x = -1
+        y = 1
+
+        prerequisite = {
+            focus = ROM_respublika
+        }
+        relative_position_id = ROM_respublika
+
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_prava_zhenshin
+        cost = 5
+        icon = GFX_focus_ARG_women_in_industry
+        mutually_exclusive = {
+        }
+
+        x = 1
+        y = 1
+
+        prerequisite = {
+            focus = ROM_respublika
+        }
+        relative_position_id = ROM_respublika
+
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_vneshny_politka
+        cost = 5
+        icon = GFX_focus_RAJ_to_shake_the_world
+        mutually_exclusive = {
+        }
+
+        x = 10
+        y = 1
+
+        prerequisite = {
+            focus = ROM_respublika
+        }
+        relative_position_id = ROM_respublika
+
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_dobrovolcheski_corpus
+        cost = 10
+        icon = GFX_focus_generic_military_academy
+        mutually_exclusive = {
+        }
+
+        x = -1
+        y = 1
+
+        prerequisite = {
+            focus = ROM_vneshny_politka
+        }
+        relative_position_id = ROM_vneshny_politka
+
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_legion
+        cost = 10
+        icon = GFX_focus_NORDIC_com_selector_army
+        mutually_exclusive = {
+        }
+
+        x = 1
+        y = 1
+
+        prerequisite = {
+            focus = ROM_dobrovolcheski_corpus
+        }
+        relative_position_id = ROM_dobrovolcheski_corpus
+
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_army_democratov
+        cost = 10
+        icon = GFX_focus_NORDIC_dem_army
+        mutually_exclusive = {
+        }
+
+        x = 1
+        y = 3
+
+        prerequisite = {
+            focus = ROM_legion
+        }
+        prerequisite = {
+            focus = ROM_balkan_dogovor
+        }
+        relative_position_id = ROM_legion
+
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_diplomatia_sosedamy
+        cost = 5
+        icon = GFX_focus_generic_balkan_diplomacy
+        mutually_exclusive = {
+        }
+
+        x = 1
+        y = 1
+
+        prerequisite = {
+            focus = ROM_vneshny_politka
+        }
+        relative_position_id = ROM_vneshny_politka
+
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_HUN
+        cost = 5
+        icon = GFX_focus_generic_befriend_hungary
+        mutually_exclusive = {
+        }
+
+        x = 4
+        y = 1
+
+        prerequisite = {
+            focus = ROM_diplomatia_sosedamy
+        }
+        relative_position_id = ROM_diplomatia_sosedamy
+
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_sozdat_transelvanskui_avtonomiu
+        cost = 5
+        icon = GFX_focus_YUG_autonomous_transylvania
+        mutually_exclusive = {
+        }
+
+        x = 0
+        y = 1
+
+        prerequisite = {
+            focus = ROM_HUN
+        }
+        relative_position_id = ROM_HUN
+
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_bukavinskee_vopros
+        cost = 5
+        icon = GFX_focus_GER_expand_gestapo
+        mutually_exclusive = {
+        }
+
+        x = 1
+        y = 1
+
+        prerequisite = {
+            focus = ROM_diplomatia_sosedamy
+        }
+        relative_position_id = ROM_diplomatia_sosedamy
+
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_balkan_dogovor
+        cost = 5
+        icon = GFX_focus_generic_balkan_diplomacy
+        mutually_exclusive = {
+        }
+
+        x = 1
+        y = 2
+
+        prerequisite = {
+            focus = ROM_sozdat_transelvanskui_avtonomiu
+            focus = ROM_bukavinskee_vopros
+        }
+        relative_position_id = ROM_bukavinskee_vopros
+
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_balkan_dershava
+        cost = 5
+        icon = GFX_focus_BUL_free_balkan_states
+        mutually_exclusive = {
+        }
+
+        x = -1
+        y = 2
+
+        prerequisite = {
+            focus = ROM_balkan_dogovor
+        }
+        relative_position_id = ROM_balkan_dogovor
+
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_agrar_reform
+        cost = 10
+        icon = GFX_focus_generic_agricultural_subsidies
+        mutually_exclusive = {
+        }
+
+        x = 3
+        y = 1
+
+        prerequisite = {
+            focus = ROM_respublika
+        }
+        relative_position_id = ROM_respublika
+
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_obrozovanie_dla_vsex
+        cost = 5
+        icon = GFX_focus_generic_university_1
+        mutually_exclusive = {
+        }
+
+        x = 1
+        y = 1
+
+        prerequisite = {
+            focus = ROM_agrar_reform
+            focus = ROM_prava_zhenshin
+            focus = ROM_corolevskaya_diplomatic
+        }
+        relative_position_id = ROM_prava_zhenshin
+
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_reforma_planovai_economyc
+        cost = 5
+        icon = GFX_focus_DEN_no_regulations
+        mutually_exclusive = {
+            focus = ROM_capitaliteshiski_put
+        }
+
+        x = 4
+        y = 2
+
+        prerequisite = {
+            focus = ROM_agrar_reform
+            focus = ROM_corolevskaya_diplomatic
+        }
+        relative_position_id = ROM_agrar_reform
+
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_uscheny_is_drugix_stran
+        cost = 5
+        icon = GFX_focus_generic_university_2
+        mutually_exclusive = {
+        }
+
+        x = 1
+        y = 2
+
+        prerequisite = {
+            focus = ROM_obrozovanie_dla_vsex
+        }
+        prerequisite = {
+            focus = ROM_capitaliteshiski_put
+        }
+        relative_position_id = ROM_obrozovanie_dla_vsex
+
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    
+    focus = {
+        id = ROM_capitaliteshiski_put
+        cost = 5
+        icon = GFX_focus_generic_welfare
+        mutually_exclusive = {
+            focus = ROM_reforma_planovai_economyc
+        }
+
+        x = 1
+        y = 2
+
+        prerequisite = {
+            focus = ROM_agrar_reform
+            focus = ROM_corolevskaya_diplomatic
+        }
+        relative_position_id = ROM_agrar_reform
+
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_invinsticee
+        cost = 5
+        icon = GFX_goal_generic_trade
+        mutually_exclusive = {
+        }
+
+        x = 0
+        y = 2
+
+        prerequisite = {
+            focus = ROM_capitaliteshiski_put
+        }
+        relative_position_id = ROM_capitaliteshiski_put
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_iskat_poleznoe_iskapoemoe
+        cost = 5
+        icon = GFX_focus_generic_steel
+        mutually_exclusive = {
+        }
+
+        x = 1
+        y = 1
+
+        prerequisite = {
+            focus = ROM_capitaliteshiski_put
+            focus = ROM_reforma_planovai_economyc
+        }
+        relative_position_id = ROM_capitaliteshiski_put
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_postroika_dorog
+        cost = 5
+        icon = GFX_focus_generic_road_investment
+        mutually_exclusive = {
+        }
+
+        x = 2
+        y = 2
+
+        prerequisite = {
+            focus = ROM_iskat_poleznoe_iskapoemoe
+        }
+        relative_position_id = ROM_capitaliteshiski_put
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_gos_plan
+        cost = 5
+        icon = GFX_focus_generic_industry_3
+        mutually_exclusive = {
+        }
+
+        x = 0
+        y = 1
+
+        prerequisite = {
+            focus = ROM_reforma_planovai_economyc
+        }
+        relative_position_id = ROM_reforma_planovai_economyc
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_free_medic
+        cost = 5
+        icon = GFX_focus_generic_bad_medical
+        mutually_exclusive = {
+        }
+
+        x = 1
+        y = 1
+
+        prerequisite = {
+            focus = ROM_gos_plan
+        }
+        relative_position_id = ROM_gos_plan
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_monarchyskie_ambisee
+        cost = 5
+        icon = GFX_focus_generic_monarchist_sentiment
+        mutually_exclusive = {
+            focus = ROM_profsoize
+            focus = ROM_profesti_vybory
+        }
+        allow_branch = {
+            NOT = {
+                has_completed_focus = ROM_podgotovka_k_vyboramy
+                has_completed_focus = ROM_uslekenie_profsoisov
+            }
+        }
+
+        x = -1
+        y = 1
+
+        prerequisite = {
+            focus = ROM_dolsnost_corol
+        }
+        relative_position_id = ROM_dolsnost_corol
+
+
+        available = {
+            NOT = {
+                has_completed_focus = ROM_podgotovka_k_vyboramy 
+                has_completed_focus = ROM_uslekenie_profsoisov 
+            }
+        }
+
+        completion_reward = {
+            add_timed_idea = {
+                days = 365
+                idea = idea_ROM_Monarxizm
+            } 
+            mark_focus_tree_layout_dirty = yes
+  
+        }
+    }
+    focus = {
+        id = ROM_svadba_corol
+        cost = 5
+        icon = GFX_focus_generic_monarchy_2
+        mutually_exclusive = {
+
+        }
+
+        x = -1
+        y = 3
+
+        prerequisite = {
+            focus = ROM_monarchyskie_ambisee
+        }
+        relative_position_id = ROM_monarchyskie_ambisee
+
+
+        available = {}
+
+        completion_reward = {
+            country_event = ROM_monarxii.1
+        }
+    }
+    focus = {
+        id = ROM_HUN_diplomatic_MIXAI
+        cost = 5
+        icon = GFX_focus_generic_befriend_hungary
+        mutually_exclusive = {
+            focus = ROM_BOL_diplomatic_MIXAI
+        }
+
+        x = -2
+        y = 1
+
+        prerequisite = {
+            focus = ROM_svadba_corol
+        }
+        relative_position_id = ROM_svadba_corol
+
+
+        available = {
+            has_country_flag = ROM_HUN_yes
+        }
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_HUN_priglasit_Gabsburga_v_BUXAREST
+        cost = 5
+        icon = GFX_focus_HUN_invite_otto_to_the_throne
+        mutually_exclusive = {
+        }
+
+        x = -1
+        y = 1
+
+        prerequisite = {
+            focus = ROM_HUN_diplomatic_MIXAI
+        }
+        relative_position_id = ROM_HUN_diplomatic_MIXAI
+
+
+        available = {}
+
+        completion_reward = {
+            add_political_power = 100
+            HUN = {
+                add_opinion_modifier = {
+                    target = ROM
+                    modifier = HUN_ROM_COROL
+                }
+            }
+        }
+    }
+    focus = {
+        id = ROM_HUN_obeadinit
+        cost = 5
+        icon = GFX_focus_HUN_the_lands_of_the_crown_of_saint_stephen
+        mutually_exclusive = {
+        }
+
+        x = 0
+        y = 1
+
+        prerequisite = {
+            focus = ROM_HUN_priglasit_Gabsburga_v_BUXAREST
+        }
+        relative_position_id = ROM_HUN_priglasit_Gabsburga_v_BUXAREST
+
+
+        available = {
+            HUN = {
+                has_opinion = {
+                    target = ROM
+                    value > 50
+                }
+            }
+        }
+
+        completion_reward = {
+            HUN = {
+                country_event = ROM_monarxii.4
+            }
+        }
+    }
+    
+    focus = {
+        id = ROM_BOL_diplomatic_MIXAI
+        cost = 5
+        icon = GFX_focus_generic_befriend_bulgaria
+        mutually_exclusive = {
+            focus = ROM_HUN_diplomatic_MIXAI
+        }
+
+        x = 0
+        y = 1
+
+        prerequisite = {
+            focus = ROM_svadba_corol
+        }
+        relative_position_id = ROM_svadba_corol
+
+
+        available = {
+            has_country_flag = ROM_BUL_yes
+        }
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_BOL_obeadinit
+        cost = 5
+        icon = GFX_focus_BUL_consolidate_the_third_bulgarian_state
+        mutually_exclusive = {
+        }
+
+        x = 0
+        y = 2
+
+        prerequisite = {
+            focus = ROM_BOL_diplomatic_MIXAI
+        }
+        relative_position_id = ROM_BOL_diplomatic_MIXAI
+
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_Boshe_xrany_corola
+        cost = 5
+        icon = GFX_focus_rom_coup
+        mutually_exclusive = {
+        }
+
+        x = 0
+        y = 1
+
+        prerequisite = {
+            focus = ROM_monarchyskie_ambisee
+        }
+        relative_position_id = ROM_monarchyskie_ambisee
+
+
+        available = {}
+
+        completion_reward = {
+            set_country_leader_ideology = absolut
+            custom_effect_tooltip = ROM_Mixai_absolut_monarx_tt
+            custom_effect_tooltip = CHL_skip_one_line_tt
+            add_popularity = {
+                ideology = monorxism
+                popularity = 0.2
+            }
+            add_stability = 0.05
+
+        }
+    }
+    focus = {
+        id = ROM_dolg_pered_dinastiei
+        cost = 5
+        icon = GFX_focus_generic_military_mission
+        mutually_exclusive = {
+        }
+
+        x = -2
+        y = 1
+
+        prerequisite = {
+            focus = ROM_Boshe_xrany_corola
+        }
+        relative_position_id = ROM_Boshe_xrany_corola
+
+
+        available = {}
+
+        completion_reward = {
+            add_popularity = {
+                ideology = monorxism
+                popularity = 0.05
+            }
+            add_ideas = idea_ROM_Monarxizm_dolg
+
+        }
+    }
+    focus = {
+        id = ROM_constitutsia_Mixai
+        cost = 5
+        icon = GFX_focus_AFG_pashtunistan_referendum
+        mutually_exclusive = {
+        }
+
+        x = 2
+        y = 0
+
+        prerequisite = {
+            focus = ROM_dolsnost_corol
+        }
+        relative_position_id = ROM_monarchyskie_ambisee 
+
+
+        available = {
+            NOT = {
+                has_completed_focus = ROM_monarchyskie_ambisee
+            }
+        }
+
+        completion_reward = {
+            add_popularity = {
+                ideology = monorxism
+                popularity = 0.1
+            }
+
+        }
+    }
+    focus = {
+        id = ROM_rashirit_corolevsky_gvardiu
+        cost = 5
+        icon = GFX_focus_NORDIC_mon_army
+        mutually_exclusive = {
+        }
+
+        x = 1
+        y = 4
+
+        prerequisite = {
+            focus = ROM_svadba_corol
+            focus = ROM_corolevskaya_diplomatic
+        }
+        relative_position_id = ROM_monarchyskie_ambisee
+
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_REvanshizm
+        cost = 5
+        icon = GFX_focus_PER_stage_mass_protests
+        mutually_exclusive = {
+        }
+
+        x = 0
+        y = 1
+
+        prerequisite = {
+            focus = ROM_rashirit_corolevsky_gvardiu
+        }
+        relative_position_id = ROM_rashirit_corolevsky_gvardiu
+
+
+        available = {}
+
+        completion_reward = {
+            add_ideas = idea_ROM_Revanshizm
+        }
+    }
+    focus = {
+        id = ROM_Balkan_imperializm
+        cost = 5
+        icon = GFX_focus_generic_balkans_focus
+        mutually_exclusive = {
+        }
+
+        x = 0
+        y = 3
+
+        prerequisite = {
+            focus = ROM_propoganda_velikow_ROM  
+            focus = ROM_HUN_obeadinit
+            focus = ROM_BOL_obeadinit
+        }
+        prerequisite = {
+            focus = ROM_REvanshizm 
+        }
+        relative_position_id = ROM_finans_cerkvy
+
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_corolevskaya_diplomatic
+        cost = 5
+        icon = GFX_focus_generic_monarchy_1
+        mutually_exclusive = {
+        }
+
+        x = 1
+        y = 2
+
+        prerequisite = {
+            focus = ROM_monarchyskie_ambisee
+        }
+        relative_position_id = ROM_monarchyskie_ambisee
+
+
+        available = {}
+
+        completion_reward = {
+            add_political_power = 100
+            add_war_support = 0.05
+        }
+    }
+    focus = {
+        id = ROM_propoganda_velikow_ROM
+        cost = 5
+        icon = GFX_focus_rom_preserve_romania
+        mutually_exclusive = {
+        }
+
+        x = 4
+        y = 3
+
+        prerequisite = {
+            focus = ROM_corolevskaya_diplomatic
+        }
+        prerequisite = {
+            focus = ROM_obrozovanie_dla_vsex
+        }
+        relative_position_id = ROM_corolevskaya_diplomatic
+
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_patriaxat_unistan ####Юстиниан (патриарх Румынский)
+        cost = 5
+        icon = GFX_focus_SOV_patriarch_of_all_russia
+        mutually_exclusive = {
+            focus = ROM_mascka_religii
+        }
+
+        x = 1
+        y = 1
+
+        prerequisite = {
+            focus = ROM_corolevskaya_diplomatic
+            focus = ROM_novea_constitutsia_dem
+        }
+        relative_position_id = ROM_corolevskaya_diplomatic
+
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_mascka_religii
+        cost = 5
+        icon = GFX_focus_generic_secret_service_agency
+        mutually_exclusive = {
+            focus = ROM_patriaxat_unistan
+        }
+
+        x = 3
+        y = 1
+
+        prerequisite = {
+            focus = ROM_corolevskaya_diplomatic
+            focus = ROM_novea_constitutsia_dem
+        }
+        relative_position_id = ROM_corolevskaya_diplomatic
+
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_finans_cerkvy
+        cost = 5
+        icon = GFX_focus_BUL_restore_the_bulgarian_patriarchate
+        mutually_exclusive = {
+        }
+
+        x = 1
+        y = 1
+
+        prerequisite = {
+            focus = ROM_patriaxat_unistan
+            focus = ROM_mascka_religii
+        }
+        relative_position_id = ROM_patriaxat_unistan
+
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+    focus = {
+        id = ROM_unishtoshit_ateistov
+        cost = 5
+        icon = GFX_focus_ger_bulwark_against_bolshevism
+        mutually_exclusive = {
+        }
+
+        x = 0
+        y = 1
+
+        prerequisite = {
+            focus = ROM_finans_cerkvy
+        }
+        relative_position_id = ROM_finans_cerkvy
+
+
+        available = {}
+
+        completion_reward = {
+        }
+    }
+
+    focus = {
+        id = ROM_conductor_reshim
+        cost = 5
+        icon = GFX_focus_generic_military_dictatorship
+        mutually_exclusive = { focus = ROM_sudba_corol_mixail }
+
+        x = 3
+        y = 0
+
+        prerequisite = {}
+        allow_branch = {
+            NOT = {
+                has_completed_focus = ROM_sudba_corol_mixail 
+            }
+        }
+
+
+        available = {
+            has_government = fascism
+            has_elections = no
+            has_stability > 0.1
+        }
+
+        completion_reward = {
+            mark_focus_tree_layout_dirty = yes
+            add_political_power = 100
+            add_ideas = idea_ROM_conductorky_reshim
+        }
+    }
+    focus = {
+        id = ROM_usilit_rehim 
+        cost = 5
+        icon = GFX_focus_GER_appease_the_wehrmacht
+        mutually_exclusive = {
+            focus = ROM_nevtenoae_nezvismost_ROM
+        }
+
+        x = 0
+        y = 2
+
+        prerequisite = { focus = ROM_conductor_reshim }
+
+        relative_position_id = ROM_conductor_reshim
+
+        available = {}
+
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = idea_ROM_conductorky_reshim
+                add_idea = idea_ROM_uselenii_conductorky_reshim
+            }
+        }
+    }
+    ###### Путь Независимости #####
+    focus = {
+        id = ROM_nevtenoae_nezvismost_ROM
+        cost = 5
+        icon = GFX_focus_PER_donate_oil_fields
+        mutually_exclusive = {
+            focus = ROM_usilit_rehim
+        }
+
+        x = 2
+        y = 2
+
+        prerequisite = { focus = ROM_conductor_reshim }
+
+        relative_position_id = ROM_conductor_reshim
+
+        available = {}
+
+        completion_reward = {
+            add_autonomy_ratio = {
+                value = 0.1
+                localization = AST_adopt_westminster
+            }
+            add_political_power = 75
+            GER = {
+                remove_resource_rights = 46
+            }
+        }
+    }
+    focus = {
+        id = ROM_anti_ger_propoganda
+        cost = 5
+        icon = GFX_goal_generic_propaganda  
+        mutually_exclusive = {
+            focus = ROM_reformy_sheleznow_gvadrii
+        }
+
+        x = 2
+        y = 1
+
+        prerequisite = { focus = ROM_nevtenoae_nezvismost_ROM }
+        allow_branch = {
+            NOT = {
+                has_completed_focus = ROM_reformy_sheleznow_gvadrii
+                has_completed_focus = ROM_sudba_corol_mixail
+            }
+        }
+
+        relative_position_id = ROM_nevtenoae_nezvismost_ROM
+
+        available = {}
+
+        completion_reward = {
+            mark_focus_tree_layout_dirty = yes
+            add_popularity = {
+                ideology = fascism
+                popularity = -0.1
+            }
+            remove_ideas = idea_ROM_GER_vliaenie
+        }
+    }
+    focus = {
+        id = ROM_krug_SIMY
+        cost = 5
+        icon = GFX_focus_POL_complete_april_constitution
+        mutually_exclusive = {
+            focus = ROM_faschist_SOVET
+        }
+
+        x = -1
+        y = 1
+
+        prerequisite = { focus = ROM_anti_ger_propoganda }
+
+        relative_position_id = ROM_anti_ger_propoganda
+
+        available = {}
+
+        completion_reward = {
+            add_ideas = idea_ROM_krug_Simy
+        }
+    }
+    focus = {
+        id = ROM_faschist_SOVET
+        cost = 5
+        icon = GFX_focus_ITA_generic_fascist_workers
+        mutually_exclusive = {
+            focus = ROM_krug_SIMY
+        }
+
+        x = 1
+        y = 1
+
+        prerequisite = { focus = ROM_anti_ger_propoganda }
+
+        relative_position_id = ROM_anti_ger_propoganda
+
+        available = {}
+
+        completion_reward = {
+            add_ideas = idea_ROM_fascist_Sovet
+            create_country_leader = {
+				name = ROM_partias
+				desc = "ROM_partias_DESC"
+				picture = GFX_portrait_ROM_partiass
+				expire = "2000.1.1"
+				ideology = nazism
+				traits = {
+					nepolnotasenaevlast 
+				}
+			}
+        }
+    }
+    focus = {
+        id = ROM_rashirit_army
+        cost = 5
+        icon = GFX_focus_generic_fascist_troops
+        mutually_exclusive = {
+        }
+
+        x = 0
+        y = 2
+
+        prerequisite = { 
+            focus = ROM_krug_SIMY
+            focus = ROM_faschist_SOVET
+        }
+
+        relative_position_id = ROM_anti_ger_propoganda
+
+        available = {}
+
+        completion_reward = {
+            add_manpower = 100000
+            add_equipment_subsidy = {
+                cic = 1000
+                equipment_type = infantry_equipment
+                seller_trigger = my_scripted_trigger
+            }
+            custom_effect_tooltip = generic_skip_one_line_tt
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = 5000
+                producer = ROM
+            }
+        }
+    }
+    focus = {
+        id = ROM_zahvat_scladov_german_army
+        cost = 5
+        icon = GFX_focus_AUS_raid_military_storages
+        mutually_exclusive = {
+        }
+
+        x = 0
+        y = 1
+
+        prerequisite = { 
+            focus = ROM_rashirit_army
+        }
+
+        relative_position_id = ROM_rashirit_army
+
+        available = {}
+
+        completion_reward = {
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = 10000
+                producer = GER
+            }
+            add_equipment_to_stockpile = {
+                type = artillery_equipment
+                amount = 1000
+                producer = GER
+            }
+            add_equipment_to_stockpile = {
+                type = explosive_ammo_equipment
+                amount = 50
+                producer = GER
+            }
+            add_equipment_to_stockpile = {
+                type = support_equipment
+                amount = 1250
+                producer = GER
+            }
+            add_war_support = 0.1
+        }
+    }
+    focus = {
+        id = ROM_AKT_nezovisimosty 
+        cost = 5
+        icon = GFX_focus_AUS_lawmaking_leniency
+        mutually_exclusive = {
+        }
+
+        x = 0
+        y = 1
+
+        prerequisite = { 
+            focus = ROM_zahvat_scladov_german_army
+        }
+
+        relative_position_id = ROM_zahvat_scladov_german_army
+
+        available = {}
+
+        completion_reward = {
+            GER = {
+                end_puppet = ROOT
+            }
+            add_timed_idea = {
+                days = 365
+                idea = idea_ROM_nezavisimost
+            }    
+        }
+    }
+    ############
+    focus = {
+        id = ROM_reformy_sheleznow_gvadrii 
+        cost = 5
+        icon = GFX_focus_ITA_generic_fascist_workers
+        mutually_exclusive ={
+            focus = ROM_anti_ger_propoganda
+        }
+
+        x = -1
+        y = 1
+
+        prerequisite = { 
+            focus = ROM_usilit_rehim 
+            focus = ROM_nevtenoae_nezvismost_ROM
+        }
+        allow_branch = {
+            NOT = {
+                has_completed_focus = ROM_anti_ger_propoganda
+                has_completed_focus = ROM_sudba_corol_mixail
+            }
+        }
+
+        relative_position_id = ROM_usilit_rehim
+
+        available = {}
+
+        completion_reward = {
+            mark_focus_tree_layout_dirty = yes
+            add_political_power = 50
+            add_popularity = {
+                ideology = fascism
+                popularity = 0.05
+            }
+        }
+    }
+    focus = {
+        id = ROM_bloshe_vlasty_partii 
+        cost = 5
+        mutually_exclusive = { focus = ROM_totalitarzm_Simy }
+        icon = GFX_focus_generic_full_employment
+
+        x = 2
+        y = 1
+
+        prerequisite = { focus = ROM_reformy_sheleznow_gvadrii }
+
+        relative_position_id = ROM_reformy_sheleznow_gvadrii
+
+        available = {}
+
+        completion_reward = {
+            add_ideas = idea_ROM_fascist_Sovet
+        }
+    }
+    focus = {
+        id = ROM_sudba_corol 
+        icon = GFX_focus_rom_coup
+        cost = 5
+
+        x = 1
+        y = 1
+
+        prerequisite = { 
+            focus = ROM_totalitarzm_Simy 
+            focus = ROM_bloshe_vlasty_partii
+        }
+
+        relative_position_id = ROM_totalitarzm_Simy
+
+        available = {}
+
+        completion_reward = {
+            country_event = ROM_carol.1   
+        }
+    }
+    focus = {
+        id = ROM_propoganda
+        icon = GFX_focus_generic_industrialists
+        cost = 5
+
+        x = 1
+        y = 1
+
+        prerequisite = { 
+            focus = ROM_sudba_corol
+            focus = ROM_krug_SIMY
+            focus = ROM_faschist_SOVET
+        }
+
+        relative_position_id = ROM_sudba_corol
+
+        available = {}
+
+        completion_reward = {
+            add_ideas = idea_ROM_propoganda
+        }
+    }
+    focus = {
+        id = ROM_novea_constitutsia
+        icon = GFX_goal_generic_forceful_treaty
+        cost = 5
+
+        x = 0
+        y = 1
+
+        prerequisite = { 
+            focus = ROM_propoganda
+        }
+
+        relative_position_id = ROM_propoganda
+
+        available = {}
+
+        completion_reward = {
+            add_ideas = idea_ROM_novae_constitution
+        }
+    }
+    focus = {
+        id = ROM_ustonovit_edinstvo_partii 
+        icon = GFX_focus_GER_anschluss
+        cost = 5
+
+        x = 0
+        y = 1
+
+        prerequisite = { 
+            focus = ROM_novea_constitutsia 
+        }
+
+        relative_position_id = ROM_novea_constitutsia
+
+        available = {}
+
+        completion_reward = {
+            add_popularity = {
+                ideology = fascism
+                popularity = 1
+            }
+            
+        }
+    }
+    focus = {
+        id = ROM_totalitarzm_Simy 
+        cost = 5
+        icon = GFX_focus_rom_preserve_romania
+        mutually_exclusive = { focus = ROM_bloshe_vlasty_partii }
+
+        x = 0
+        y = 1
+
+        prerequisite = { focus = ROM_reformy_sheleznow_gvadrii }
+
+        relative_position_id = ROM_reformy_sheleznow_gvadrii
+
+        available = {}
+
+        completion_reward = {
+            add_country_leader_trait = ROM_Simy_totalitarism
+        }
+    }
+    focus = {
+        id = ROM_pevyi_rumsky_arbitrash
+        cost = 5
+        icon = GFX_focus_generic_attack_romania
+
+        x = -4
+        y = 1
+        available = {
+            has_war_support > 0.5
+            has_army_manpower = {
+                size > 100000
+            }
+        }
+
+        prerequisite = { 
+            focus = ROM_totalitarzm_Simy 
+            focus = ROM_krug_SIMY
+            focus = ROM_bloshe_vlasty_partii
+            focus = ROM_faschist_SOVET
+        }
+        allow_branch = {
+        }
+
+        relative_position_id = ROM_totalitarzm_Simy
+
+        available = {}
+
+        completion_reward = {
+            add_state_core = 192
+            add_state_core = 834
+            add_contested_owner = 84
+            add_contested_owner = 76
+            add_state_claim = 84
+            add_state_claim = 76
+        }
+    }
+    focus = {
+        id = ROM_potrebovat_banat
+        cost = 5
+
+        x = 0
+        y = 1
+
+        prerequisite = { focus = ROM_pevyi_rumsky_arbitrash }
+
+        relative_position_id = ROM_pevyi_rumsky_arbitrash
+
+        available = {
+            82 = {
+                controller = {
+                    NOT = {
+                        has_war_with = ROOT
+                    }
+                }
+            }
+        } 
+
+        completion_reward = {
+            82 = {
+                controller = {
+                    country_event = ROM_potrebovat.1
+                }
+            }
+        }
+    }
+    focus = {
+        id = ROM_potrebovat_bukoviny
+        cost = 5
+
+        x = -2
+        y = 1
+
+        prerequisite = { focus = ROM_pevyi_rumsky_arbitrash }
+
+        relative_position_id = ROM_pevyi_rumsky_arbitrash
+
+        available = {
+            80 = {
+                controller = {
+                    NOT = {
+                        has_war_with = ROOT
+                    }
+                }
+            }
+        }
+
+        completion_reward = {
+            80 = {
+                controller = {
+                    country_event = ROM_potrebovat.3  
+                } 
+            }
+        }
+    }
+    focus = {
+        id = ROM_vtoroy_RUM_arbitras 
+        cost = 5
+        icon = GFX_focus_generic_attack_romania   
+
+        x = -1
+        y = 1
+
+        prerequisite = { focus = ROM_potrebovat_bukoviny }
+        prerequisite = { focus = ROM_potrebovat_banat }
+
+        relative_position_id = ROM_potrebovat_banat
+
+        available = {
+            has_war_support > 0.4
+            has_army_manpower = {
+                size > 200000
+            }
+        }
+
+        completion_reward = {
+            add_state_claim = 197
+            add_state_claim = 211
+            
+        }
+    }
+    focus = {
+        id = ROM_potrebovat_ukrain
+        cost = 5
+        icon = GFX_focus_HUN_the_kingdom_of_ukraine
+
+        x = 2
+        y = 1
+
+        prerequisite = { focus = ROM_vtoroy_RUM_arbitras }
+
+        relative_position_id = ROM_vtoroy_RUM_arbitras
+
+        available = {
+            RKU = {
+                exists = yes
+            }
+        }
+
+        completion_reward = {
+            if = {
+            limit = {
+                RKU = {
+                    is_subject = yes  
+                }
+            }
+            RKU = {
+                OVERLORD = { 
+                    country_event = { id = ROM_potrebovat.5 days = 10 }   
+                }
+            }
+        }
+        else = {
+            limit = {
+                RKU = {
+                    is_subject = no
+                }
+            }
+            RKU = {
+                country_event = ROM_potrebovat.5
+            }
+        }
+        }
+    }
+    focus = {
+        id = ROM_assimilization_ukrain
+        cost = 10
+        icon = GFX_focus_SWE_revoke_militia_law 
+
+        x = 0
+        y = 1
+
+        prerequisite = { focus = ROM_potrebovat_ukrain }
+
+        relative_position_id = ROM_potrebovat_ukrain
+
+
+        available = {
+            ROM = {
+                has_subject = RKU
+            }
+        }
+
+        completion_reward = {
+            set_state_owner = 197 
+            set_state_owner = 203
+            add_state_core = 197
+            add_state_core = 203
+        }
+    }
+    focus = {
+        id = ROM_ambisee_v_balkanax
+        cost = 5
+        icon = GFX_focus_generic_balkans_focus
+
+        x = 0
+        y = 1
+
+        prerequisite = { focus = ROM_vtoroy_RUM_arbitras }
+
+        relative_position_id = ROM_vtoroy_RUM_arbitras
+
+        available = {
+            threat > 0.25
+        }
+
+        completion_reward = {
+            add_war_support = 0.05
+            add_ideas = idea_ROM_balkan_ambise
+        }
+    }
+    focus = {
+        id = ROM_sozdanie_velikow_ROM  
+        cost = 5
+        icon = GFX_focus_generic_attack_romania
+
+        x = 1
+        y = 2
+
+        prerequisite = { 
+            focus = ROM_ambisee_v_balkanax
+            focus = ROM_assimilization_ukrain
+        }
+
+        relative_position_id = ROM_ambisee_v_balkanax
+
+        available = {}
+
+        completion_reward = {
+            ROM = {
+                set_cosmetic_tag = ROM_TITAN
+            }
+        }
+    }
+    focus = {
+        id = ROM_gvardeisky_divisee
+        icon = GFX_goal_rhineland
+        cost = 5
+
+        x = -1
+        y = 1
+
+        prerequisite = { 
+            focus = ROM_totalitarzm_Simy 
+            focus = ROM_krug_SIMY
+            focus = ROM_faschist_SOVET
+            focus = ROM_bloshe_vlasty_partii
+        }
+
+        relative_position_id = ROM_totalitarzm_Simy
+
+        available = {}
+
+        completion_reward = {
+            add_manpower = 25000
+            add_command_power = 25
+            army_experience = 10
+        }
+    }
+    focus = {
+        id = ROM_podershka_reixa
+        cost = 5
+        icon = GFX_focus_chi_mission_to_germany
+
+        x = 0
+        y = 2
+
+        prerequisite = { focus = ROM_totalitarzm_Simy }
+
+        relative_position_id = ROM_totalitarzm_Simy
+
+        available = {}
+
+        completion_reward = {
+            remove_ideas = idea_ROM_GER_vliaenie
+        }
+    }
+    focus = {
+        id = ROM_AKT_oborony
+        cost = 5
+        icon = GFX_goal_generic_military_sphere
+
+        x = 0
+        y = 1
+
+        prerequisite = { focus = ROM_podershka_reixa }
+
+        relative_position_id = ROM_podershka_reixa
+        available = {}
+
+        completion_reward = {
+            add_war_support = 0.1
+        }
+    }
+    focus = {
+        id = ROM_germansky_tanky 
+        cost = 5
+        icon = GFX_focus_GER_adopt_new_panzer_doctrine_historical
+
+        x = 0
+        y = 1
+
+        prerequisite = { focus = ROM_AKT_oborony }
+
+        relative_position_id = ROM_AKT_oborony
+        available = {
+            NOT = {
+                has_war_with = GER
+            }
+        }
+
+        completion_reward = {
+            random_owned_controlled_state = {
+                add_building_construction = {
+                    type = arms_factory
+                    level = 1
+                    instant_build = yes
+                }
+            }
+            random_owned_controlled_state = {
+                add_building_construction = {
+                    type = arms_factory
+                    level = 1
+                    instant_build = yes
+                }
+            }
+        }
+    }
+}
