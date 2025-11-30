@@ -217,13 +217,18 @@ focus_tree = {
                     instant_build = yes
                 }
             }
+<<<<<<< HEAD
             random_owned_state = {   
+=======
+            random_owned_state = {
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
                 add_building_construction = {
                     type = industrial_complex
                     level = 1
                     instant_build = yes
                 }
             }
+<<<<<<< HEAD
             effect_tooltip = CHL_skip_one_line_tt
             set_country_flag = ROM_ecnomic_start
             custom_effect_tooltip = CHL_skip_one_line_tt
@@ -234,6 +239,11 @@ focus_tree = {
             }
         }
     } 
+=======
+            set_country_flag = ROM_ecnomic_start
+        }
+    }
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
     focus = {
         id = ROM_nasyonal_predpriatii
         cost = 10

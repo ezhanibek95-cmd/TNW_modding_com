@@ -4,11 +4,20 @@ state={
 	provinces={
 		4559 4937 5009 7965 7976 8126 10413 10863 12789 12898 
 	}
+<<<<<<< HEAD
 	manpower=2000000
 	buildings_max_level_factor=1.000
 	state_category = pastoral
 	history={
 		owner = CHI
+=======
+	manpower=1000000
+	buildings_max_level_factor=1.000
+	state_category = pastoral
+	history={
+		owner = YUN
+		add_core_of = YUN
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 		add_core_of = CHI
 		add_core_of = PRC
 		victory_points = {
@@ -17,6 +26,25 @@ state={
 		buildings = {
 			infrastructure = 2
 		}
+<<<<<<< HEAD
+=======
+		1938.10.25 = {
+			if = {
+				limit = {
+					NOT = {
+						has_dlc = "Waking the Tiger" 
+					}
+
+				}
+				CHI = {
+					transfer_state = PREV
+
+				}
+
+			}
+
+		}
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 
 	}
 

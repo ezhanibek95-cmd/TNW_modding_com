@@ -7,6 +7,7 @@ state={
 	state_category = pastoral
 	
 	
+<<<<<<< HEAD
 	history = {
 
 		owner = PRC
@@ -31,6 +32,32 @@ state={
 		coal = 8 #initial distribution
 		steel = 16
 	}
+=======
+	history=
+	{
+		owner = SHX
+		add_core_of = SHX
+		add_core_of = CHI
+		add_core_of = PRC
+		add_core_of = MEN
+		
+		buildings = {
+			infrastructure = 1
+		}
+
+		1938.10.25 = {
+			controller = JAP
+		}
+		
+		1939.1.1 = {
+			
+			owner = PRC
+			controller = MEN
+
+		}
+	}
+	manpower=500000
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 	buildings_max_level_factor=1.000
 
 	local_supplies=0.0 

@@ -522,12 +522,15 @@ guiTypes = {
 			centerposition = yes
 			Orientation = CENTER
 		}
+<<<<<<< HEAD
 
 		iconType = {
 		    name = "overlay"
 		    position = { x = -9 y = -28 }
 		    alwaystransparent = yes
 		}
+=======
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 		
 		iconType = {
 			name = "historical"
@@ -719,7 +722,13 @@ guiTypes = {
 			maxWidth = 450
 			maxHeight = 30
 			format = center
+<<<<<<< HEAD
 			fixedsize = yes		
+=======
+			fixedsize = yes
+            scrollbarType = standardtext_slider			
+			
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 		}
 		iconType = {
 			name = "symbol"
@@ -770,6 +779,10 @@ guiTypes = {
 			text = "Description"
 			maxWidth = 485
 			maxHeight = 70
+<<<<<<< HEAD
+=======
+			scrollbarType = standardtext_slider
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 			format = center
 		}
 

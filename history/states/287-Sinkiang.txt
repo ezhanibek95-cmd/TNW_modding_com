@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 state = {
 	id = 287
 	name = "STATE_287"
@@ -9,11 +10,29 @@ state = {
 
 		buildings = {
 			infrastructure = 1
+=======
+state={
+	id=287
+	name="STATE_287"
+
+	history={
+		owner = SIK
+		add_core_of = SIK
+		add_core_of = CHI
+		add_core_of = PRC
+		buildings = {
+			infrastructure = 1
+
+		}
+		victory_points = {
+			4973 1
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 		}
 	}
 
 
 	provinces={
+<<<<<<< HEAD
 		5016 7790 8042 8086 10885 12864 
 	}
 	manpower = 58000
@@ -23,4 +42,13 @@ state = {
 	force_link_ownership_to = 1042 # Khotan
 
 	local_supplies = 0.0 
+=======
+		4973 8042 8086 10885 10911 12864 
+	}
+	manpower=408000
+	buildings_max_level_factor=1.000
+	state_category=wasteland
+
+	local_supplies=4.0 
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 }

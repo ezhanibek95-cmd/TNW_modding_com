@@ -3,13 +3,21 @@ state={
 	name="STATE_617"
 
 	history={
+<<<<<<< HEAD
 		owner = PRC
 		add_core_of = CHI
+=======
+		owner = SIK
+		add_core_of = SIK
+		add_core_of = CHI
+		add_core_of = PRC
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 		buildings = {
 			infrastructure = 2
 			industrial_complex = 2
 
 		}
+<<<<<<< HEAD
 
 		victory_points = {
 			4709 5 # Urumqi
@@ -21,6 +29,10 @@ state={
 
 		victory_points = {
 			4682 1 # Aksu
+=======
+		victory_points = {
+			4709 5
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 		}
 
 	}

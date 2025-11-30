@@ -1,5 +1,6 @@
 state = {
 	id = 528
+<<<<<<< HEAD
 	name = "STATE_528" # North Kyushu
 	manpower = 6046000 # was 9069000
 
@@ -8,6 +9,15 @@ state = {
 	resources = {
 		chromium = 32 # was: 88, then 52
 		coal = 15 # initial distribution
+=======
+	name = "STATE_528" # Kyushu
+	manpower = 9069000
+
+	state_category = large_city
+
+	resources = {
+		chromium = 52 # was: 88
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 	}
 
 	history = {
@@ -18,9 +28,15 @@ state = {
 		buildings = {
 			infrastructure = 4 #was: 7
 			air_base = 3
+<<<<<<< HEAD
 			dockyard = 3
 			arms_factory = 1
 			industrial_complex = 1
+=======
+			dockyard = 4
+			arms_factory = 1
+			industrial_complex = 2
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 
 			9950 = {
 				naval_base = 6
@@ -33,6 +49,7 @@ state = {
 		}
 
 		victory_points = {
+<<<<<<< HEAD
 			9950 15 # Nagasaki
 		}
 
@@ -42,12 +59,23 @@ state = {
 
 		victory_points = {
 			11925 5 # Kumamoto
+=======
+			4102 15 # Kagoshima
+		}
+
+		victory_points = {
+			9950 20 # Nagasaki
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 		}
 
 		1939.1.1 = {
 			buildings = {
 				dockyard = 4
+<<<<<<< HEAD
 				industrial_complex = 2
+=======
+				industrial_complex = 3
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 				7110 = {
 					naval_facility = 1 # Sasebo Naval Arsenal
 				}
@@ -57,7 +85,11 @@ state = {
 	}
 
 	provinces = {
+<<<<<<< HEAD
 		1025 1158 4027 4164 7110 9950 10011 10020 10092 11925 
+=======
+		1020 1025 1158 1183 4027 4102 4164 4198 7110 7178 9950 10011 10020 10092 11925 11949 12006 12032 
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 	}
 
 	local_supplies = 10.0 

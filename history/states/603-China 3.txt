@@ -12,6 +12,19 @@ state={
 			arms_factory = 2
 
 		}
+<<<<<<< HEAD
+=======
+		1939.1.1 = {
+			buildings = {
+				industrial_complex = 4
+				infrastructure = 2
+				air_base = 1
+				arms_factory = 2
+
+			}
+
+		}
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 		victory_points = {
 			4504 3 
 		}
@@ -19,6 +32,7 @@ state={
 	}
 
 	provinces={
+<<<<<<< HEAD
 		1474 1884 4504 4532 7521 7549 7577 8095 10616 10819  
 	}
 	manpower=7543200
@@ -26,6 +40,11 @@ state={
 	resources = {
 		coal = 3 # initial distribution
 	}
+=======
+		1474 1884 4192 4504 4532 5072 7521 7549 7577 8095 10616 10819 12841 
+	}
+	manpower=7543200
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 	buildings_max_level_factor=1.000
 	state_category=town
 

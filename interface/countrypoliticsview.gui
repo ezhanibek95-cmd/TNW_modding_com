@@ -53,6 +53,7 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "chart_explanation"
+<<<<<<< HEAD
 			position = { x = 18 y = 116 }
 			size = { width = 330 height = 70 }
 			clipping = no
@@ -65,6 +66,22 @@ guiTypes = {
 			gridBoxType = {
 				name = "parties_grid"
 				position = { x = 260 y = 184 }
+=======
+			position = { x = 334 y = 297 }
+			size = { width = 216 height = 80 }
+			clipping = yes
+			verticalScrollbar = "right_vertical_slider"
+			margin = { top = 6 left = 0 bottom = 5 right = 0}
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_bg_1_scrollbar"
+			}
+
+			gridBoxType = {
+				name = "parties_grid"
+				position = { x = -55 y = 0 }
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 				size = { width = 100%% height = 100%% }
 				slotsize = { width = 230 height = 16 }
 				format = "UPPER_LEFT"
@@ -125,6 +142,7 @@ guiTypes = {
 				vertical_alignment = center
 			}
 			
+<<<<<<< HEAD
 			containerWindowType = {
 				name = "faction"
 				position = { x = 100 y = -50}
@@ -241,6 +259,26 @@ guiTypes = {
 					}
 				}
 			}
+=======
+			instantTextboxType = {
+				name = "faction_name"
+				position = { x = 105 y = -45 }
+				font = "hoi_18mbs"
+				text = "faction"
+				maxWidth = 195
+				maxHeight = 20
+				multiline = no
+				format = left
+			}
+			
+			buttonType = {
+				name = "dismantle_faction"
+				position = { x = 302 y = -50 }
+				quadTextureSprite = "GFX_dismantle_faction_button"
+				#buttonFont = "hoi_16mbs"
+				#buttonText = "DIPLOMACY_DISMANTLE_FACTION_TITLE"
+			}		
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 
 			containerWindowType = {
 				name = "power_balance_button"
@@ -296,6 +334,7 @@ guiTypes = {
 						
 		containerWindowType = {
 			name = "autonomy_progress_view"
+<<<<<<< HEAD
 			position = { x = 0 y = 430 }
 			size = { width = 100%% height = 75 }
 			clipping = no
@@ -308,10 +347,17 @@ guiTypes = {
 				name = "backgroundwrapper"
 				position = { x = 280 y = 12 }
 				size = { width = 230 height = 50 }
+=======
+			position = { x = 170 y = 242 }
+			size = { width = 245 height = 55 }
+			clipping = no
+
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 			background = {
 				name = "Background"		
 				quadTextureSprite ="GFX_mini_bg"
 			}
+<<<<<<< HEAD
 		}
 		
 			instantTextboxType = {
@@ -341,6 +387,12 @@ guiTypes = {
 			instantTextboxType = {
 				name = "current_autonomy_name"
 				position = { x = 362 y = 17 }
+=======
+			
+			instantTextboxType = {
+				name = "current_autonomy_name"
+				position = { x = 92 y = 8 }
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 				font = "hoi_16mbs"
 				text = "autonomy"
 				fixedsize = yes
@@ -348,16 +400,27 @@ guiTypes = {
 				maxHeight = 20		
 				format = center
 			}
+<<<<<<< HEAD
 
 			buttonType = {
 				name = "prev_autonomy_level"
 				position = { x = 345 y = 18}
+=======
+			
+			buttonType = {
+				name = "prev_autonomy_level"
+				position = { x = 75 y = 9 }
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 				quadTextureSprite = "GFX_autonomy_level_button"
 			}
 			
 			iconType = {
 				name = "prev_level_glow"
+<<<<<<< HEAD
 				position = { x = 333 y = 11 }
+=======
+				position = { x = 63 y = 2 }
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 				quadTextureSprite = "GFX_ongoing_focus_goal_polview"
 				alwaystransparent = yes				
 				scale = 0.5
@@ -365,26 +428,42 @@ guiTypes = {
 			
 			iconType = {
 				name = "prev_autonomy_level_icon"
+<<<<<<< HEAD
 				position = { x = 330 y = 18 }
+=======
+				position = { x = 60 y = 9 }
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 				quadTextureSprite = "GFX_autonomy_unknown_icon"
 			}
 			
 			iconType = {
 				name = "autonomy_progress"
 				spriteType = "GFX_subject_progressbar"
+<<<<<<< HEAD
 				position = { x = 365 y = 38 }
+=======
+				position = { x = 95 y = 29 }
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 				frame = 100
 			}
 			
 			buttonType = {
 				name = "next_autonomy_level"
+<<<<<<< HEAD
 				position = { x = 460 y = 14 }
+=======
+				position = { x = 190 y = 5 }
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 				quadTextureSprite = "GFX_occupation_policy_button_selected"
 			}
 			
 			iconType = {
 				name = "next_level_glow"
+<<<<<<< HEAD
 				position = { x = 449 y = 7 }
+=======
+				position = { x = 179 y = -2 }
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 				quadTextureSprite = "GFX_ongoing_focus_goal_polview"
 				alwaystransparent = yes				
 				scale = 0.5
@@ -392,14 +471,22 @@ guiTypes = {
 			
 			iconType = {
 				name = "next_autonomy_level_icon"
+<<<<<<< HEAD
 				position = { x = 465 y = 18 }
+=======
+				position = { x = 195 y = 9 }
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 				quadTextureSprite = "GFX_autonomy_unknown_icon"
 				alwaystransparent = yes
 			}
 
 			iconType = {
 				name = "continuous_glow"
+<<<<<<< HEAD
 				position = { x = 274 y = 12 }
+=======
+				position = { x = 4 y = -2 }
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 				quadTextureSprite = "GFX_ongoing_generic_glow_yellow"
 				alwaystransparent = yes				
 				scale = 0.5
@@ -407,7 +494,11 @@ guiTypes = {
 			
 			iconType = {
 				name = "current_autonomy_level_icon"
+<<<<<<< HEAD
 				position = { x = 290 y = 19 }
+=======
+				position = { x = 20 y = 10 }
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 				quadTextureSprite = "GFX_autonomy_unknown_icon"
 			}
 		}
@@ -616,6 +707,11 @@ guiTypes = {
 				max_slots_horizontal = 1
 				format = "UPPER_LEFT"
 			}
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 		}
 
 		iconType ={

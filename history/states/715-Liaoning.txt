@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 state = {
 	id = 715
 	name = "STATE_715"
@@ -18,14 +19,39 @@ state = {
 		buildings = {
 			infrastructure = 3
 			arms_factory = 3
+=======
+state={
+	id=715
+	name="STATE_715"
+	manpower = 3643373
+	
+	state_category = town
+
+	history={
+		owner = MAN
+		add_core_of = CHI
+		add_core_of = MAN
+		add_core_of = PRC
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 			industrial_complex = 1
 		}
 
 	}
 
+<<<<<<< HEAD
 	provinces = {
 		916 930 1499 1508 1558 1627 1638 3877 3978 4561 4633 4642 6893 7812 9831 10429 11836 11903 12337 12469 12478 
 	}
 
 	local_supplies = 0.0 
+=======
+	provinces={
+		916 930 1499 1508 1558 1627 1638 3877 3978 4561 4633 4642 6893 7812 9831 10429 11836 11903 12337 12469 12478 
+	}
+
+	local_supplies=0.0 
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 }

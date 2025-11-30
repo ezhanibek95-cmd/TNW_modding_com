@@ -2,7 +2,11 @@ state = {
 	id = 596
 	name = "STATE_596"
 	manpower = 21230700
+<<<<<<< HEAD
 	state_category = town
+=======
+	state_category = city
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 
 	history = {
 
@@ -13,6 +17,7 @@ state = {
 		victory_points = { 
 			9974 1 # Ningbo
 		}
+<<<<<<< HEAD
 
 		victory_points = { 
 			7191 1 # Hangzhou
@@ -25,6 +30,11 @@ state = {
 		victory_points = { 
 			7174 1 # Quzhou
 		}
+=======
+		victory_points = { 
+			7191 1 # Hangzhou
+		}
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 		
 		buildings = {
 
@@ -47,6 +57,23 @@ state = {
 				bunker = 1
 			}
 		}
+<<<<<<< HEAD
+=======
+
+		1938.10.25 = {		
+			JAP = {
+				set_province_controller = 1055
+				set_province_controller = 1096
+				set_province_controller = 4042
+				set_province_controller = 7058
+				set_province_controller = 7191
+				set_province_controller = 9974
+				set_province_controller = 10014
+				set_province_controller = 10101
+				set_province_controller = 11991
+			} 			
+		}
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 	}
 
 	provinces = {

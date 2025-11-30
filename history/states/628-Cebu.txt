@@ -2,9 +2,15 @@ state=
 {
 	id=628
 	name="STATE_628"
+<<<<<<< HEAD
 	manpower = 3426194
 	
 	state_category = large_town
+=======
+	manpower = 3525715
+	
+	state_category = rural
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 	
 	history=
 	{

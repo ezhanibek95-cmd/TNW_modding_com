@@ -2,7 +2,11 @@ state={
 	id=748
 	name="STATE_748"
 	provinces={
+<<<<<<< HEAD
 		1010 4325 9939 10763 
+=======
+		1010 4141 4325 4431 9939 10763 11972 
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 	}
 	history={
 		owner = CHI

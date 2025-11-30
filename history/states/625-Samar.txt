@@ -2,10 +2,16 @@ state=
 {
 	id=625
 	name="STATE_625"
+<<<<<<< HEAD
 	manpower = 1213592
 	
 	state_category = town
 
+=======
+	manpower = 1138724
+	
+	state_category = rural
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 	history=
 	{
 		owner = PHI

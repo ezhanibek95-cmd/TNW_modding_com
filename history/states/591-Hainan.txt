@@ -1,15 +1,25 @@
 state={
 	id=591
 	name="STATE_591"
+<<<<<<< HEAD
 	manpower = 7480000 #was 4350000
 	state_category = town
 
 	history={
 		owner = CHI	
+=======
+	manpower = 4350000
+	state_category = town
+
+	history={
+		owner = GXC
+		add_core_of = GXC
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 		add_core_of = CHI
 		add_core_of = PRC
 		
 		victory_points = {
+<<<<<<< HEAD
 			1070 2 # Haikou
 		}
 
@@ -19,16 +29,41 @@ state={
 		
 		buildings = {
 			infrastructure = 2
+=======
+			1070 1 
+		}
+		
+		buildings = {
+			infrastructure = 1
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 			air_base = 1
 			1070 = {
 				naval_base = 2
 			}
 
 		}
+<<<<<<< HEAD
 	}
 
 	provinces={
 		994 1038 1070 11963 11990 
+=======
+
+		1938.10.25 = {
+			if = {
+				limit = {
+					NOT = { has_dlc = "Waking the Tiger" }
+				}
+				remove_core_of = GXC
+				CHI = { transfer_state = PREV }
+			}
+			controller = JAP
+		}
+	}
+
+	provinces={
+		994 1038 1070 4160 7135 11963 11990 
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 	}
 
 	local_supplies=1.0 

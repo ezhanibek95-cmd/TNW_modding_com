@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 state = {
 	id = 610
 	name = "STATE_610" # Jehol
@@ -26,13 +27,38 @@ state = {
 
 		buildings = {
 			infrastructure = 3
+=======
+
+state={
+	id=610
+	name="STATE_610" # Jehol
+	manpower = 1975377
+	
+	state_category = pastoral
+
+	history={
+		owner = MAN
+		add_core_of = CHI
+		add_core_of = MAN
+		add_core_of = PRC
+		buildings = {
+			infrastructure = 2
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 		}
 
 	}
 
+<<<<<<< HEAD
 	provinces = {
 		814 881 934 972 3814 3828 3881 3934 3955 4514 6837 6852 6898 6937 6969 6988 7575 7633 9768 9873 9927 10331 10426 10499 11801 11855 11886 
 	}
 
 	local_supplies = 0.0 
+=======
+	provinces={
+		814 881 934 972 3814 3828 3881 3934 3955 4514 6837 6852 6898 6937 6988 7575 7633 9768 9873 9905 9927 10331 10426 10499 11801 11855 11886 
+	}
+
+	local_supplies=0.0 
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 }

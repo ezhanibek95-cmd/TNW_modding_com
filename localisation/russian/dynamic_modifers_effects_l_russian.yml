@@ -28,6 +28,11 @@
  ROM_econmociheskaya_vosroshednie_RESORCE_MIN_EXPORT_tt: "  £resources_to_market_icon Ресурсы на продажу: §Y+30%§!"
  ROM_economic_SPEDD_STROITELSTVO_tt: "  £civ_factory Скорость строительства: §G+10%§!"
  ROM_economicRASHOD_PRIPASOV_tt: "  £supply_texticon Расход Припасов: §G-10%§!"
+<<<<<<< HEAD
  ROM_economic_SCOROST_ISLEDOVANIE_tt: "   £research_icon Скорость Исследований: §G+5%§!" 
  ROM_economyc_niskae_roshdaemocst_tt: " £population_texticon Ежемесячный прирост населения: §G+20%§!"
  ROM_industrial_consumer_goods_factor_tt: " $MODIFIER_CONSUMER_GOODS_FACTOR$: $RIGHT|Y=%1$"
+=======
+ ROM_economic_SCOROST_ISLEDOVANIE_tt: "   £research_icon Скорость Исследований: §G+5%§!"
+ ROM_economyc_niskae_roshdaemocst_tt: " £population_texticon Ежемесячный прирост населения: §G+20%§!"
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18

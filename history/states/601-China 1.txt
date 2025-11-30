@@ -2,12 +2,20 @@ state={
 	id=601
 	name="STATE_601"
 	resources={
+<<<<<<< HEAD
 		oil=4.000
 		steel = 4
 	}
 
 	history={
 		owner = TIB
+=======
+		oil=2.000
+	}
+
+	history={
+		owner = CHI
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 		add_core_of = CHI
 		add_core_of = TIB
 		add_core_of = PRC

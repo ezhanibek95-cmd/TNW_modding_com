@@ -1,7 +1,11 @@
 state={
 	id=592
 	name="STATE_592"
+<<<<<<< HEAD
 	manpower = 19835200
+=======
+	manpower = 17835200
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 	state_category = city
 	resources={
 		tungsten=8 # was: 10
@@ -10,7 +14,12 @@ state={
 	}
 
 	history={
+<<<<<<< HEAD
 		owner = CHI
+=======
+		owner = GXC
+		add_core_of = GXC
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 		add_core_of = CHI
 		add_core_of = PRC
 		
@@ -26,6 +35,7 @@ state={
 			}
 
 		}
+<<<<<<< HEAD
 
 		victory_points = {
 			1047 10 # Guangzhou
@@ -33,6 +43,26 @@ state={
 
 		victory_points = {
 			12077 1 # Maoming
+=======
+		victory_points = {
+			1047 5 # Guangzhou
+		}
+
+		1938.10.25 = {
+			if = {
+				limit = {
+					NOT = { has_dlc = "Waking the Tiger" }
+				}
+				remove_core_of = GXC
+				CHI = { transfer_state = PREV }
+			}
+			JAP = {
+				set_province_controller = 1047
+				set_province_controller = 7152
+				set_province_controller = 11938
+				set_province_controller = 11941
+			} 			
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 		}
 	}
 

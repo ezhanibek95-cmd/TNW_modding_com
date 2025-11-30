@@ -1,7 +1,11 @@
 state = {
 	id = 532
 	name = "STATE_532" # Tokai
+<<<<<<< HEAD
 	manpower = 7174000 # was 6174000
+=======
+	manpower = 6174000
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 	state_category = large_city
 
 	history = {

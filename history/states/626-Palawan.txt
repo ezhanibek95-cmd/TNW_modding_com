@@ -2,9 +2,15 @@ state=
 {
 	id=626
 	name="STATE_626"
+<<<<<<< HEAD
 	manpower = 192257
 	
 	state_category = pastoral
+=======
+	manpower = 83041
+	
+	state_category = rural
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 	
 	history=
 	{
@@ -16,11 +22,14 @@ state=
 			}
 		}
 		add_core_of = PHI
+<<<<<<< HEAD
 		1939.1.1 = {
 			buildings = {
 				industrial_complex = 1
 			}
 		}
+=======
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 	}
 	provinces={
 		4429 7419 10145 

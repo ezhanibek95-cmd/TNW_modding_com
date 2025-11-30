@@ -6,6 +6,7 @@ state={
 	}
 
 	history={
+<<<<<<< HEAD
 		owner = CHI
 		add_core_of = CHI
 		add_core_of = PRC
@@ -22,17 +23,49 @@ state={
 			12262 1 # Pu'er
 		}
 
+=======
+		owner = YUN
+		add_core_of = YUN
+		add_core_of = CHI
+		add_core_of = PRC
+		victory_points = {
+			1319 10 
+		}
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 		buildings = {
 			infrastructure = 2
 			arms_factory = 1
 			industrial_complex = 3
 
 		}
+<<<<<<< HEAD
+=======
+		1938.10.25 = {
+			if = {
+				limit = {
+					NOT = {
+						has_dlc = "Waking the Tiger" 
+					}
+
+				}
+				CHI = {
+					transfer_state = PREV
+
+				}
+
+			}
+
+		}
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 
 	}
 
 	provinces={
+<<<<<<< HEAD
 		1114 1172 1196 1319 1383 1522 1653 4192 4501 5072 7446 7606 8023 10346 10776 12262 12282 12841
+=======
+		1114 1172 1196 1319 1383 1522 1653 4501 7446 7606 8023 10346 10776 12262 12282 
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 	}
 	manpower=10994500
 	buildings_max_level_factor=1.000

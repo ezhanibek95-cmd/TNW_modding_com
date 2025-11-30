@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 state = {
 	id = 534
 	name = "STATE_534" # was Hokuriku, is actually Kōshin'etsu
@@ -13,6 +14,19 @@ state = {
 		owner = JAP
 		add_core_of = JAP
 
+=======
+
+state={
+	id=534
+	name="STATE_534" # Hokuriku
+	manpower = 1933000
+	
+	state_category = city
+
+	history={
+		owner = JAP
+		add_core_of = JAP
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 		buildings = {
 			infrastructure = 2
 			arms_factory = 2
@@ -21,6 +35,7 @@ state = {
 		}
 		
 		victory_points = {
+<<<<<<< HEAD
 			1117 10 # Niigata
 		}
 
@@ -39,4 +54,17 @@ state = {
 	}
 
 	local_supplies = 0.0 
+=======
+			1117 10
+		}
+
+
+	}
+
+	provinces={
+		1117 9952 10128 11930 11989 12007 
+	}
+
+	local_supplies=0.0 
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 }

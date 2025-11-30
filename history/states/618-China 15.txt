@@ -7,10 +7,19 @@ state={
 	state_category = pastoral
 
 	history={
+<<<<<<< HEAD
 		owner = PRC
 		add_core_of = SIK
 		buildings = {
 			infrastructure = 0
+=======
+		owner = SIK
+		add_core_of = SIK
+		add_core_of = CHI
+		add_core_of = PRC
+		buildings = {
+			infrastructure = 2
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 			industrial_complex = 1
 		}
 		victory_points = {

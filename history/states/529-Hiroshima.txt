@@ -1,7 +1,12 @@
 state = {
 	id = 529
+<<<<<<< HEAD
 	name = "STATE_529" # San'yo, formerly Chugoku
 	manpower = 4431000 # was 5341000
+=======
+	name = "STATE_529" # Chugoku
+	manpower = 5341000
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 	state_category = large_city
 
 	history = { 
@@ -10,11 +15,15 @@ state = {
 		add_core_of = JAP
 
 		buildings = {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 			infrastructure = 4 #was: 7
 			air_base = 3
 			dockyard = 2
 			arms_factory = 2
+<<<<<<< HEAD
 			industrial_complex = 1
 
 			1092 = {
@@ -25,6 +34,12 @@ state = {
 						has_dlc = "No Compromise, No Surrender"
 					}
 				}
+=======
+			industrial_complex = 2
+
+			1092 = {
+				naval_base = 10
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 				# Kure Naval Arsenal
 				naval_facility = 1
 			}
@@ -42,22 +57,33 @@ state = {
 			7212 10 # Okayama
 		}
 
+<<<<<<< HEAD
 		victory_points = {
 			11985 2 # Shimonoseki
 		}
 
+=======
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 		1939.1.1 = {
 			buildings = {
 				dockyard = 3
 				arms_factory = 3
+<<<<<<< HEAD
 				industrial_complex = 2
+=======
+				industrial_complex = 3
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 			}
 		}
 
 	}
 
 	provinces = {
+<<<<<<< HEAD
 		1092 4197 7212 9968 10052 11946 11985 
+=======
+		1092 1167 1191 4197 7050 7145 7212 9968 10052 10055 11946 11985 
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 	}
 
 	local_supplies = 0.0 

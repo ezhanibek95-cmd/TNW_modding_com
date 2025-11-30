@@ -1,7 +1,11 @@
 state = {
 	id = 282
 	name = "STATE_282" # Kanto
+<<<<<<< HEAD
 	manpower = 15773000 # was 13773000
+=======
+	manpower = 13773000
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 	
 	state_category = megalopolis
 	
@@ -25,6 +29,7 @@ state = {
 				naval_base = 6
 			}
 
+<<<<<<< HEAD
 			1182 = {
 				landmark_tokyo_imperial_palace = {
 				    level = 1
@@ -35,6 +40,8 @@ state = {
 				
 			}
 
+=======
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 		}
 
 		victory_points = {

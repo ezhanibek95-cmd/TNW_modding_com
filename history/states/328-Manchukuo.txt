@@ -8,6 +8,7 @@ state={
 
 	resources={
 		aluminium=7 # was: 10
+<<<<<<< HEAD
 		steel = 4
 		coal = 4
 	}
@@ -15,6 +16,14 @@ state={
 	history={
 		owner = PRC
 		add_core_of = CHI
+=======
+	}
+
+	history={
+		owner = MAN
+		add_core_of = CHI
+		add_core_of = MAN
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 		add_core_of = PRC
 		buildings = {
 			infrastructure = 2

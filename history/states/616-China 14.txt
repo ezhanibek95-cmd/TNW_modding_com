@@ -2,6 +2,7 @@ state = {
 	id = 616
 	name = "STATE_616"
 
+<<<<<<< HEAD
 	resources = {
 		coal = 2
 	}
@@ -9,11 +10,18 @@ state = {
 	history = {
 
 		owner = PRC
+=======
+	history = {
+
+		owner = XSM
+		add_core_of = XSM
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 		add_core_of = CHI
 		add_core_of = PRC
 
 		buildings = {
 			infrastructure = 1
+<<<<<<< HEAD
 
 			8127 = {
 				landmark_great_wall_section = {
@@ -21,10 +29,29 @@ state = {
 				    allowed = {
 				        has_dlc = "No Compromise, No Surrender"
 				    }
+=======
+		}
+
+		victory_points = {
+			8127 2 #Yinchuan
+		}
+
+		1938.10.25 = {
+			if = {
+				limit = {
+					NOT = {
+						has_dlc = "Waking the Tiger" 
+					}
+				}
+				CHI = {
+					transfer_state = PREV
+
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 				}
 			}
 		}
 
+<<<<<<< HEAD
 		victory_points = {
 			8127 3 # Yinchuan
 		}
@@ -39,6 +66,14 @@ state = {
 		3742 5031 7511 8055 8081 8127 10724 12750  
 	}
 	manpower = 1077600
+=======
+	}
+
+	provinces = {
+		3742 5031 5057 5100 7511 8055 8081 8127 10724 12327 12750 12776 
+	}
+	manpower = 2077600
+>>>>>>> 07adcca853ddcb189bf3dd8d98231372dfa0df18
 	buildings_max_level_factor = 1.000
 	state_category = pastoral
 
