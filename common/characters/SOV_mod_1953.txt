@@ -1,0 +1,53 @@
+characters = {
+    SOV_Beria = {
+        name = "SOV_Beria"
+        portraits = {
+            civilian = {
+                large = GFX_portrait_beria
+            }
+        }
+        country_leader = { 
+            ideology = marxism
+            expire = "1960.12.07" 
+            id = -1
+            traits = { beria_bolnoy }
+        }
+    }
+	
+    SOV_partiass = {                 # <-- ключ персонажа
+        country_leader = {
+            ideology = marxism      # или твоя кастомная, если реально существует
+            expire = "2100.1.1"
+            traits = { partia }        # убедись, что такой trait есть в common/traits
+        }
+		name = "SOV_partiass"            # локализационный ключ (не текст!)
+        portraits = {
+            civilian = {
+			    large = GFX_portrait_SOV_partiaa
+			}
+        }
+        
+    }
+
+    SOV_malenkovx = {                 # <-- ключ персонажа
+        country_leader = {
+            ideology = marxism      # или твоя кастомная, если реально существует
+            expire = "2100.1.1"
+            traits = {Ne_polnotasenae_vlast}        
+        }
+		name = "SOV_malenkov"            # локализационный ключ (не текст!)
+        portraits = {
+            civilian = {
+			    large = GFX_portrait_SOV_partiaa
+			}
+        }
+        
+    }
+
+
+    
+}
+
+
+
+

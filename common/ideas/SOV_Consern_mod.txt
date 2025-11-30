@@ -1,0 +1,24 @@
+ideas = {
+    industrial_concern = {
+        SOV_economic_ispolnit_idea_resikl_consert = {
+            picture = GFX_idea_generic_industrial_concern
+            allowed = {
+                original_tag = SOV
+                has_completed_focus = SOV_economic_ispolnit_idea_resikl
+            }
+            designer = no
+
+            cost = 150 
+
+            research_bonus = {
+                industry = 0.15
+            }
+
+            modifier = {
+                production_lack_of_resource_penalty_factor = -0.30
+                production_factory_max_efficiency_factor = 0.1
+            }
+
+        }
+    }
+}

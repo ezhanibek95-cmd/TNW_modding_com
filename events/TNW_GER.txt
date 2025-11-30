@@ -1,0 +1,432 @@
+add_namespace = germany
+
+# President dies
+
+country_event = {
+    id = germany.1
+    title = germany.1.t
+    desc = germany.1.d
+    
+    trigger = {
+        tag = GER
+		date > 1952.1.1
+    }
+    
+	mean_time_to_happen = {
+		days = 150
+	}
+	fire_only_once = yes
+    option = {
+		name = germany.1.a  # Предположим, это вариант прихода Гиммлера
+		add_stability = -0.10
+		kill_country_leader = yes
+		promote_character = GER_Heinrich_Himmler
+		remove_advisor_role = {
+			character = GER_Heinrich_Himmler
+			slot = political_advisor
+		}
+		country_event = { id = germany.2 }  # новое событие для начала конфликта Геббельс–Гиммлер
+	}
+	option = {
+		trigger = {
+			power_balance_value = {
+				id = GER_fascism_party_balance
+				value < -0.20
+			}
+		}
+        name = germany.1.b
+        add_stability = -0.10
+		kill_country_leader = yes
+		promote_character = GER_Martin_Borman
+		remove_advisor_role = {
+			character = GER_Martin_Borman
+			slot = political_advisor
+		}
+    }
+	option = {
+		trigger = {
+			power_balance_value = {
+				id = GER_fascism_party_balance
+				value > -0.1
+				value < 0.1
+			}
+		}
+        name = germany.1.с
+        add_stability = -0.10
+		kill_country_leader = yes
+		promote_character = GER_Joseph_Goebbels
+		remove_advisor_role = {
+			character = GER_Joseph_Goebbels
+			slot = political_advisor
+		}
+    }
+}
+country_event = {
+    id = germany.2
+    title = germany.2.t
+    desc = germany.2.d
+    immediate = yes
+    fire_only_once = yes
+    option = {
+        name = germany.2.a  # Успешно (в пользу НСДАП)
+        add_stability = 0.05
+        add_power_balance_value = {
+            id = GER_fascism_party_balance
+            value = -0.05   # ещё больше в пользу НСДАП
+        }
+    }
+    option = {
+        name = germany.2.b  # Упущен шанс (немного отменяет эффект)
+        add_political_power = 20
+    }
+}
+
+country_event = {
+    id = germany.3
+    title = germany.3.t
+    desc = germany.3.d
+    immediate = yes
+    fire_only_once = yes
+    option = {
+        name = germany.3.a  # Чистка удалась
+        add_power_balance_value = {
+            id = GER_fascism_party_balance
+            value = -0.10   # сильный сдвиг к НСДАП
+        }
+        add_stability = 0.10
+    }
+    option = {
+        name = germany.3.b  # Междоусобица (болеe нестабильно)
+        add_power_balance_value = {
+            id = GER_fascism_party_balance
+            value = 0.05   # небольшая отдача СС
+        }
+        add_stability = -0.10
+    }
+}
+
+country_event = {
+    id = germany.4
+    title = germany.4.t
+    desc = germany.4.d
+    immediate = yes
+    fire_only_once = yes
+    option = {
+        name = germany.4.a  # Парад вдохновил массы
+        add_power_balance_value = {
+            id = GER_fascism_party_balance
+            value = -0.08
+        }
+        add_war_support = 0.10
+    }
+    option = {
+        name = germany.4.b  # Скандалы и провалы
+        add_war_support = -0.05
+    }
+}
+
+country_event = {
+    id = germany.5
+    title = germany.5.t
+    desc = germany.5.d
+    immediate = yes
+    fire_only_once = yes
+    option = {
+        name = germany.5.a  # Контроль налажен
+        add_power_balance_value = {
+            id = GER_fascism_party_balance
+            value = -0.06
+        }
+        add_stability = 0.05
+    }
+    option = {
+        name = germany.5.b  # Жесткость ударила по репутации
+        add_stability = -0.10
+    }
+}
+
+country_event = {
+    id = germany.6
+    title = germany.6.t
+    desc = germany.6.d
+    immediate = yes
+    fire_only_once = yes
+    option = {
+        name = germany.6.a  # Бюджет ускорил планы НСДАП
+        add_power_balance_value = {
+            id = GER_fascism_party_balance
+            value = -0.07
+        }
+        add_political_power = 50
+    }
+    option = {
+        name = germany.6.b  # Коррупция и растраты
+        add_political_power = 20
+        add_stability = -0.05
+    }
+}
+
+country_event = {
+    id = germany.7
+    title = germany.7.t
+    desc = germany.7.d
+    immediate = yes
+    fire_only_once = yes
+    option = {
+        name = germany.7.a  # Идеология СС усилилась
+        add_power_balance_value = {
+            id = GER_fascism_party_balance
+            value = 0.05
+        }
+        add_stability = -0.05
+    }
+    option = {
+        name = germany.7.b  # Контратака НСДАП (стабильность)
+        add_stability = 0.05
+    }
+}
+
+country_event = {
+    id = germany.8
+    title = germany.8.t
+    desc = germany.8.d
+    immediate = yes
+    fire_only_once = yes
+    option = {
+        name = germany.8.a  # Чистка удалась (СС укрепились)
+        add_power_balance_value = {
+            id = GER_fascism_party_balance
+            value = 0.10
+        }
+        add_war_support = -0.05
+    }
+    option = {
+        name = germany.8.b  # Пересмотр процедур (НСДАП отреагировало)
+        add_war_support = 0.05
+    }
+}
+
+country_event = {
+    id = germany.9
+    title = germany.9.t
+    desc = germany.9.d
+    immediate = yes
+    fire_only_once = yes
+    option = {
+        name = germany.9.a  # Мощный парад СС
+        add_power_balance_value = {
+            id = GER_fascism_party_balance
+            value = 0.07
+        }
+        add_war_support = 0.10
+    }
+    option = {
+        name = germany.9.b  # Напряженность (люди боятся СС)
+        add_stability = -0.10
+    }
+}
+
+country_event = {
+    id = germany.10
+    title = germany.10.t
+    desc = germany.10.d
+    immediate = yes
+    fire_only_once = yes
+    option = {
+        name = germany.10.a  # СМИ под контролем СС
+        add_power_balance_value = {
+            id = GER_fascism_party_balance
+            value = 0.05
+        }
+        add_stability = -0.05
+    }
+    option = {
+        name = germany.10.b  # Паблик-стори против СС
+        add_stability = 0.05
+    }
+}
+
+country_event = {
+    id = germany.11
+    title = germany.11.t
+    desc = germany.11.d
+    immediate = yes
+    fire_only_once = yes
+    option = {
+        name = germany.11.a  # Ресурсы пошли на нужные цели
+        add_power_balance_value = {
+            id = GER_fascism_party_balance
+            value = 0.07
+        }
+        add_political_power = 50
+    }
+    option = {
+        name = germany.11.b  # Задержки и скандалы
+        add_political_power = 20
+        add_stability = -0.05
+    }
+}
+country_event = {
+    id = germany.12
+    title = germany.12.t
+    desc = germany.12.d
+    immediate = yes
+    fire_only_once = yes
+    option = {
+        name = germany.12.a  # Пропаганда улучшается
+        add_power_balance_value = { id = GER_gh_personal_balance value = -0.05 }
+        add_stability = 0.05
+    }
+    option = {
+        name = germany.12.b  # Кампания оказалась слабой
+        add_stability = -0.05
+    }
+}
+country_event = {
+    id = germany.13
+    title = germany.13.t
+    desc = germany.13.d
+    immediate = yes
+    fire_only_once = yes
+    option = {
+        name = germany.13.a  # СМИ целиком под контролем
+        add_power_balance_value = { id = GER_gh_personal_balance value = -0.05 }
+        add_stability = 0.05
+    }
+    option = {
+        name = germany.13.b  # Возникают утечки информации
+        add_stability = -0.10
+    }
+}
+country_event = {
+    id = germany.14
+    title = germany.14.t
+    desc = germany.14.d
+    immediate = yes
+    fire_only_once = yes
+    option = {
+        name = germany.14.a  # Реформы укрепили идеологию
+        add_power_balance_value = { id = GER_gh_personal_balance value = -0.08 }
+        add_political_power = 20
+    }
+    option = {
+        name = germany.14.b  # Массовые протесты
+        add_stability = -0.10
+    }
+}
+country_event = {
+    id = germany.15
+    title = germany.15.t
+    desc = germany.15.d
+    immediate = yes
+    fire_only_once = yes
+    option = {
+        name = germany.15.a  # Шоу силы впечатлило
+        add_power_balance_value = { id = GER_gh_personal_balance value = -0.05 }
+        add_war_support = 0.10
+    }
+    option = {
+        name = germany.15.b  # Произошли беспорядки
+        add_stability = -0.10
+    }
+}
+country_event = {
+    id = germany.16
+    title = germany.16.t
+    desc = germany.16.d
+    immediate = yes
+    fire_only_once = yes
+    option = {
+        name = germany.16.a  # Средства использованы эффективно
+        add_power_balance_value = { id = GER_gh_personal_balance value = -0.06 }
+        add_political_power = 50
+    }
+    option = {
+        name = germany.16.b  # Появились утечки
+        add_political_power = 20
+        add_stability = -0.05
+    }
+}
+
+country_event = {
+    id = germany.17
+    title = germany.17.t
+    desc = germany.17.d
+    immediate = yes
+    fire_only_once = yes
+    option = {
+        name = germany.17.a  # Чистка прошла успешно
+        add_power_balance_value = { id = GER_gh_personal_balance value = 0.10 }
+        add_stability = -0.10
+    }
+    option = {
+        name = germany.17.b  # Возмущение арестами
+        add_stability = -0.05
+    }
+}
+country_event = {
+    id = germany.18
+    title = germany.18.t
+    desc = germany.18.d
+    immediate = yes
+    fire_only_once = yes
+    option = {
+        name = germany.18.a  # Идеология усваивается
+        add_power_balance_value = { id = GER_gh_personal_balance value = 0.05 }
+        add_war_support = 0.10
+    }
+    option = {
+        name = germany.18.b  # Критика новых учебников
+        add_stability = -0.10
+    }
+}
+country_event = {
+    id = germany.19
+    title = germany.19.t
+    desc = germany.19.d
+    immediate = yes
+    fire_only_once = yes
+    option = {
+        name = germany.19.a  # Научная пропаганда
+        add_power_balance_value = { id = GER_gh_personal_balance value = 0.06 }
+        add_political_power = 20
+    }
+    option = {
+        name = germany.19.b  # Протесты учёных
+        add_stability = -0.05
+    }
+}
+country_event = {
+    id = germany.20
+    title = germany.20.t
+    desc = germany.20.d
+    immediate = yes
+    fire_only_once = yes
+    option = {
+        name = germany.20.a  # Уроки сСДР понравились
+        add_power_balance_value = { id = GER_gh_personal_balance value = 0.08 }
+        add_war_support = 0.10
+    }
+    option = {
+        name = germany.20.b  # Репетиция отняла силы
+        add_war_support = -0.05
+    }
+}
+country_event = {
+    id = germany.21
+    title = germany.21.t
+    desc = germany.21.d
+    immediate = yes
+    fire_only_once = yes
+    option = {
+        name = germany.21.a  # Бюджет пошёл на порядок
+        add_power_balance_value = { id = GER_gh_personal_balance value = 0.07 }
+        add_political_power = 50
+    }
+    option = {
+        name = germany.21.b  # Расходы не оправдались
+        add_political_power = 20
+        add_stability = -0.05
+    }
+}
+

@@ -1,0 +1,21 @@
+ROM_mod_economic = {
+	enable = { always = yes }
+
+	icon = GFX_idea_ARG_economic_reactivation 
+
+	production_speed_industrial_complex_factor = ROM_economic_speed_fabric
+	production_speed_infrastructure_factor = ROM_economic_speed_ifrastructure
+	production_speed_arms_factory_factor = ROM_ecnomic_SPEED_ARMS_ZAVOD
+    production_oil_factor = ROM_economic_oil_production
+    monthly_population = ROM_economyc_niskae_roshdaemocst
+    production_lack_of_resource_penalty_factor = ROM_ecnomic_resourse_penalty
+	consumer_goods_factor = ROM_economic_TNP
+	production_factory_max_efficiency_factor = ROM_economic_MAX_ZAVOD_FACTOR
+	base_fuel_gain = ROM_ecnomic_FUEL_GAIN
+	fuel_cost = ROM_ecnomic_FUEL_stoimost
+	min_export = ROM_ecnomic_min_export_oil
+	production_speed_buildings_factor = ROM_economic_SPEDD_STROITELSTVO
+	supply_consumption_factor = ROM_economicRASHOD_PRIPASOV
+	research_speed_factor = ROM_ecnomic_RESEARCH_SPEED
+	
+}

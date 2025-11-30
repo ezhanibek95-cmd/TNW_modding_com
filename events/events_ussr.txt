@@ -1,0 +1,215 @@
+add_namespace = smert
+add_namespace = civil_war_SOV
+add_namespace = avtonomy
+add_namespace = ubrat_pomex
+add_namespace = germany_civil_war_SOV
+
+country_event = {
+    id = smert.1
+    title = smert.1.t
+    desc  = smert.1.d
+    picture = GFX_course
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = smert.1.a 
+		
+		kill_country_leader = yes
+		
+        create_country_leader = {
+	        name = SOV_partiass
+	        desc = "SOV_partiass_DESC"   
+	        picture = GFX_portrait_SOV_partiaa
+	        expire = "1965.1.1"
+	        ideology = marxism 
+	        traits = {
+			   partia 
+	        }
+        }
+		set_variable = { 
+		    var = umer_beria
+		} 
+        
+        
+    }
+}
+
+country_event = {
+    id = smert.2
+    title = smert.2.t
+    desc  = smert.2.d
+    picture = GFX_course
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = smert.2.a  
+        
+		set_country_flag = nikita_hyruchov
+    }
+	
+	option = {
+        name = smert.2.b
+        
+		set_country_flag = Buharin
+    }
+	
+	option = {
+        name = smert.2.c
+        
+		set_country_flag = NKVD
+    }
+}
+country_event = {
+    id = avtonomy.1  
+    title = avtonomy.1.t
+    desc  = avtonomy.1.d
+    picture = GFX_course
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = avtonomy.1.a    
+        set_country_flag = SOV_avtonomii_obeshat_nesavismost
+    }
+	
+	option = {
+        name = avtonomy.1.b
+        set_country_flag = SOV_avtonomii_posle_grashdanky_dat_bolee_bolee_bolshe_prav
+    }
+	
+	option = {
+        name = avtonomy.1.c
+        set_country_flag = SOV_avtonomii_net_avtonomia_eto_zakon
+    }
+}
+country_event = {
+    id = germany_civil_war_SOV.1
+    title = germany_civil_war_SOV.1.t
+    desc  = germany_civil_war_SOV.1.d
+    picture = GFX_course
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = germany_civil_war_SOV.1.a    
+        set_country_flag = SOV_germany_civil_war_pomosh
+    }
+	
+	option = {
+        name = germany_civil_war_SOV.1.b
+        set_country_flag = SOV_germany_civil_war_otkas
+    }
+}
+country_event = {
+    id = ubrat_pomex.1
+    title = ubrat_pomex.1.t
+    desc  = ubrat_pomex.1.d
+    picture = GFX_course
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = ubrat_pomex.1.a
+        D04 = {
+		    random_unit_leader = {
+				limit = { NOT = { has_unit_leader_flag = field_marshal } } 
+				remove_unit_leader = yes
+            }
+			random_unit_leader = {
+				limit = { NOT = { has_unit_leader_flag = field_marshal } } 
+				remove_unit_leader = yes
+			}
+			random_unit_leader = {
+				limit = { NOT = { has_unit_leader_flag = field_marshal } } 
+				remove_unit_leader = yes
+			}
+			random_unit_leader = {
+				limit = { has_unit_leader_flag = field_marshal }
+				remove_unit_leader = yes
+			}	
+        }			
+    }
+}
+country_event = {
+    id = civil_war_SOV.1
+    title = civil_war_SOV.1.t
+    desc = civil_war_SOV.1.d
+    picture = GFX_course
+    is_triggered_only = yes
+    fire_only_once = yes
+	
+	immediate = {
+	    set_country_flag = SOV_civilwar_start
+		set_cosmetic_tag = SOV_CHYSHOV
+		start_civil_war = {
+            ideology = communism
+            size = 0.7
+        }
+	}
+	
+
+   option = {
+    name = civil_war_SOV.1.a    
+
+		hidden_effect = {
+			kill_country_leader = yes
+			create_country_leader = {
+				name = SOV_nikita_chyrsov
+				desc = "SOV_nikita_chyrsov_DESC"
+				picture = GFX_portrait_SOV_nikita_crysov
+				expire = "1965.1.1"
+				ideology = marxism
+				traits = { }
+			}
+            mark_focus_tree_layout_dirty = yes			
+		}
+		if = {
+			limit = { has_completed_focus = SOV_nikita_hyrchov_ubrat_pomex }
+			country_event = ubrat_pomex.1
+		}
+		if = {
+			limit = { has_country_flag = SOV_nikita_hyrchov_corupsia_v_NKVD }
+			D04 = {
+				add_ideas = idea_SOV_nikita_hyrushov_corrupsia_v_NKVD
+			}
+		}
+		else_if = {
+			limit = { has_country_flag = SOV_nikita_hyrchov_zarushaetsa_podershoi_naroda }
+			add_ideas = idea_SOV_nikita_hyrushov_zarushaetsa_podershoi_naroda 
+		}
+		
+		if = {
+			limit = { has_country_flag = SOV_avtonomii_obeshat_nesavismost }
+			every_country = {
+				limit = { is_subject_of = D04 }
+				overlord = { end_puppet = PREV }
+				leave_faction = yes
+				add_ideas = idea_SOV_nikita_hyrushov_pomosh_ussr
+			}
+			add_ideas = idea_SOV_nikita_hyrushov_pomosh_ot_marionetok
+		}
+		else_if = {
+			limit = { has_country_flag = SOV_avtonomii_posle_grashdanky_dat_bolee_bolee_bolshe_prav }
+			every_country = {
+				limit = { is_subject_of = D04 }
+				overlord = { end_puppet = PREV }
+				leave_faction = yes
+				add_ideas = idea_SOV_nikita_hyrushov_pomosh_ussr
+			}
+			add_ideas = idea_SOV_nikita_hyrushov_pomosh_ot_marionetok
+		}
+		else_if = {
+			limit = { has_country_flag = SOV_avtonomii_net_avtonomia_eto_zakon }
+			every_country = {
+				limit = { is_subject_of = D04 }
+				declare_war_on = {
+					target = SOV
+					type = annex_everything
+				} 
+			}
+		}
+	}
+}
+

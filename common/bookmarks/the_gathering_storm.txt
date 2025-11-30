@@ -1,0 +1,163 @@
+bookmarks = {
+    bookmark = {
+        name = "SECOND_STORM_NAME"
+        desc = "SECOND_STORM_DESC"
+        date = 1953.1.1.1
+        picture = "GFX_select_date_1936"
+        default_country = "GER"
+        default = yes
+
+        # Франция (без DLC)
+        "FRA" = {
+            history = "FRA_GATHERING_STORM_DESC"
+            ideology = democratic
+            available = { NOT = { has_dlc = "La Resistance" } }
+            ideas = {
+                # Идеи для Франции
+            }
+            focuses = {
+                # Фокусы для Франции
+            }
+        }
+
+        # Франция (с DLC)
+        "FRA" = {
+            history = "FRA_GATHERING_STORM_DESC"
+            ideology = democratic
+            available = { has_dlc = "La Resistance" }
+            ideas = {
+                # Идеи для Франции с DLC
+            }
+            focuses = {
+                # Фокусы для Франции с DLC
+            }
+        }
+
+        # США
+        "USA" = {
+            history = "USA_GATHERING_STORM_DESC"
+            ideology = democratic
+            ideas = {
+                # Идеи для США
+            }
+            focuses = {
+                # Фокусы для США
+            }
+        }
+
+        # Великобритания (с DLC)
+        "ENG" = {
+            history = "ENG_GATHERING_STORM_DESC"
+            ideology = democratic
+            available = { has_dlc = "Man the Guns" }
+            ideas = {
+                # Идеи для Великобритании с DLC
+            }
+            focuses = {
+                # Фокусы для Великобритании с DLC
+            }
+        }
+
+        # Великобритания (без DLC)
+        "ENG" = {
+            history = "ENG_GATHERING_STORM_DESC"
+            ideology = democratic
+            available = { NOT = { has_dlc = "Man the Guns" } }
+            ideas = {
+                # Идеи для Великобритании без DLC
+            }
+            focuses = {
+                # Фокусы для Великобритании без DLC
+            }
+        }
+
+        # Италия (с DLC)
+        "ITA" = {
+            history = "ITA_GATHERING_STORM_DESC"
+            ideology = fascism
+            available = { has_dlc = "By Blood Alone" }
+            ideas = {
+                # Идеи для Италии с DLC
+            }
+            focuses = {
+                # Фокусы для Италии с DLC
+            }
+        }
+
+        # Италия (без DLC)
+        "ITA" = {
+            history = "ITA_GATHERING_STORM_DESC"
+            ideology = fascism
+            available = { NOT = { has_dlc = "By Blood Alone" } }
+            ideas = {
+                # Идеи для Италии без DLC
+            }
+            focuses = {
+                # Фокусы для Италии без DLC
+            }
+        }
+
+        # Германия (с DLC)
+        "GER" = {
+            history = "GER_GATHERING_STORM_DESC"
+            ideology = communism
+            available = { has_dlc = "Waking the Tiger" }
+            ideas = {
+                # Идеи для Германии с DLC
+            }
+            focuses = {
+                # Фокусы для Германии с DLC
+            }
+        }
+
+        # Германия (без DLC)
+        "GER" = {
+            history = "GER_GATHERING_STORM_DESC"
+            ideology = communism
+            available = { NOT = { has_dlc = "Waking the Tiger" } }
+            ideas = {
+                # Идеи для Германии без DLC
+            }
+            focuses = {
+                # Фокусы для Германии без DLC
+            }
+        }
+
+
+        # Советский Союз (с DLC)
+        "SOV" = {
+            history = "SOV_GATHERING_STORM_DESC"
+            ideology = communism
+            available = { has_dlc = "No Step Back" }
+            ideas = {
+                # Идеи для СССР с DLC
+            }
+            focuses = {
+                # Фокусы для СССР с DLC
+            }
+        }
+
+        # Советский Союз (без DLC)
+        "SOV" = {
+            history = "SOV_GATHERING_STORM_DESC"
+            ideology = communism
+            available = { NOT = { has_dlc = "No Step Back" } }
+            ideas = {
+                # Идеи для СССР без DLC
+            }
+            focuses = {
+                # Фокусы для СССР без DLC
+            }
+        }
+
+        # Другие страны (если требуется)
+        "---" = {
+            history = "OTHER_GATHERING_STORM_DESC"
+        }
+
+        # Эффекты
+        effect = {
+            randomize_weather = 22345  # <- Обязательно для каждой закладки
+        }
+    }
+}

@@ -1,0 +1,127 @@
+ideas = {
+
+	country = {
+		idea_GER_konccamps = {
+			
+			picture = GER_destroed_nation
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				non_core_manpower = 0.25
+				resistance_tick_auto = 2
+			}
+		}
+		
+		idea_GER_сountry_terrorist = {
+		
+			picture = GER_antifa
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				join_faction_tension = 0.35
+				trade_opinion_factor = -0.50
+				improve_relations_maintain_cost_factor = 0.30
+			}
+		}
+		
+		idea_GER_Anenerbe = {
+			
+			picture = GER_antifa
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				research_speed_factor = -0.5
+			}
+		}
+		
+		idea_GER_slave_work_economic = {
+			
+			picture = GER_problems_with_selhoz
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				local_resources_factor = 0.30
+				industrial_capacity_factory = 0.5
+				production_factory_max_efficiency_factor = -0.2
+			}
+		}
+		
+		idea_GER_army_without_head = {
+			
+			picture = GER_brain_destroed
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_org_factor = -0.4
+			}
+		}
+		
+		idea_GER_freeze_war = {
+			
+			picture = GER_wind_of_change
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.15
+			}
+		}
+		
+
+
+
+	}
+}

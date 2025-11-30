@@ -1,0 +1,22 @@
+on_actions = {
+    on_startup = {
+        effect = {
+            SOV = {
+			   country_event = { id = smert.1 days = 10 }
+			}
+        }
+    }
+    on_country_leader_changed = {
+        effect = {
+            if = {
+                limit = {
+                    has_country_leader = { 
+                        name = SOV_nikita_chyrsov
+				        ideology = communism
+                    }
+                }
+                mark_focus_tree_layout_dirty = yes
+            }
+        }
+    }
+}

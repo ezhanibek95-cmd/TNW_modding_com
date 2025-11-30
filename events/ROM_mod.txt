@@ -1,0 +1,424 @@
+add_namespace = ROM_resourse
+add_namespace = ROM_carol
+add_namespace = ROM_potrebovat
+add_namespace = ROM_monarxii
+
+country_event = {
+    id = ROM_resourse.1
+    title = ROM_resourse.1.t
+    desc  = ROM_resourse.1.d
+    picture = GFX_course
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = ROM_resourse.1.a 
+        
+    }
+}
+country_event = {
+    id = ROM_resourse.2
+    title = ROM_resourse.2.t
+    desc  = ROM_resourse.2.d
+    picture = GFX_course
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = ROM_resourse.2.a 
+        
+    }
+}
+country_event = {
+    id = ROM_resourse.3
+    title = ROM_resourse.3.t
+    desc  = ROM_resourse.3.d
+    picture = GFX_course
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = ROM_resourse.3.a 
+        
+    }
+}
+country_event = {
+    id = ROM_carol.1
+    title = ROM_carol.1.t
+    desc  = ROM_carol.1.d
+    picture = GFX_ROM_events_carol_mixai
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = ROM_carol.1.a  ####  Растрелять
+        ai_chance = {
+            factor = 75
+            modifier = {
+                factor = 0.85
+                has_completed_focus = ROM_totalitarzm_Simy
+            }
+        }
+        add_political_power = 50
+        
+    }
+    option = {
+        name = ROM_carol.1.b 
+        ai_chance = {
+            factor = 25
+            modifier = {
+                factor = 1.25
+                has_completed_focus = ROM_bloshe_vlasty_partii
+            }
+        }
+        add_political_power = 25
+    }
+}
+country_event = {
+    id = ROM_potrebovat.1
+    title = ROM_potrebovat.1.t
+    desc  = ROM_potrebovat.1.d
+    picture = GFX_ROM_events_carol_mixai
+    is_triggered_only = yes
+    fire_only_once = yes
+    mean_time_to_happen = { days = 5 }
+
+    option = {
+        name = ROM_potrebovatl.1.a  ####  Отдать
+        ai_chance = {
+            factor = 50
+        }
+        add_political_power = 50
+        ROM = {
+            create_wargoal = {
+                target = HUN
+                type = take_state_focus
+                generator = { 82 }
+            }
+            country_event = ROM_potrebovat.2
+        }
+        
+    }
+    option = {
+        name = ROM_potrebovat.1.b 
+        ai_chance = {
+            factor = 50
+        }
+        add_political_power = 25
+        ROM = {
+            set_state_owner = 82
+        }
+    }
+}
+country_event = {
+    id = ROM_potrebovat.2
+    title = ROM_potrebovat.2.t
+    desc  = ROM_potrebovat.2.d
+    picture = GFX_ROM_events_carol_mixai
+    is_triggered_only = yes
+    fire_only_once = yes
+    mean_time_to_happen = {
+		days = 5
+	}
+
+    option = {
+        name = ROM_potrebovatl.2.a 
+        ai_chance = {
+            factor = 100
+        }
+        add_war_support = 0.05
+    }
+}
+country_event = {
+    id = ROM_potrebovat.3
+    title = ROM_potrebovat.3.t
+    desc  = ROM_potrebovat.3.d
+    picture = GFX_ROM_events_carol_mixai
+    is_triggered_only = yes
+    fire_only_once = yes
+    mean_time_to_happen = {
+		days = 10
+	}
+
+    option = {
+        name = ROM_potrebovatl.3.a  ####  Отдать
+        ai_chance = {
+            factor = 50
+        }
+        add_political_power = 50
+        ROM = {
+            limit = {
+                80 = {
+                    controller = {
+                        create_wargoal = {
+                            target = ROOT
+                            type = take_state_focus
+                            generator = { 80 }
+                        }
+                    }
+                }
+            }
+            country_event =  ROM_potrebovat.3.1
+        }
+        
+    }
+    option = {
+        name = ROM_potrebovat.3.b 
+        ai_chance = {
+            factor = 50
+        }
+        add_political_power = 25
+        ROM = {
+            set_state_owner = 80
+        }
+    }
+}
+country_event = {
+    id = ROM_potrebovat.4
+    title = ROM_potrebovat.4.t
+    desc  = ROM_potrebovat.4.d
+    picture = GFX_ROM_events_carol_mixai
+    is_triggered_only = yes
+    fire_only_once = yes
+    mean_time_to_happen = { days = 5 }
+
+    option = {
+        name = ROM_potrebovatl.4.a 
+        ai_chance = {
+            factor = 100
+        }
+        add_war_support = 0.05
+    }
+}
+country_event = {
+    id = ROM_potrebovat.5
+    title = ROM_potrebovat.5.t
+    desc = ROM_potrebovat.5.d
+    picture = GFX_ROM_events_carol_mixai
+    fire_only_once = no
+    is_triggered_only = yes
+
+    option = {
+        name = ROM_potrebovatl.5.a 
+        ai_chance = {
+            factor = 75
+            modifier = {
+                factor = 1.25
+                has_completed_focus = ROM_anti_ger_propoganda
+            }
+        }
+        add_political_power = 50
+        ROM = {
+            add_stability = 0.05
+            add_war_support = -0.05
+            country_event = ROM_potrebovat.7
+        }
+        
+    }
+    option = {
+        name = ROM_potrebovat.5.b 
+        ai_chance = {
+            factor = 25
+            modifier = {
+                factor = 1.60
+                has_completed_focus = ROM_podershka_reixa
+            }
+        }
+        add_political_power = 25
+        add_war_support = 0.05
+        if = {
+            limit = {
+                RKU = {
+                    is_subject = yes  
+                }
+            }
+            RKU = {
+                OVERLORD = { 
+                    end_puppet = RKU
+                }
+            }
+        }
+        ROM = {
+            puppet = RKU
+            country_event = ROM_potrebovat.6
+        }
+    }
+}
+country_event = {
+    id = ROM_potrebovat.6
+    title = ROM_potrebovat.6.t
+    desc  = ROM_potrebovat.6.d
+    picture = GFX_ROM_events_carol_mixai
+    is_triggered_only = yes
+    fire_only_once = yes
+    mean_time_to_happen = {
+		days = 5
+	}
+
+    option = {
+        name = ROM_potrebovatl.6.a 
+        ai_chance = {
+            factor = 100
+        }
+        add_war_support = 0.05
+        add_stability = 0.05
+    }
+}
+country_event = {
+    id = ROM_potrebovat.7
+    title = ROM_potrebovat.7.t
+    desc  = ROM_potrebovat.7.d
+    picture = GFX_ROM_events_carol_mixai
+    is_triggered_only = yes
+    fire_only_once = yes
+    mean_time_to_happen = {
+		days = 5
+	}
+
+    option = {
+        name = ROM_potrebovatl.7.a 
+        ai_chance = {
+            factor = 100
+        }
+        add_war_support = -0.05
+    }
+}
+
+
+
+
+country_event = {
+    id = ROM_monarxii.1 
+    title = ROM_monarxii.1.t
+    desc  = ROM_monarxii.1.d 
+    picture = GFX_ROM_events_carol_mixai
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = ROM_monarxii.1.a 
+        ai_chance = {
+            factor = 75
+        }
+        HUN = {
+            country_event = ROM_monarxii.2
+        }
+    }
+    option = {
+        name = ROM_monarxii.1.b 
+        ai_chance = {
+            factor = 25
+        }
+        BUL = {
+            country_event = ROM_monarxii.3
+        }
+    }
+}
+country_event = {
+    id = ROM_monarxii.2
+    title = ROM_monarxii.2.t
+    desc  = ROM_monarxii.2.d
+    picture = GFX_ROM_events_carol_mixai
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = ROM_monarxii.2.a 
+        ai_chance = {
+            factor = 75
+        }
+        ROM = {
+            complete_national_focus = ROM_HUN_diplomatic_MIXAI
+            set_country_flag = ROM_HUN_yes
+        }
+    }
+    option = {
+        name = ROM_monarxii.2.b 
+        ai_chance = {
+            factor = 25
+        }
+        
+
+        
+    }
+}
+country_event = {
+    id = ROM_monarxii.3
+    title = ROM_monarxii.3.t
+    desc  = ROM_monarxii.3.d
+    picture = GFX_ROM_events_carol_mixai
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = ROM_monarxii.3.a 
+        ai_chance = {
+            factor = 75
+        }
+        ROM = {
+            complete_national_focus = ROM_BOL_diplomatic_MIXAI
+            set_country_flag = ROM_BUL_yes
+        }
+    }
+    option = {
+        name = ROM_monarxii.3.b 
+        ai_chance = {
+            factor = 25
+        }
+        
+    }
+}
+country_event = {
+    id = ROM_monarxii.4
+    title = ROM_monarxii.4.t
+    desc  = ROM_monarxii.4.d
+    picture = GFX_ROM_events_carol_mixai
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = ROM_monarxii.4.a 
+        ai_chance = {
+            factor = 75
+            modifier = {
+                factor = 2
+                has_opinion = {
+                    target = ROM
+                    value > 50
+                }
+            }
+        }
+        
+        ROM = {
+            annex_country = {
+                target = HUN
+                transfer_troops = yes
+            }
+
+        }
+    }
+    option = {
+        name = ROM_monarxii.4.b 
+        ai_chance = {
+            factor = 25
+            
+        }
+        country_event = ROM_monarxii.4
+        
+    }
+}
+country_event = {
+    id = ROM_monarxii.4
+    title = ROM_monarxii.4.t
+    desc  = ROM_monarxii.4.d
+    picture = GFX_ROM_events_carol_mixai
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = ROM_monarxii.4.a 
+        ai_chance = {
+            factor = 100
+        }
+    }
+}

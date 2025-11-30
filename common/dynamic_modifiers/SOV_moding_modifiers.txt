@@ -1,0 +1,36 @@
+SOV_mod_5_plan_modifier = {
+	enable = { always = yes }
+
+	icon = GFX_idea_CHL_ejercito_de_chile
+
+	consumer_goods_factor = SOV_mod_5_plan_consumer_factor_modifiear
+	production_speed_industrial_complex_factor = SOV_mod_5_plan_industrial_complex_modifiear
+	production_speed_infrastructure_factor = SOV_mod_5_plan_infrastructure_modifiear
+	production_speed_arms_factory_factor = SOV_mod_5_plan_arms_factory_modifiear
+	production_oil_factor = SOV_mod_5_plan_production_oil_facto_modifiear
+	monthly_population = SOV_mod_5_plan_monthly_population_modifiear
+	production_speed_arms_factory_factor = SOV_mod_5_plan_production_speed_arms_factory_factor_modifiear
+	production_factory_efficiency_gain_factor = SOV_mod_5_plan_production_factory_efficiency_gain_factor_modifiear
+	production_lack_of_resource_penalty_factor = SOV_mod_5_plan_production_lack_of_resource_penalty_factor_modifiear
+	supply_node_range = SOV_mod_5_supply_node_range_modifiear
+	research_speed_factor = SOV_mod_5_research_speed_factor_modifiear
+	production_speed_buildings_factor = SOV_mod_5_production_speed_buildings_factor_modifiear
+	production_factory_max_efficiency_factor = SOV_mod_5_plan_production_factory_max_efficiency_factor_modifiear
+	production_factory_start_efficiency_factor = SOV_mod_5_plan_production_factory_start_efficiency_factor_modifiear
+	industrial_capacity_dockyard = SOV_mod_5_plan_industrial_capacity_dockyard_modifiear
+}
+
+SOV_mod_urbanization = {
+	enable = { always = yes }
+
+	icon = GFX_idea_CHL_ejercito_de_chile
+
+	production_speed_industrial_complex_factor = 0.20
+	production_speed_infrastructure_factor = 0.10
+	monthly_population = 0.40
+	
+}
+
+
+
+

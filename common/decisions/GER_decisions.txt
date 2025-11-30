@@ -1,0 +1,336 @@
+### GER BOP ###
+
+GER_balance_decision_category = {
+    # Решения в пользу НСДАП
+    GER_nsdap_propaganda_campaign = {
+        icon = generic_political_reform
+        available = {
+            has_government = fascism
+        }
+        cost = 120
+        days_re_enable = 30
+        complete_effect = {
+            add_power_balance_value = {
+                id = GER_fascism_party_balance
+                value = -0.08   # продвигает НСДАП (влево)
+            }
+            add_political_power = -40
+            add_stability = 0.05
+            country_event = {
+                id = germany.2  # триггер события пропаганды НСДАП
+            }
+        }
+        ai_will_do = { factor = 1 }
+    }
+    GER_nsdap_purge = {
+        icon = generic_political_reform
+        available = {
+            has_government = fascism
+            power_balance_value = { id = GER_fascism_party_balance value < -0.3 }
+        }
+        cost = 150
+        days_re_enable = 60
+        complete_effect = {
+            add_power_balance_value = {
+                id = GER_fascism_party_balance
+                value = -0.15   # сильная чистка, НСДАП доминирует
+            }
+            add_war_support = -0.05
+            add_stability = 0.10
+            country_event = { 
+				id = germany.3 
+			}  # событие чистки НСДАП
+        }
+        ai_will_do = { factor = 0.8 }
+    }
+    GER_nsdap_military_parade = {
+        icon = generic_military_reform
+        available = {
+            has_government = fascism
+            power_balance_value = { id = GER_fascism_party_balance value < -0.1 }
+        }
+        cost = 100
+        days_re_enable = 30
+        complete_effect = {
+            add_power_balance_value = {
+                id = GER_fascism_party_balance
+                value = -0.10  # эффект парада в пользу НСДАП
+            }
+            add_war_support = 0.10
+            country_event = { id = germany.4 }  # событие парада НСДАП
+        }
+        ai_will_do = { factor = 1 }
+    }
+    GER_nsdap_media_control = {
+        icon = generic_political_effort
+        available = {
+            has_government = fascism
+        }
+        cost = 80
+        days_re_enable = 20
+        complete_effect = {
+            add_power_balance_value = {
+                id = GER_fascism_party_balance
+                value = -0.05   # цензура СМИ в пользу НСДАП
+            }
+            add_stability = 0.05
+            country_event = { id = germany.5 }  # событие цензуры НСДАП
+        }
+        ai_will_do = { factor = 0.7 }
+    }
+    GER_nsdap_budget_reform = {
+        icon = generic_navy_offensive
+        available = {
+            has_government = fascism
+            power_balance_value = { id = GER_fascism_party_balance value < 0 }
+        }
+        cost = 120
+        days_re_enable = 40
+        complete_effect = {
+            add_power_balance_value = {
+                id = GER_fascism_party_balance
+                value = -0.07  # перераспределение бюджета в пользу НСДАП
+            }
+            add_political_power = 50
+            add_stability = 0.05
+            country_event = { id = germany.6 }  # событие бюджетной реформы НСДАП
+        }
+        ai_will_do = { factor = 0.9 }
+    }
+
+    # Решения в пользу СС
+    GER_ss_indoctrination_program = {
+        icon = generic_political_reform
+        available = {
+            has_government = fascism
+        }
+        cost = 110
+        days_re_enable = 30
+        complete_effect = {
+            add_power_balance_value = {
+                id = GER_fascism_party_balance
+                value = 0.10   # пропаганда СС (вправо)
+            }
+            add_stability = -0.05
+            country_event = { id = germany.7 }  # событие пропаганды СС
+        }
+        ai_will_do = { factor = 1 }
+    }
+    GER_ss_purge = {
+        icon = generic_political_reform
+        available = {
+            has_government = fascism
+            power_balance_value = { id = GER_fascism_party_balance value > 0.3 }
+        }
+        cost = 160
+        days_re_enable = 60
+        complete_effect = {
+            add_power_balance_value = {
+                id = GER_fascism_party_balance
+                value = 0.15   # чистка против НСДАП (СС доминирует)
+            }
+            add_war_support = -0.05
+            country_event = { id = germany.8 }  # событие чистки СС
+        }
+        ai_will_do = { factor = 0.8 }
+    }
+    GER_ss_parade = {
+        icon = generic_military_reform
+        available = {
+            has_government = fascism
+            power_balance_value = { id = GER_fascism_party_balance value > 0.1 }
+        }
+        cost = 90
+        days_re_enable = 30
+        complete_effect = {
+            add_power_balance_value = {
+                id = GER_fascism_party_balance
+                value = 0.07   # военный парад СС
+            }
+            add_war_support = 0.15
+            country_event = { id = germany.9 }  # событие парада СС
+        }
+        ai_will_do = { factor = 1 }
+    }
+    GER_ss_media_control = {
+        icon = generic_political_effort
+        available = {
+            has_government = fascism
+        }
+        cost = 80
+        days_re_enable = 20
+        complete_effect = {
+            add_power_balance_value = {
+                id = GER_fascism_party_balance
+                value = 0.05   # цензура СМИ в пользу СС
+            }
+            add_stability = -0.05
+            country_event = { id = germany.10 }  # событие цензуры СС
+        }
+        ai_will_do = { factor = 0.7 }
+    }
+    GER_ss_budget_reform = {
+        icon = generic_navy_offensive
+        available = {
+            has_government = fascism
+            power_balance_value = { id = GER_fascism_party_balance value > 0 }
+        }
+        cost = 120
+        days_re_enable = 40
+        complete_effect = {
+            add_power_balance_value = {
+                id = GER_fascism_party_balance
+                value = 0.07   # перераспределение бюджета в пользу СС
+            }
+            add_political_power = 50
+            country_event = { id = germany.11 }  # событие бюджетной реформы СС
+        }
+        ai_will_do = { factor = 0.9 }
+    }
+}
+GER_gh_balance_decision_category = {
+	# Решения в пользу Геббельса (left)
+	GER_gh_propaganda_boost = {
+		icon = generic_political_reform
+		available = { has_government = fascism }
+		cost = 100
+		days_re_enable = 30
+		complete_effect = {
+			add_power_balance_value = { id = GER_gh_personal_balance value = -0.08 }
+			add_stability = 0.05
+			country_event = { id = germany.12 }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	GER_gh_censor = {
+		icon = generic_political_effort
+		available = { has_government = fascism }
+		cost = 80
+		days_re_enable = 20
+		complete_effect = {
+			add_power_balance_value = { id = GER_gh_personal_balance value = -0.05 }
+			add_stability = 0.05
+			country_event = { id = germany.13 }
+		}
+		ai_will_do = { factor = 0.8 }
+	}
+	GER_gh_elitist_reforms = {
+		icon = generic_social_reform
+		available = {
+			has_government = fascism
+			power_balance_value = { id = GER_gh_personal_balance value < -0.2 }
+		}
+		cost = 120
+		days_re_enable = 40
+		complete_effect = {
+			add_power_balance_value = { id = GER_gh_personal_balance value = -0.12 }
+			add_political_power = 20
+			country_event = { id = germany.14 }
+		}
+		ai_will_do = { factor = 0.7 }
+	}
+	GER_gh_show_of_force = {
+		icon = generic_military_reform
+		available = {
+			has_government = fascism
+			power_balance_value = { id = GER_gh_personal_balance value < -0.1 }
+		}
+		cost = 100
+		days_re_enable = 30
+		complete_effect = {
+			add_power_balance_value = { id = GER_gh_personal_balance value = -0.07 }
+			add_war_support = 0.05
+			country_event = { id = germany.15 }
+		}
+		ai_will_do = { factor = 0.9 }
+	}
+	GER_gh_campaign_funding = {
+		icon = generic_naval_torpedo
+		available = {
+			has_government = fascism
+			power_balance_value = { id = GER_gh_personal_balance value < 0 }
+		}
+		cost = 110
+		days_re_enable = 30
+		complete_effect = {
+			add_power_balance_value = { id = GER_gh_personal_balance value = -0.06 }
+			add_political_power = 50
+			country_event = { id = germany.16 }
+		}
+		ai_will_do = { factor = 0.85 }
+	}
+	GER_hm_purge_prophets = {
+		icon = generic_political_reform
+		available = {
+			has_government = fascism
+			power_balance_value = { id = GER_gh_personal_balance value > 0.3 }
+		}
+		cost = 150
+		days_re_enable = 60
+		complete_effect = {
+			add_power_balance_value = { id = GER_gh_personal_balance value = 0.15 }
+			add_stability = -0.05
+			country_event = { id = germany.17 }
+		}
+		ai_will_do = { factor = 0.8 }
+	}
+	GER_hm_strict_education = {
+		icon = generic_political_effort
+		available = {
+			has_government = fascism
+		}
+		cost = 80
+		days_re_enable = 20
+		complete_effect = {
+			add_power_balance_value = { id = GER_gh_personal_balance value = 0.05 }
+			add_war_support = 0.05
+			country_event = { id = germany.18 }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	GER_hm_snp_science_program = {
+		icon = generic_industrial_effort
+		available = {
+			has_government = fascism
+			power_balance_value = { id = GER_gh_personal_balance value > 0.1 }
+		}
+		cost = 120
+		days_re_enable = 40
+		complete_effect = {
+			add_power_balance_value = { id = GER_gh_personal_balance value = 0.08 }
+			add_political_power = 20
+			country_event = { id = germany.19 }
+		}
+		ai_will_do = { factor = 0.7 }
+	}
+	GER_hm_paramilitary_drill = {
+		icon = generic_military_reform
+		available = {
+			has_government = fascism
+			power_balance_value = { id = GER_gh_personal_balance value > -0.1 }
+		}
+		cost = 100
+		days_re_enable = 30
+		complete_effect = {
+			add_power_balance_value = { id = GER_gh_personal_balance value = 0.10 }
+			add_war_support = 0.10
+			country_event = { id = germany.20 }
+		}
+		ai_will_do = { factor = 0.9 }
+	}
+	GER_hm_security_budget = {
+		icon = generic_naval_torpedo
+		available = {
+			has_government = fascism
+			power_balance_value = { id = GER_gh_personal_balance value > 0 }
+		}
+		cost = 110
+		days_re_enable = 30
+		complete_effect = {
+			add_power_balance_value = { id = GER_gh_personal_balance value = 0.07 }
+			add_political_power = 50
+			country_event = { id = germany.21 }
+		}
+		ai_will_do = { factor = 0.85 }
+	}
+}

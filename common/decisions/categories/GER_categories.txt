@@ -1,0 +1,17 @@
+GER_balance_decision_category  = {
+	
+	icon = eng_appeal_to_imperial_loyalists
+	
+	visible_when_empty = yes
+	
+    visible = {
+		original_tag = GER
+    }
+}
+GER_gh_balance_decision_category = {
+    icon = eng_appeal_to_imperial_loyalists
+    visible_when_empty = yes
+    visible = {
+        original_tag = GER
+    }
+}

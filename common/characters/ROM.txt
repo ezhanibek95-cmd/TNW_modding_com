@@ -1,0 +1,44 @@
+characters = {
+    ROM_Hormia_Sima = {
+        name = "ROM_Hormia_Sima"
+        portraits = {
+            civilian = {
+                large = GFX_portrait_ROM_Hormia_Sima
+            }
+        }
+        country_leader = { 
+            ideology = nazism
+            expire = "1960.12.07" 
+            id = -1
+            traits = { }
+        }
+    }
+    ROM_geotgiu-dhek = {
+        name = "ROM_geotgiu-dhek"
+        portraits = {
+            civilian = {
+                large = GFX_portrait_ROM_geotgiu-dhek
+            }
+        }
+        country_leader = { 
+            ideology = marxism
+            expire = "1965.12.07" 
+            id = -1
+            traits = { }
+        }
+    }
+    ROM_MIXAI_I = {
+        name = "ROM_MIXAI_I"
+        portraits = {
+            civilian = {
+                large = GFX_portrait_ROM_MIXAI_I
+            }
+        }
+        country_leader = { 
+            ideology = oligarchism
+            expire = "2000.12.07" 
+            id = -1
+            traits = { }
+        }
+    }
+}

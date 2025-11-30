@@ -1,0 +1,65 @@
+﻿capital = 46
+
+
+set_research_slots = 4
+set_stability = 0.5
+set_war_support = 0.7
+
+add_dynamic_modifier = { modifier = ROM_mod_economic }
+
+set_variable = { ROM_economic_speed_fabric = -0.1 }
+set_variable = { ROM_economic_speed_ifrastructure = -0.1 }
+set_variable = { ROM_economyc_niskae_roshdaemocst = -0.1 }
+set_variable = { ROM_economic_TNP = 0.1 }
+set_variable = { ROM_ecnomic_SPEED_ARMS_ZAVOD = -0.05 }
+set_variable = { ROM_ecnomic_FUEL_GAIN = 0 }
+
+
+set_politics = {
+	ruling_party = fascism
+	last_election = "1934.3.26"
+	election_frequency = 60
+	elections_allowed = no
+}
+set_popularities = {
+	democratic = 20
+	fascism = 73
+	communism = 2
+	monorxism = 5
+}
+
+recruit_character = ITA_benito_mussolini
+recruit_character = ROM_Hormia_Sima	
+#######communism#####
+recruit_character = ROM_geotgiu-dhek
+
+add_ideas = {
+	idea_ROM_economic_neft_zavisimost
+	idea_ROM_GER_vliaenie
+	idea_ROM_Radikal_vlast
+}
+
+
+
+
+
+# Starting tech
+set_technology = {
+	tech_support = 1		
+	tech_engineers = 1
+	tech_mountaineers = 1
+	tech_trucks = 1
+	motorised_infantry = 1
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	gw_artillery = 1
+	interwar_antiair = 1
+	basic_train = 1
+}
+
+
+
+
+
+
+set_convoys = 10

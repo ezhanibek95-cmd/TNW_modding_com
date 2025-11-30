@@ -1,0 +1,48 @@
+spriteTypes = {    
+    ##### SOV #######
+    spriteType = { 
+        name = "GFX_portrait_beria"
+        texturefile = "gfx/leaders/SOV/portrait_SOV_lavrenty_beriya_mod.dds"
+    }
+	spriteType = { 
+        name = "GFX_portrait_SOV_partiaa"  
+        texturefile = "gfx/leaders/SOV/potrait_communism_party.dds"
+    }
+	spriteType = { 
+        name = "GFX_portrait_SOV_nikita_crysov"  
+        texturefile = "gfx/leaders/SOV/portrait_SOV_nikita_cyrysov.dds"
+    }
+	spriteType = { 
+        name = "GFX_portrait_SOV_malenckov"  
+        texturefile = "gfx/leaders/SOV/potrait_SOV_malenkov_mod.dds"
+    }
+
+    ##### ROMANIA ########
+    spriteType = { 
+        name = "GFX_portrait_ROM_Hormia_Sima"
+        texturefile = "gfx/leaders/ROM/ROM_Hormia_Sima.dds"
+    }
+    spriteType = { 
+        name = "GFX_portrait_ROM_geotgiu-dhek" 
+        texturefile = "gfx/leaders/ROM/ROM_geotgiu-dhek.dds"
+    }
+    spriteType = { 
+        name = "GFX_portrait_ROM_MIXAI_I"  
+        texturefile = "gfx/leaders/ROM/ROM_MIXAI_I.dds" 
+    }
+    ###### TURKESTAN #########
+    spriteType = { 
+        name = "GFX_portrait_TRK_Zhumabai_shaihmetov" 
+        texturefile = "gfx/leaders/TRK/TRK_Zhumabai_shaihmetov.dds"
+    }
+    ########## FRANCE #########
+    spriteType = { 
+        name = "GFX_portrait_FRA_Zhun_vencan_Orlion" 
+        texturefile = "gfx/leaders/FRA/portrait_FRA_Zhun_vencan_Orlion.dds" 
+    }
+    ######### ENGLAND ##########
+     spriteType = { 
+        name = "GFX_ENG_Winston_chechil" 
+        texturefile = "gfx/leaders/ENG/ENG_Winston_chechil.dds" 
+    }
+}

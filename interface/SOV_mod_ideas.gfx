@@ -1,0 +1,11 @@
+spriteTypes = {	
+
+	spriteType = {
+		name = "GFX_idea_SOV_podershka_naroda"
+		texturefile = "gfx/interface/ideas/SOV/idea_SOV_podershka_naroda_civil_war.dds"
+	}
+	SpriteType = { 
+		name = "GFX_idea_SOV_corupsia_v_NKVD"     
+		texturefile = "gfx/interface/ideas/SOV/idea_SOV_corupsia_v_NKVD.dds" 
+	}
+}

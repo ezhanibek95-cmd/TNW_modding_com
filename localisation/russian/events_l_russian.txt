@@ -1,0 +1,13 @@
+l_russian:
+ GER_HITLER_DEATH_TITLE: "Смерть фюрера"
+ GER_HITLER_DEATH_DESC: "Адольф Гитлер скончался в своём бункере. Его многолетние болезни и психическое расстройство окончательно подорвали здоровье. Германия осталась без лидера."
+ GER_HITLER_DEATH_OPTION: "Начинается борьба за наследие..."
+ 
+ GER_POWER_STRUGGLE_TITLE: "Борьба за власть"
+ GER_POWER_STRUGGLE_DESC: "После смерти фюрера различные фракции в правительстве начали борьбу за контроль над Рейхом."
+ GER_POWER_STRUGGLE_OPTION_SS: "Чёрный орден во главе государства!"
+ GER_POWER_STRUGGLE_OPTION_NSDAP: "Партия должна победить!"
+ 
+ GER_BALANCE_CATEGORY: "Внутрипартийная борьба"
+ GER_SS_PURGE_DECISION: "Провести чистку в СС"
+ GER_EMPOWER_PARTY_DECISION: "Укрепить позиции партии"

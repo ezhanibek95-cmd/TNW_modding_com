@@ -1,0 +1,12 @@
+SOV_CHYSHOV = {
+    color = rgb { 255 102 102 }
+    color_ui = rgb { 255 73 121 }
+}
+SOV_NKVD = {
+    color = rgb { 165 42 42 }
+    color_ui = rgb { 255 73 121 }
+}
+ROM_TITAN = {
+    color = rgb { 153 153 0 }
+    color_ui = rgb { 204 204 0 }
+}

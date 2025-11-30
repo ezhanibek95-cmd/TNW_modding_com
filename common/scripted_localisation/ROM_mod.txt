@@ -1,0 +1,3 @@
+GetROMTNPFactor = {
+    text = "[?ROOT.TNP_factor|%0]"
+}

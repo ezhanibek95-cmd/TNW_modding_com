@@ -1,0 +1,56 @@
+SOV_mod_urbanization_scripted_effects = {
+    248 = {
+        add_dynamic_modifier = {
+			modifier = SOV_mod_urbanization
+			days = 365
+		}
+    }
+    249 = {
+        add_dynamic_modifier = {
+			modifier = SOV_mod_urbanization
+			days = 365
+		}
+    }
+    399 = {
+        add_dynamic_modifier = {
+			modifier = SOV_mod_urbanization
+			days = 365
+		}
+    }
+    651 = {
+        add_dynamic_modifier = {
+			modifier = SOV_mod_urbanization
+			days = 365
+		}
+    }
+    573 = {
+        add_dynamic_modifier = {
+			modifier = SOV_mod_urbanization
+			days = 365
+		}
+    }
+    262 = {
+        add_dynamic_modifier = {
+			modifier = SOV_mod_urbanization
+			days = 365
+		}
+    }
+    825 = {
+        add_dynamic_modifier = {
+			modifier = SOV_mod_urbanization
+			days = 365
+		}
+    }
+    577 = {
+        add_dynamic_modifier = {
+			modifier = SOV_mod_urbanization
+			days = 365
+		}
+    }
+    654 = {
+        add_dynamic_modifier = {
+			modifier = SOV_mod_urbanization
+			days = 365
+		}
+    }
+}
